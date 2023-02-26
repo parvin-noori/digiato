@@ -4,6 +4,13 @@ $(document).ready(function () {
     let loginForm=$("#login-form");
     let registerForm=$("#register-form");
     let forgetForm=$("#forgot-form");
+    let changeThemeBtn=$(".head__theme");
+    
+    //change theme
+    changeThemeBtn.click(function () {
+       $('body').toggleClass('darkMode')
+        $("i", this).toggleClass("fa-regular fa-moon fa-regular fa-brightness");
+    });
 
     //open search form inside header
     searchArea.click(function (e) {

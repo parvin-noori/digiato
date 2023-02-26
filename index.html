@@ -49,31 +49,50 @@
         <div class="row">
             <div class="col-lg-12">
                 <div id="header" class="row align-items-center justify-content-between">
+
+                    <!--hamburger menu-->
+                    <div class="col-auto d-md-none d-block">
+                        <a class="btn hamburgerMenuBtn d-flex align-items-center justify-content-center" data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+                           aria-controls="mobileMenu">
+                            <i class="fa-regular fa-bars"></i>
+                        </a>
+                    </div>
+
+                    <!--logo-->
                     <div class="col-auto">
                         <div class="site-branding">
                             <a href="#" class="logo-brand">
-                                <img src="assets/imgs/logo.svg" alt="">
+                                <img src="assets/imgs/logo.svg" alt="لوگوی دیجیاتو" class=" logo-light logoImg">
+                                <img src="assets/imgs/logo-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark logoImg">
+                                <img src="assets/imgs/mini-logo-en.svg" alt="لوگوی دیجیاتو" class=" logo-light mini-logo">
+                                <img src="assets/imgs/mini-logo-en-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark mini-logo">
                             </a>
                         </div>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto d-md-flex d-none">
                         <div class="head d-flex align-items-center">
+
+                            <!--heade theme-->
                             <a href="#" class="head__theme">
                                 <i class="fa-regular fa-moon"></i>
                             </a>
-                            <div class="searchArea">
+
+                            <!--search area-->
+                            <div class="searchArea me-2">
                                 <div id="searchArea">
                                     <form action="">
                                         <div class="input-group">
                                             <input type="text" class="form-control border-0 bg-transparent"
                                                    placeholder="کلمه کلیدی مورد نظر را جستجو کنید"
                                                    aria-label="Recipient's username" aria-describedby="searchBtn">
-                                            <button class="btn p-0  border-0"  type="button" id="searchBtn"><i
+                                            <button class="btn p-0  border-0" type="button" id="searchBtn"><i
                                                     class="fa-regular fa-magnifying-glass"></i></button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
+
+                            <!--profile-->
                             <a href="#" class="head__profile ms-4" data-bs-toggle="modal" data-bs-target="#loginModal">
                                 <i class="fa-regular fa-user"></i>
                             </a>
@@ -85,7 +104,7 @@
     </div>
 </header>
 
-<!-- Modal -->
+<!--login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -105,10 +124,15 @@
                                         <input type="password" name="loginPassword" class="form-control"
                                                id="loginPassword" placeholder="لطفا رمزعبور خود را وارد کنید">
                                     </div>
-                                    <button class="btn my-4 modalLoginBtn" type="submit" id="loginBtn">ورود به حساب کاربری</button>
+                                    <button class="btn my-4 modalLoginBtn" type="submit" id="loginBtn">ورود به حساب
+                                        کاربری
+                                    </button>
                                     <div class="loginModal__form--links d-flex flex-column align-items-start">
-                                        <button class="btn p-0 mb-2 registerModalOpen" type="button">ساخت حساب کاربری جدید</button>
-                                        <button class="btn p-0 mb-2 forgotModalOpen" type="button">اطلاعات حساب خود را فراموش کرده ام
+                                        <button class="btn p-0 mb-2 registerModalOpen" type="button">ساخت حساب کاربری
+                                            جدید
+                                        </button>
+                                        <button class="btn p-0 mb-2 forgotModalOpen" type="button">اطلاعات حساب خود را
+                                            فراموش کرده ام
                                         </button>
                                     </div>
                                 </form>
@@ -129,7 +153,8 @@
                                 <form id="register-form" action="">
                                     <div class="form-group mb-3">
                                         <label for="RegisterUsername" class="form-label">نام کاربری </label>
-                                        <input type="text" name="RegisterUsername" class="form-control" id="RegisterUsername"
+                                        <input type="text" name="RegisterUsername" class="form-control"
+                                               id="RegisterUsername"
                                                placeholder="نامی که با آن حساب کاربری شما نمایش داده خواهد شد">
                                     </div>
                                     <div class="form-group mb-3">
@@ -143,15 +168,21 @@
                                                id="registerPassword" placeholder="رمز عبور خود را وارد نمایید">
                                     </div>
                                     <div class="form-check d-flex align-items-end">
-                                        <input class="form-check-input me-2 mb-1" type="checkbox" value="" id="register-privacy" name="registerPrivacy">
+                                        <input class="form-check-input me-2 mb-1" type="checkbox" value=""
+                                               id="register-privacy" name="registerPrivacy">
                                         <label class="form-check-label" for="register-privacy">
-                                            کلیه <a href="#"> شرایط و ضوابط </a>دیجیاتو را مطالعه کرده ام و آن ها را می پذیرم
+                                            کلیه <a href="#"> شرایط و ضوابط </a>دیجیاتو را مطالعه کرده ام و آن ها را می
+                                            پذیرم
                                         </label>
                                     </div>
-                                    <button class="btn my-4 modalLoginBtn" type="submit" id="registerBtn">ساخت حساب کاربری جدید</button>
+                                    <button class="btn my-4 modalLoginBtn" type="submit" id="registerBtn">ساخت حساب
+                                        کاربری جدید
+                                    </button>
                                     <div class="loginModal__form--links d-flex flex-column align-items-start">
-                                        <button class="btn p-0 mb-2 loginModalOpen" type="button">ورود به حساب کاربری</button>
-                                        <button class="btn p-0 mb-2 forgotModalOpen" type="button">اطلاعات حساب خود را فراموش کرده ام
+                                        <button class="btn p-0 mb-2 loginModalOpen" type="button">ورود به حساب کاربری
+                                        </button>
+                                        <button class="btn p-0 mb-2 forgotModalOpen" type="button">اطلاعات حساب خود را
+                                            فراموش کرده ام
                                         </button>
                                     </div>
                                 </form>
@@ -176,9 +207,13 @@
                                                placeholder="لطفا پست الکترونیکی خود را وارد کنید">
                                     </div>
 
-                                    <button class="btn my-4 modalLoginBtn" type="submit" id="forgetBtn">بازیابی رمز عبور</button>
+                                    <button class="btn my-4 modalLoginBtn" type="submit" id="forgetBtn">بازیابی رمز
+                                        عبور
+                                    </button>
                                     <div class="loginModal__form--links d-flex flex-column align-items-start">
-                                        <button class="btn p-0 mb-2 registerModalOpen" type="button">ساخت حساب کاربری جدید</button>
+                                        <button class="btn p-0 mb-2 registerModalOpen" type="button">ساخت حساب کاربری
+                                            جدید
+                                        </button>
                                         <button class="btn p-0 mb-2 loginModalOpen" type="button">ورود به حساب کاربری
                                         </button>
                                     </div>
@@ -194,6 +229,30 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!--hamburger menu-->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileMenuLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
+            etc.
+        </div>
+        <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
         </div>
     </div>
 </div>
