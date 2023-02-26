@@ -1,0 +1,133 @@
+@import "assets/scss/_colors.scss";
+
+:root {
+  --header-backgroundColor: #{$headerBackgroundColor};
+  --gray-border: #{$grayBorder};
+  --white: #{$white};
+  --text-color: #{$textColor};
+  --dark-blue:#{$darkBlue};
+
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: IranSans, 'Figtree';
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+@mixin bordered($color) {
+  border: 1px solid $color;
+}
+
+input:focus {
+  box-shadow: none !important;
+}
+
+.site-header {
+  padding: 1.5rem 0;
+
+  background-color: var(--header-backgroundColor);
+  color: var(--text-color);
+
+  .head {
+    .head__theme {
+      position: relative;
+      color: inherit;
+      display: flex;
+
+      &:after {
+        content: '';
+        width: 2px;
+        height: 21px;
+        background-color: var(--gray-border);
+        display: block;
+        margin-right:1rem;
+      }
+
+      i {
+        transform: rotate(-10deg);
+      }
+    }
+  }
+
+  i {
+    font-size: 1.3rem;
+  }
+
+  #searchArea {
+    border-radius: 1rem;
+    width: 0;
+    transition: all 0.3s;
+
+    padding: 0 1.2rem;
+
+    .input-group {
+      input.form-control {
+        padding: 0;
+
+      }
+
+      flex-wrap: nowrap;
+    }
+
+    &.active {
+      background-color: var(--white);
+      @include bordered(var(--gray-border));
+      width: 25rem;
+
+
+      //.input-group {
+      //  flex-wrap: wrap;
+      //
+      //}
+
+
+    }
+
+    .btn {
+      color: inherit;
+    }
+
+    input.form-control {
+      //padding: 1rem;
+      color: var(--text-color);
+      height: 3rem;
+
+      &::placeholder {
+        color: inherit;
+        font-weight: 500;
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+
+    }
+  }
+
+}
+
+#loginModal{
+  .modal-content{
+    border-radius: 1rem;
+    border: none;
+    overflow: hidden;
+  }
+  .loginModal__picture{
+    background-color: var(--header-backgroundColor);
+    h5{
+      color: var(--dark-blue);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+  }
+  .loginModal__picture,.loginModal__form{
+    padding: 4rem;
+  }
+}

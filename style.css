@@ -1,0 +1,77 @@
+:root {
+  --header-backgroundColor: #f7f9fd;
+  --gray-border: #e1eaf9;
+  --white: #fff;
+  --text-color: #888dab;
+  --dark-blue:#16205b; }
+
+html {
+  font-size: 14px; }
+
+body {
+  font-family: IranSans, 'Figtree';
+  font-size: 1rem; }
+
+a {
+  text-decoration: none; }
+
+input:focus {
+  box-shadow: none !important; }
+
+.site-header {
+  padding: 1.5rem 0;
+  background-color: var(--header-backgroundColor);
+  color: var(--text-color); }
+  .site-header .head .head__theme {
+    position: relative;
+    color: inherit;
+    display: flex; }
+    .site-header .head .head__theme:after {
+      content: '';
+      width: 2px;
+      height: 21px;
+      background-color: var(--gray-border);
+      display: block;
+      margin-right: 1rem; }
+    .site-header .head .head__theme i {
+      transform: rotate(-10deg); }
+  .site-header i {
+    font-size: 1.3rem; }
+  .site-header #searchArea {
+    border-radius: 1rem;
+    width: 0;
+    transition: all 0.3s;
+    padding: 0 1.2rem; }
+    .site-header #searchArea .input-group {
+      flex-wrap: nowrap; }
+      .site-header #searchArea .input-group input.form-control {
+        padding: 0; }
+    .site-header #searchArea.active {
+      background-color: var(--white);
+      border: 1px solid var(--gray-border);
+      width: 25rem; }
+    .site-header #searchArea .btn {
+      color: inherit; }
+    .site-header #searchArea input.form-control {
+      color: var(--text-color);
+      height: 3rem; }
+      .site-header #searchArea input.form-control::placeholder {
+        color: inherit;
+        font-weight: 500;
+        opacity: 0.7;
+        font-size: 0.9rem; }
+
+#loginModal .modal-content {
+  border-radius: 1rem;
+  border: none;
+  overflow: hidden; }
+#loginModal .loginModal__picture {
+  background-color: var(--header-backgroundColor); }
+  #loginModal .loginModal__picture h5 {
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+    font-weight: bold; }
+#loginModal .loginModal__picture, #loginModal .loginModal__form {
+  padding: 4rem; }
+
+/*# sourceMappingURL=style.css.map */
