@@ -5,8 +5,9 @@
   --gray-border: #{$grayBorder};
   --white: #{$white};
   --text-color: #{$textColor};
-  --dark-blue:#{$darkBlue};
-
+  --dark-blue: #{$darkBlue};
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
 }
 
 html {
@@ -21,9 +22,27 @@ body {
 a {
   text-decoration: none;
 }
-
+.btn:focus,.btn:active{
+  outline: none;
+  border-color: transparent!important;
+}
 @mixin bordered($color) {
   border: 1px solid $color;
+}
+
+@mixin borderRadius {
+  border-radius: 0.8rem;
+}
+
+@mixin mainButtons($color,$radius) {
+  border: 1px solid $color;
+  background-color: $color;
+  border-radius: $radius;
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  &:hover{
+    opacity: 0.8;
+  }
 }
 
 input:focus {
@@ -48,7 +67,7 @@ input:focus {
         height: 21px;
         background-color: var(--gray-border);
         display: block;
-        margin-right:1rem;
+        margin-right: 1rem;
       }
 
       i {
@@ -112,22 +131,80 @@ input:focus {
 
 }
 
-#loginModal{
-  .modal-content{
+#loginModal {
+  font-size: 0.9rem;
+
+  .modal-content {
     border-radius: 1rem;
     border: none;
     overflow: hidden;
   }
-  .loginModal__picture{
+
+  .loginModal__picture {
     background-color: var(--header-backgroundColor);
-    h5{
+
+    h5 {
       color: var(--dark-blue);
       font-size: 1.2rem;
       font-weight: bold;
     }
 
   }
-  .loginModal__picture,.loginModal__form{
-    padding: 4rem;
+
+  .loginModal__picture, .loginModal__form {
+    padding: 4rem 3rem;
+  }
+
+  .form-group {
+    label {
+      color: var(--text-color);
+    }
+  }
+
+  .form-control {
+    @include bordered(var(--gray-border));
+    background-color: var(--header-backgroundColor);
+    text-align: right;
+    padding: 1rem;
+    transition: all 0.3s;
+    @include borderRadius;
+
+    &::placeholder {
+      font-size: 0.9rem;
+      opacity: 0.5;
+    }
+
+    &:hover, &:focus {
+      border-color: var(--primary-color);
+      background-color: var(--white);
+    }
+    &.error-message{
+      border-color: red;
+    }
+  }
+
+  .modalLoginBtn {
+    @include mainButtons(var(--secondary-color), 0.8rem)
+  }
+  span.error-message{
+    color: red;
+    margin-top: 1rem;
+    display: block;
+    font-size: 0.8rem;
+  }
+  .loginModal__form--links{
+    color: var(--primary-color);
+    button{
+      color: inherit;
+      font-size: small;
+    }
+  }
+  .registerModalbox,.forgotModalbox{
+    display: none;
+  }
+}
+@media (min-width: 992px){
+  .modal-lg, .modal-xl {
+    --bs-modal-width: 900px;
   }
 }

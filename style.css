@@ -3,7 +3,9 @@
   --gray-border: #e1eaf9;
   --white: #fff;
   --text-color: #888dab;
-  --dark-blue:#16205b; }
+  --dark-blue: #16205b;
+  --primary-color: #0075e7;
+  --secondary-color: #f15928; }
 
 html {
   font-size: 14px; }
@@ -14,6 +16,10 @@ body {
 
 a {
   text-decoration: none; }
+
+.btn:focus, .btn:active {
+  outline: none;
+  border-color: transparent !important; }
 
 input:focus {
   box-shadow: none !important; }
@@ -61,17 +67,60 @@ input:focus {
         opacity: 0.7;
         font-size: 0.9rem; }
 
-#loginModal .modal-content {
-  border-radius: 1rem;
-  border: none;
-  overflow: hidden; }
-#loginModal .loginModal__picture {
-  background-color: var(--header-backgroundColor); }
-  #loginModal .loginModal__picture h5 {
-    color: var(--dark-blue);
-    font-size: 1.2rem;
-    font-weight: bold; }
-#loginModal .loginModal__picture, #loginModal .loginModal__form {
-  padding: 4rem; }
+#loginModal {
+  font-size: 0.9rem; }
+  #loginModal .modal-content {
+    border-radius: 1rem;
+    border: none;
+    overflow: hidden; }
+  #loginModal .loginModal__picture {
+    background-color: var(--header-backgroundColor); }
+    #loginModal .loginModal__picture h5 {
+      color: var(--dark-blue);
+      font-size: 1.2rem;
+      font-weight: bold; }
+  #loginModal .loginModal__picture, #loginModal .loginModal__form {
+    padding: 4rem 3rem; }
+  #loginModal .form-group label {
+    color: var(--text-color); }
+  #loginModal .form-control {
+    border: 1px solid var(--gray-border);
+    background-color: var(--header-backgroundColor);
+    text-align: right;
+    padding: 1rem;
+    transition: all 0.3s;
+    border-radius: 0.8rem; }
+    #loginModal .form-control::placeholder {
+      font-size: 0.9rem;
+      opacity: 0.5; }
+    #loginModal .form-control:hover, #loginModal .form-control:focus {
+      border-color: var(--primary-color);
+      background-color: var(--white); }
+    #loginModal .form-control.error-message {
+      border-color: red; }
+  #loginModal .modalLoginBtn {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    border-radius: 0.8rem;
+    color: var(--white);
+    padding: 0.9rem 2rem; }
+    #loginModal .modalLoginBtn:hover {
+      opacity: 0.8; }
+  #loginModal span.error-message {
+    color: red;
+    margin-top: 1rem;
+    display: block;
+    font-size: 0.8rem; }
+  #loginModal .loginModal__form--links {
+    color: var(--primary-color); }
+    #loginModal .loginModal__form--links button {
+      color: inherit;
+      font-size: small; }
+  #loginModal .registerModalbox, #loginModal .forgotModalbox {
+    display: none; }
+
+@media (min-width: 992px) {
+  .modal-lg, .modal-xl {
+    --bs-modal-width: 900px; } }
 
 /*# sourceMappingURL=style.css.map */

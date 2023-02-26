@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACA,WAAW,EAAE,mBAAmB;EAChC,SAAS,EAAE,GAAG",
+"mappings": "AAAA,IAAI;EACA,WAAW,EAAE,mBAAmB;EAChC,SAAS,EAAE,GAAG;EACd,UAAU,EAAE,KAAK",
 "sources": ["rtl.scss"],
 "names": [],
 "file": "rtl.css"
