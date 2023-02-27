@@ -283,8 +283,10 @@ input:focus {
     display: none; }
 
 .homeCardsFooterBox {
-  background-color: var(--navigation-background); }
+  background-color: var(--navigation-background);
+  transition: all 0.3s; }
   .homeCardsFooterBox .homeCardsFooter {
+    transition: all 0.3s;
     background-color: var(--header-backgroundColor);
     padding: 2rem;
     margin-top: -3rem;
@@ -354,6 +356,8 @@ input:focus {
   color: var(--light-textColor); }
   .darkMode .hamburgerMenuBtn {
     color: var(--white) !important; }
+  .darkMode .siteTitle {
+    color: var(--text-color); }
   .darkMode .site-header {
     background-color: var(--darkHeaderBackgroundColor);
     color: inherit; }
@@ -381,6 +385,12 @@ input:focus {
     white-space: nowrap; }
   .darkMode .dropdown-toggle::after {
     background: var(--dark-mobildMenu); }
+  .darkMode .homeCardsFooterBox {
+    background-color: var(--dark-body); }
+    .darkMode .homeCardsFooterBox .homeCardsFooter {
+      background-color: var(--dark-searchArea); }
+  .darkMode .miniCard .miniCard__title p {
+    color: var(--white); }
   @media (min-width: 992px) {
     .darkMode .site-header .logo-dark.logoImg {
       display: block; } }

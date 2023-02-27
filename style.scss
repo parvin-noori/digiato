@@ -476,8 +476,10 @@ input:focus {
 
 .homeCardsFooterBox {
   background-color: var(--navigation-background);
+  @include transition;
 
   .homeCardsFooter {
+    @include transition;
     background-color: var(--header-backgroundColor);
     padding: 2rem;
     margin-top: -3rem;
@@ -586,6 +588,10 @@ input:focus {
     color: var(--white) !important;
   }
 
+  .siteTitle{
+    color: var(--text-color);
+  }
+
   .site-header {
     background-color: var(--darkHeaderBackgroundColor);
     color: inherit;
@@ -634,6 +640,18 @@ input:focus {
 
   .dropdown-toggle::after {
     background: var(--dark-mobildMenu);
+  }
+
+  .homeCardsFooterBox {
+    background-color: var(--dark-body);
+
+    .homeCardsFooter {
+      background-color: var(--dark-searchArea);
+    }
+  }
+
+  .miniCard .miniCard__title p {
+    color: var(--white);
   }
 
   @media (min-width: 992px) {
