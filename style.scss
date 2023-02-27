@@ -14,6 +14,8 @@
   --dark-mobildMenu: #{$darkMobileMenu};
   --light-textColor: #{$lightTextColor};
   --navigation-background: #{$navigationBackground};
+  --black: #{$black};
+  --blue: #{$blue};
 }
 
 
@@ -23,6 +25,10 @@
 
 @mixin borderRadius {
   border-radius: 0.8rem;
+}
+
+@mixin lightBorderRadius {
+  border-radius: 0.4rem;
 }
 
 @mixin mainButtons($color,$radius) {
@@ -36,17 +42,21 @@
   }
 }
 
-@mixin headThemeAfter {
+@mixin headThemeAfter($color,$height,$width) {
   content: '';
-  width: 2px;
-  height: 21px;
-  background-color: var(--gray-border);
+  width: $width;
+  background-color: $color;
+  height: $height;
   display: block;
   margin: 0 1rem;
 }
 
 @mixin transition {
   transition: all 0.3s;
+}
+
+@mixin beforeRectangle {
+
 }
 
 html {
@@ -69,6 +79,32 @@ a {
   width: 100% !important;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.miniCard {
+  .miniCard__picture {
+    @include lightBorderRadius;
+    width: 80px;
+    height: 80px;
+    padding-right: 0.5rem;
+    overflow: hidden;
+  }
+
+  .miniCard__title {
+    flex: 80%;
+    font-weight: bold;
+
+    p {
+      color: var(--blue);
+      line-height: 2;
+    }
+  }
+
+  .miniCard__date {
+    font-size: 0.8rem;
+    color: var(--text-color);
+  }
+
 }
 
 @media (min-width: 1600px) {
@@ -170,7 +206,7 @@ input:focus {
   .head {
     .head__theme {
       &:after {
-        @include headThemeAfter
+        @include headThemeAfter(var(--gray-border), 21px, 2px);
       }
     }
   }
@@ -209,10 +245,67 @@ input:focus {
   }
 }
 
+.dropdown-menu {
+  border: none;
+
+  .dropdown-submenu {
+    .dropdown-menu {
+      right: 100%;
+      top: 0;
+      white-space: nowrap;
+    }
+  }
+}
+
 .primary-menu {
   a {
     display: block;
     color: inherit;
+  }
+
+  .dropdown-toggle::after {
+    border: none;
+    width: 16px;
+    height: 16px;
+    content: '';
+    background: #fbfcfd;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    margin-top: 5px;
+    transform: rotate(45deg) translate(0, -100%);
+  }
+
+  ul.nav li:hover {
+    & > ul.dropdown-menu {
+      display: block;
+
+    }
+
+    .dropdown-toggle::after {
+      opacity: 1;
+    }
+  }
+
+}
+
+.siteTitle {
+  margin-bottom: 16px;
+  color: var(--dark-blue);
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    @include headThemeAfter(var(--secondary-color), 23px, 8px);
+    border-radius: 0.5rem;
   }
 }
 
@@ -228,6 +321,77 @@ input:focus {
   .primary-menu {
     a {
       padding: 1rem 0.6rem;
+    }
+  }
+}
+
+#homeCards {
+  background-color: var(--black);
+
+  .card__overload {
+    z-index: 2;
+  }
+
+  .card__overload--title {
+    color: var(--white);
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
+
+  .card__overload--description {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 2;
+  }
+
+  .card__overload--info {
+    font-size: small;
+    color: var(--white);
+
+    a {
+      color: inherit;
+    }
+
+    .card__overload--author {
+      position: relative;
+
+      &::after {
+        @include headThemeAfter(var(--white), 15px, 1px)
+      }
+    }
+  }
+
+  .homeFeaturedItem {
+    position: relative;
+    height: 583px;
+
+    .attachment-single-reviews {
+      object-fit: cover;
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      pointer-events: none;
+    }
+
+    &:after {
+      left: 80%;
+      width: 20vw;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0.35%, rgba(0, 0, 0, 0)), color-stop(53.68%, #000));
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0) .35%, #000 53.68%);
+    }
+
+    &:before {
+      left: 0;
+      width: 70%;
+      background: -webkit-gradient(linear, right top, left top, color-stop(0.35%, rgba(0, 0, 0, 0)), color-stop(53.68%, #000));
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0) .35%, #000 53.68%);
     }
   }
 }
@@ -310,6 +474,34 @@ input:focus {
   }
 }
 
+.homeCardsFooterBox {
+  background-color: var(--navigation-background);
+
+  .homeCardsFooter {
+    background-color: var(--header-backgroundColor);
+    padding: 2rem;
+    margin-top: -3rem;
+    z-index: 10;
+    position: relative;
+    @include borderRadius;
+
+    ul {
+      li {
+        padding: 0 1rem;
+        flex: 1;
+        position: relative;
+
+        &:not(:last-child):after {
+          @include headThemeAfter(var(--gray-border), 60px, 1px);
+          top: 0.8rem;
+          left: -1rem;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .modal-lg, .modal-xl {
     --bs-modal-width: 900px;
@@ -354,7 +546,7 @@ input:focus {
 
       .head__theme {
         &:before {
-          @include headThemeAfter
+          @include headThemeAfter(var(--gray-border), 21px, 2px)
         }
       }
 
@@ -432,6 +624,16 @@ input:focus {
 
   .site-navigation {
     background-color: transparent;
+  }
+
+  .dropdown-menu {
+    background-color: var(--dark-mobildMenu);
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  .dropdown-toggle::after {
+    background: var(--dark-mobildMenu);
   }
 
   @media (min-width: 992px) {
