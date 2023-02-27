@@ -192,20 +192,6 @@ input:focus {
     font-weight: bold;
     font-size: 1.1rem;
     line-height: 2; }
-  #homeCards .card__overload--info {
-    font-size: small;
-    color: var(--white); }
-    #homeCards .card__overload--info a {
-      color: inherit; }
-    #homeCards .card__overload--info .card__overload--author {
-      position: relative; }
-      #homeCards .card__overload--info .card__overload--author::after {
-        content: '';
-        width: 1px;
-        background-color: var(--white);
-        height: 15px;
-        display: block;
-        margin: 0 1rem; }
   #homeCards .homeFeaturedItem {
     position: relative;
     height: 583px; }
@@ -282,8 +268,10 @@ input:focus {
   #loginModal .registerModalbox, #loginModal .forgotModalbox {
     display: none; }
 
+.homeCardsFooterBox, .editorsSuggestions {
+  background-color: var(--navigation-background); }
+
 .homeCardsFooterBox {
-  background-color: var(--navigation-background);
   transition: all 0.3s; }
   .homeCardsFooterBox .homeCardsFooter {
     transition: all 0.3s;
@@ -307,6 +295,121 @@ input:focus {
         top: 0.8rem;
         left: -1rem;
         position: absolute; }
+
+.card {
+  border: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.4rem; }
+  .card .card__overload--link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    left: 0; }
+  .card a {
+    color: inherit; }
+  .card .card-overload {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 2rem; }
+    .card .card-overload .card-overload--categories {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; }
+      .card .card-overload .card-overload--categories .card__overload--category {
+        z-index: 2;
+        border: 1px solid var(--dark-blue);
+        background-color: var(--dark-blue);
+        border-radius: 8px;
+        color: var(--white);
+        padding: 0.4rem 1rem;
+        margin-bottom: 1rem; }
+        .card .card-overload .card-overload--categories .card__overload--category:hover {
+          opacity: 0.8; }
+        .card .card-overload .card-overload--categories .card__overload--category:hover {
+          opacity: 1; }
+    .card .card-overload .card__overload--title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 2;
+      margin-bottom: 1.1rem; }
+  .card:before {
+    z-index: 0;
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 32, 91, 0)), to(#16205b));
+    background: linear-gradient(180deg, rgba(22, 32, 91, 0) 0, #16205b 100%);
+    opacity: .5;
+    pointer-events: none; }
+
+.card__bookmark {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  color: var(--white);
+  padding: 0.6rem;
+  color: var(--white) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .card__bookmark:hover {
+    opacity: 0.8; }
+  .card__bookmark i {
+    color: inherit; }
+  .card__bookmark:hover {
+    opacity: 1; }
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color); }
+.swiper-button-prev.swiper-button-next, .swiper-button-next.swiper-button-next {
+  left: 0;
+  right: auto; }
+.swiper-button-prev.swiper-button-prev, .swiper-button-next.swiper-button-prev {
+  left: 2.5rem; }
+
+.card__overload--info {
+  font-size: small;
+  color: var(--white);
+  white-space: nowrap; }
+  .card__overload--info::before {
+    content: '';
+    width: 8px;
+    background-color: var(--secondary-color);
+    height: 23px;
+    display: block;
+    margin: 0 1rem;
+    border-radius: 0.5rem; }
+  .card__overload--info a {
+    color: inherit; }
+  .card__overload--info .card__overload--author {
+    position: relative;
+    z-index: 2; }
+    .card__overload--info .card__overload--author::after {
+      content: '';
+      width: 1px;
+      background-color: var(--white);
+      height: 15px;
+      display: block;
+      margin: 0 1rem; }
 
 @media (min-width: 992px) {
   .modal-lg, .modal-xl {

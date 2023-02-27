@@ -31,12 +31,13 @@
   border-radius: 0.4rem;
 }
 
-@mixin mainButtons($color,$radius) {
+@mixin mainButtons($color,$radius,$padding) {
   border: 1px solid $color;
   background-color: $color;
   border-radius: $radius;
   color: var(--white);
-  padding: 0.9rem 2rem;
+  //padding: 0.9rem 2rem;
+  padding: $padding;
   &:hover {
     opacity: 0.8;
   }
@@ -345,22 +346,6 @@ input:focus {
     line-height: 2;
   }
 
-  .card__overload--info {
-    font-size: small;
-    color: var(--white);
-
-    a {
-      color: inherit;
-    }
-
-    .card__overload--author {
-      position: relative;
-
-      &::after {
-        @include headThemeAfter(var(--white), 15px, 1px)
-      }
-    }
-  }
 
   .homeFeaturedItem {
     position: relative;
@@ -450,7 +435,7 @@ input:focus {
   }
 
   .modalLoginBtn {
-    @include mainButtons(var(--secondary-color), 0.8rem)
+    @include mainButtons(var(--secondary-color), 0.8rem, 0.9rem 2rem)
   }
 
   span.error-message {
@@ -474,8 +459,11 @@ input:focus {
   }
 }
 
-.homeCardsFooterBox {
+.homeCardsFooterBox, .editorsSuggestions {
   background-color: var(--navigation-background);
+}
+
+.homeCardsFooterBox {
   @include transition;
 
   .homeCardsFooter {
@@ -503,6 +491,138 @@ input:focus {
     }
   }
 }
+
+.card {
+  .card__overload--link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    left: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  border: none;
+  position: relative;
+  overflow: hidden;
+  @include lightBorderRadius;
+
+  .card-overload {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+padding: 2rem;
+    .card-overload--categories {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .card__overload--category {
+        z-index: 2;
+        @include mainButtons(var(--dark-blue), 8px, 0.4rem 1rem);
+        margin-bottom: 1rem;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .card__overload--title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 2;
+      margin-bottom: 1.1rem;
+    }
+  }
+
+  &:before {
+    z-index: 0;
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 32, 91, 0)), to(#16205b));
+    background: linear-gradient(180deg, rgba(22, 32, 91, 0) 0, #16205b 100%);
+    opacity: .5;
+    pointer-events: none;
+  }
+
+
+}
+
+.card__bookmark {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  @include mainButtons(var(--primary-color), 4px, 0.6rem);
+  color: var(--white) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    color: inherit;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+
+  &:after {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+
+  &.swiper-button-next {
+    left: 0;
+    right: auto;
+  }
+
+  &.swiper-button-prev {
+    left: 2.5rem;
+  }
+}
+
+.card__overload--info {
+  font-size: small;
+  color: var(--white);
+  white-space: nowrap;
+  &::before {
+    @include headThemeAfter(var(--secondary-color), 23px, 8px);
+    border-radius: 0.5rem;
+  }
+  a {
+    color: inherit;
+  }
+
+  .card__overload--author {
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      @include headThemeAfter(var(--white), 15px, 1px)
+    }
+  }
+}
+
 
 @media (min-width: 992px) {
   .modal-lg, .modal-xl {
@@ -588,7 +708,7 @@ input:focus {
     color: var(--white) !important;
   }
 
-  .siteTitle{
+  .siteTitle {
     color: var(--text-color);
   }
 

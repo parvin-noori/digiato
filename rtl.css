@@ -3,4 +3,10 @@ body {
   direction: rtl;
   text-align: right; }
 
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'next'; }
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  content: 'prev'; }
+
 /*# sourceMappingURL=rtl.css.map */

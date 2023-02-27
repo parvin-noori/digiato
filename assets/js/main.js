@@ -167,4 +167,28 @@ $(document).ready(function () {
         loginModalBox.slideUp();
         forgotModalBox.slideDown()
     })
+
+    //suggestion editor swiper
+    new Swiper(".editorsSuggestionsSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 15,
+            navigation: {
+                nextEl: ".swiper-button-next1",
+                prevEl: ".swiper-button-prev1",
+            },
+        breakpoints: {
+            0:{
+                slidesPerView: 1.4,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1400: {
+                slidesPerView: 4,
+            },
+        },
+    });
 });
