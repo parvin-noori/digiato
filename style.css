@@ -358,8 +358,9 @@ input:focus {
 
 .card__bookmark {
   position: absolute;
+  z-index: 2;
   top: 1rem;
-  left: 1rem;
+  right: 1rem;
   border: 1px solid var(--primary-color);
   background-color: var(--primary-color);
   border-radius: 4px;
@@ -381,10 +382,11 @@ input:focus {
   font-weight: bold;
   color: var(--text-color); }
 .swiper-button-prev.swiper-button-next, .swiper-button-next.swiper-button-next {
-  left: 0;
-  right: auto; }
+  right: 0;
+  left: auto; }
 .swiper-button-prev.swiper-button-prev, .swiper-button-next.swiper-button-prev {
-  left: 2.5rem; }
+  right: 2.5rem;
+  left: inherit; }
 
 .card__overload--info {
   font-size: small;

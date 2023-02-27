@@ -566,8 +566,9 @@ padding: 2rem;
 
 .card__bookmark {
   position: absolute;
+  z-index: 2;
   top: 1rem;
-  left: 1rem;
+  right: 1rem;
   @include mainButtons(var(--primary-color), 4px, 0.6rem);
   color: var(--white) !important;
   display: flex;
@@ -592,12 +593,13 @@ padding: 2rem;
   }
 
   &.swiper-button-next {
-    left: 0;
-    right: auto;
+    right: 0;
+    left: auto;
   }
 
   &.swiper-button-prev {
-    left: 2.5rem;
+    right: 2.5rem;
+    left: inherit;
   }
 }
 

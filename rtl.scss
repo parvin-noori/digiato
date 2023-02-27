@@ -21,3 +21,20 @@ body{
         }
     }
 }
+
+.swiper-button-prev, .swiper-button-next {
+
+    &.swiper-button-next {
+        left: 0;
+        right: auto;
+    }
+
+    &.swiper-button-prev {
+        left: 2.5rem;
+        right: inherit;
+    }
+}
+.card__bookmark {
+    left: 1rem;
+    right: inherit;
+}
