@@ -293,7 +293,7 @@ input:focus {
         display: block;
         margin: 0 1rem;
         top: 0.8rem;
-        left: -1rem;
+        right: -1rem;
         position: absolute; }
 
 .card {

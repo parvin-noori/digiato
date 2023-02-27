@@ -9,3 +9,15 @@ body{
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
     content: 'prev';
 }
+.homeCardsFooterBox {
+    .homeCardsFooter {
+        ul {
+            li:not(:last-child){
+                &:after{
+                    right: inherit;
+                    left: -1rem;
+                }
+            }
+        }
+    }
+}

@@ -484,7 +484,7 @@ input:focus {
         &:not(:last-child):after {
           @include headThemeAfter(var(--gray-border), 60px, 1px);
           top: 0.8rem;
-          left: -1rem;
+          right: -1rem;
           position: absolute;
         }
       }
