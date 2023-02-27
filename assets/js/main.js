@@ -122,10 +122,7 @@ $(document).ready(function () {
          }
      });
 
-    //focus input after open modal
-    $('#loginModal').on('shown.bs.modal', function () {
-        $('#loginEmail').focus();
-    });
+
 
     //loginForm modal
 
@@ -135,6 +132,20 @@ $(document).ready(function () {
     let registerButtonLink=$('.registerModalOpen');
     let loginButtonLink=$('.loginModalOpen');
     let forgetButtonLink=$('.forgotModalOpen');
+    let loginModal= $('#loginModal');
+    let loginEmail= $('#loginEmail');
+
+    //focus input after open modal
+    loginModal.on('shown.bs.modal', function () {
+       loginEmail.focus();
+    });
+
+    //back to login step after close modal
+    loginModal.on('hidden.bs.modal', function () {
+        registerModalBox.slideUp();
+        forgotModalBox.slideUp();
+        loginModalBox.slideDown()
+    });
 
     //open register modal
     registerButtonLink.click(function (e) {

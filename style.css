@@ -155,6 +155,11 @@ input:focus {
       border-color: transparent; }
       .darkMode .site-header #searchArea.active {
         background-color: var(--dark-searchArea); }
+  .darkMode .modal-content {
+    background-color: var(--dark-body);
+    color: var(--white); }
+  .darkMode #loginModal .form-control:hover, .darkMode #loginModal .form-control:focus {
+    border-color: transparent; }
   @media (min-width: 992px) {
     .darkMode .site-header .logo-dark.logoImg {
       display: block; } }

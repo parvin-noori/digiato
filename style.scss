@@ -279,6 +279,13 @@ input:focus {
       }
     }
   }
+  .modal-content{
+    background-color: var(--dark-body);
+    color:var(--white)
+  }
+  #loginModal .form-control:hover, #loginModal .form-control:focus{
+    border-color: transparent;
+  }
   @media (min-width: 992px) {
     .site-header{
       .logo-dark.logoImg {
