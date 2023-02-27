@@ -44,19 +44,11 @@
     </div>
 </div>
 </div> -->
-<header class="site-header">
+<header class="site-header d-lg-block d-none">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div id="header" class="row align-items-center justify-content-between">
-
-                    <!--hamburger menu-->
-                    <div class="col-auto d-md-none d-block">
-                        <a class="btn hamburgerMenuBtn d-flex align-items-center justify-content-center" data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
-                           aria-controls="mobileMenu">
-                            <i class="fa-regular fa-bars"></i>
-                        </a>
-                    </div>
 
                     <!--logo-->
                     <div class="col-auto">
@@ -64,11 +56,12 @@
                             <a href="#" class="logo-brand">
                                 <img src="assets/imgs/logo.svg" alt="لوگوی دیجیاتو" class=" logo-light logoImg">
                                 <img src="assets/imgs/logo-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark logoImg">
-                                <img src="assets/imgs/mini-logo-en.svg" alt="لوگوی دیجیاتو" class=" logo-light mini-logo">
-                                <img src="assets/imgs/mini-logo-en-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark mini-logo">
+
                             </a>
                         </div>
                     </div>
+
+                    <!--head-->
                     <div class="col-auto d-md-flex d-none">
                         <div class="head d-flex align-items-center">
 
@@ -85,7 +78,7 @@
                                             <input type="text" class="form-control border-0 bg-transparent"
                                                    placeholder="کلمه کلیدی مورد نظر را جستجو کنید"
                                                    aria-label="Recipient's username" aria-describedby="searchBtn">
-                                            <button class="btn p-0  border-0" type="button" id="searchBtn"><i
+                                            <button class="btn p-0  border-0 searchBtn" type="button" id=""><i
                                                     class="fa-regular fa-magnifying-glass"></i></button>
                                         </div>
                                     </form>
@@ -105,7 +98,53 @@
 </header>
 <nav class="site-navigation">
     <div class="container navigation">
+        <div class="row d-flex align-items-center justify-content-between">
+            <!--hamburger menu-->
+            <div class="col-auto d-lg-none d-block">
+                <a class="btn hamburgerMenuBtn d-flex align-items-center justify-content-center py-4"
+                   data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+                   aria-controls="mobileMenu">
+                    <i class="fa-regular fa-bars"></i>
+                </a>
+            </div>
 
+            <!--primary menu-->
+            <div class="col-auto d-lg-block d-none">
+                <div id="primary-menu" class="primary-menu">
+                    <ul class="nav">
+                        <li><a href="#">تکنولوژی</a></li>
+                        <li><a href="#">خودرو</a></li>
+                        <li><a href="#">نقد و بررسی</a></li>
+                        <li><a href="#">ویدیو</a></li>
+                        <li><a href="#">آموزش</a></li>
+                        <li><a href="#">راهنمای خرید</a></li>
+                        <li><a href="#">علمی</a></li>
+                        <li><a href="#">کسب و کار</a></li>
+                        <li><a href="#">دیجیاتو</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--popularArea-->
+            <div class="col-auto d-lg-block d-none">
+                <div class="popularArea d-flex align-items-center">
+                    <strong>پرطرفدارها:</strong>
+                    <ul class="nav list-unstyled">
+                        <li><a href="#"> s23 گلکسی</a></li>
+                        <li><a href="#">ChatGpt</a></li>
+                        <li><a href="#">ایلان ماسک</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--responsive logo-->
+            <div class="col-auto d-lg-none d-block">
+                <a href="#" class="logo-brand">
+                    <img src="assets/imgs/mini-logo-en.svg" alt="لوگوی دیجیاتو" class=" logo-light mini-logo">
+                    <img src="assets/imgs/mini-logo-en-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark mini-logo">
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -238,26 +277,64 @@
     </div>
 </div>
 
-<!--hamburger menu-->
+<!--hamburger mobile menu-->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="mobileMenuLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="offcanvas-header d-flex flex-column">
+        <button type="button" class="btn-close ms-auto mb-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="mobileMenu__top">
+            <div class="head d-flex align-items-center">
+
+                <!--profile-->
+                <a href="#" class="head__profile ms-4 d-flex align-items-center " data-bs-toggle="modal"
+                   data-bs-target="#loginModal">
+                    <i class="fa-regular fa-user me-2"></i>
+                    ورود به حساب کاربری
+                </a>
+
+                <!--search area-->
+                <div class="searchArea me-2">
+                    <button class="btn p-0  border-0 searchBtn ms-4" type="button"><i
+                            class="fa-regular fa-magnifying-glass"></i></button>
+                </div>
+
+                <!--head theme-->
+                <a href="#" class="head__theme">
+                    <i class="fa-regular fa-moon"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="offcanvas-body">
-        <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
-            etc.
-        </div>
-        <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+        <div class="mobileMenu__middle">
+            <ul class="nav flex-column primary-menu">
+                <li><a href="#">تکنولوژی</a></li>
+                <li><a href="#">خودرو</a></li>
+                <li><a href="#">نقد و بررسی</a></li>
+                <li><a href="#">ویدیو</a></li>
+                <li><a href="#">آموزش</a></li>
+                <li><a href="#">راهنمای خرید</a></li>
+                <li><a href="#">علمی</a></li>
+                <li><a href="#">کسب و کار</a></li>
+                <li><a href="#">دیجیاتو</a></li>
             </ul>
+        </div>
+    </div>
+    <div class="offcanvas-footer">
+        <div class="pollDigiato d-flex align-items-center justify-content-center">
+            <i class="fa-regular fa-message-medical me-2"></i>
+            ثبت بازخورد
+        </div>
+        <div class="mobileMenu__bottom">
+            <div class="list-socialMedia">
+                <ul class="nav d-flex align-items-center justify-content-around">
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa-light fa-paper-plane"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

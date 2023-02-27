@@ -8,18 +8,38 @@
   --primary-color: #0075e7;
   --secondary-color: #f15928;
   --dark-searchArea: #43464a;
-  --dark-body: #161718; }
+  --dark-body: #161718;
+  --dark-mobildMenu: #2d2e31;
+  --light-textColor: #e1eaf9;
+  --navigation-background: #f0f4fc; }
 
 html {
   font-size: 14px; }
 
 body {
   font-family: IranSans, 'Figtree';
-  font-size: 1rem; }
+  font-size: 1rem;
+  transition: all 0.3s; }
 
 a {
   text-decoration: none; }
 
+.container {
+  max-width: 1624px;
+  margin: 0 auto;
+  width: 100% !important;
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1616px; } }
+@media (min-width: 992px) {
+  .container {
+    width: 986px; } }
+@media (min-width: 768px) {
+  .container {
+    width: 766px; } }
 .btn:focus, .btn:active {
   outline: none;
   border-color: transparent !important; }
@@ -27,56 +47,76 @@ a {
 input:focus {
   box-shadow: none !important; }
 
+.head .head__theme {
+  position: relative;
+  color: inherit;
+  display: flex; }
+  .head .head__theme i {
+    transform: rotate(-10deg); }
+.head .searchArea .btn {
+  color: inherit; }
+.head #searchArea {
+  border-radius: 1rem;
+  width: 0;
+  transition: all 0.3s;
+  padding: 0 1.2rem; }
+  .head #searchArea .input-group {
+    flex-wrap: nowrap; }
+    .head #searchArea .input-group input.form-control {
+      padding: 0; }
+  .head #searchArea.active {
+    border: 1px solid var(--gray-border);
+    background-color: var(--white);
+    width: 25rem; }
+  .head #searchArea input.form-control {
+    color: var(--text-color);
+    height: 3rem; }
+    .head #searchArea input.form-control::placeholder {
+      color: inherit;
+      font-weight: 500;
+      opacity: 0.7;
+      font-size: 0.9rem; }
+.head i {
+  font-size: 1.3rem; }
+
 .site-header {
   padding: 1.5rem 0;
   transition: all 0.3s;
   background-color: var(--header-backgroundColor);
   color: var(--text-color); }
-  .site-header .head .head__theme {
-    position: relative;
-    color: inherit;
-    display: flex; }
-    .site-header .head .head__theme:after {
-      content: '';
-      width: 2px;
-      height: 21px;
-      background-color: var(--gray-border);
-      display: block;
-      margin: 0 1rem; }
-    .site-header .head .head__theme i {
-      transform: rotate(-10deg); }
+  .site-header .head .head__theme:after {
+    content: '';
+    width: 2px;
+    height: 21px;
+    background-color: var(--gray-border);
+    display: block;
+    margin: 0 1rem; }
   .site-header .logo-dark {
     display: none; }
-  .site-header i {
-    font-size: 1.3rem; }
-  .site-header #searchArea {
-    border-radius: 1rem;
-    width: 0;
-    transition: all 0.3s;
-    padding: 0 1.2rem; }
-    .site-header #searchArea .input-group {
-      flex-wrap: nowrap; }
-      .site-header #searchArea .input-group input.form-control {
-        padding: 0; }
-    .site-header #searchArea.active {
-      border: 1px solid var(--gray-border);
-      background-color: var(--white);
-      width: 25rem; }
-    .site-header #searchArea .btn {
-      color: inherit; }
-    .site-header #searchArea input.form-control {
-      color: var(--text-color);
-      height: 3rem; }
-      .site-header #searchArea input.form-control::placeholder {
-        color: inherit;
-        font-weight: 500;
-        opacity: 0.7;
-        font-size: 0.9rem; }
-  .site-header .hamburgerMenuBtn {
-    color: var(--dark-blue) !important; }
-    .site-header .hamburgerMenuBtn i {
-      font-size: 1.7rem; }
 
+.site-navigation {
+  background-color: var(--navigation-background);
+  color: var(--text-color); }
+  .site-navigation .hamburgerMenuBtn {
+    color: var(--dark-blue) !important; }
+    .site-navigation .hamburgerMenuBtn i {
+      font-size: 1.7rem; }
+  .site-navigation a {
+    color: inherit; }
+  .site-navigation .list-unstyled a {
+    font-size: small;
+    margin-right: 1.5rem; }
+
+.primary-menu a {
+  display: block;
+  color: inherit; }
+
+@media (min-width: 1200px) {
+  .primary-menu a {
+    padding: 1.5rem; } }
+@media (max-width: 1200px) {
+  .primary-menu a {
+    padding: 1rem 0.6rem; } }
 #loginModal {
   font-size: 0.9rem; }
   #loginModal .modal-content {
@@ -133,20 +173,53 @@ input:focus {
   .modal-lg, .modal-xl {
     --bs-modal-width: 900px; }
 
-  .site-header .mini-logo {
+  .mini-logo {
     display: none; } }
 @media (max-width: 992px) {
   .site-header .logoImg {
     display: none; }
-  .site-header .logo-light.mini-logo {
+
+  .mini-logo.logo-dark {
+    display: none; }
+  .mini-logo.logo-light {
     display: block; } }
+#mobileMenu {
+  color: var(--text-color);
+  width: 300px;
+  transition: all 0.3s; }
+  #mobileMenu .mobileMenu__top {
+    border: 1px solid var(--gray-border);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.5rem 0; }
+    #mobileMenu .mobileMenu__top .head .head__theme:before {
+      content: '';
+      width: 2px;
+      height: 21px;
+      background-color: var(--gray-border);
+      display: block;
+      margin: 0 1rem; }
+    #mobileMenu .mobileMenu__top .head .head__profile {
+      font-weight: bold;
+      white-space: nowrap; }
+  #mobileMenu .pollDigiato, #mobileMenu .list-socialMedia {
+    padding: 1rem; }
+  #mobileMenu .list-socialMedia i {
+    font-size: 1.3rem;
+    color: var(--secondary-color); }
+  #mobileMenu .pollDigiato {
+    background-color: var(--secondary-color);
+    color: var(--white); }
+
 .darkMode {
-  background-color: var(--dark-body); }
+  background-color: var(--dark-body);
+  color: var(--light-textColor); }
   .darkMode .hamburgerMenuBtn {
     color: var(--white) !important; }
   .darkMode .site-header {
     background-color: var(--darkHeaderBackgroundColor);
-    color: var(--white); }
+    color: inherit; }
     .darkMode .site-header .head__profile {
       color: inherit; }
     .darkMode .site-header .logo-light {
@@ -158,13 +231,20 @@ input:focus {
   .darkMode .modal-content {
     background-color: var(--dark-body);
     color: var(--white); }
+  .darkMode #mobileMenu {
+    background-color: var(--dark-mobildMenu);
+    color: inherit; }
   .darkMode #loginModal .form-control:hover, .darkMode #loginModal .form-control:focus {
     border-color: transparent; }
+  .darkMode .site-navigation {
+    background-color: transparent; }
   @media (min-width: 992px) {
     .darkMode .site-header .logo-dark.logoImg {
       display: block; } }
   @media (max-width: 992px) {
-    .darkMode .site-header .logo-dark.mini-logo {
-      display: block; } }
+    .darkMode .mini-logo.logo-dark {
+      display: block; }
+    .darkMode .mini-logo.logo-light {
+      display: none; } }
 
 /*# sourceMappingURL=style.css.map */

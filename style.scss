@@ -11,25 +11,11 @@
   --secondary-color: #{$secondary};
   --dark-searchArea: #{$darkSearchArea};
   --dark-body: #{$darkBody};
+  --dark-mobildMenu: #{$darkMobileMenu};
+  --light-textColor: #{$lightTextColor};
+  --navigation-background: #{$navigationBackground};
 }
 
-html {
-  font-size: 14px;
-}
-
-body {
-  font-family: IranSans, 'Figtree';
-  font-size: 1rem;
-}
-
-a {
-  text-decoration: none;
-}
-
-.btn:focus, .btn:active {
-  outline: none;
-  border-color: transparent !important;
-}
 
 @mixin bordered($color) {
   border: 1px solid $color;
@@ -50,49 +36,91 @@ a {
   }
 }
 
+@mixin headThemeAfter {
+  content: '';
+  width: 2px;
+  height: 21px;
+  background-color: var(--gray-border);
+  display: block;
+  margin: 0 1rem;
+}
+
+@mixin transition {
+  transition: all 0.3s;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: IranSans, 'Figtree';
+  font-size: 1rem;
+  @include transition;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1624px;
+  margin: 0 auto;
+  width: 100% !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1616px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 986px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 766px;
+  }
+}
+
+
+.btn:focus, .btn:active {
+  outline: none;
+  border-color: transparent !important;
+}
+
 input:focus {
   box-shadow: none !important;
 }
 
-.site-header {
-  padding: 1.5rem 0;
-  transition: all 0.3s;
-  background-color: var(--header-backgroundColor);
-  color: var(--text-color);
+.head {
+  .head__theme {
+    position: relative;
+    color: inherit;
+    display: flex;
 
-  .head {
-    .head__theme {
-      position: relative;
-      color: inherit;
-      display: flex;
 
-      &:after {
-        content: '';
-        width: 2px;
-        height: 21px;
-        background-color: var(--gray-border);
-        display: block;
-        margin: 0 1rem;
-      }
-
-      i {
-        transform: rotate(-10deg);
-      }
+    i {
+      transform: rotate(-10deg);
     }
   }
 
-  .logo-dark {
-    display: none;
-  }
-
-  i {
-    font-size: 1.3rem;
+  .searchArea {
+    .btn {
+      color: inherit;
+    }
   }
 
   #searchArea {
     border-radius: 1rem;
     width: 0;
-    transition: all 0.3s;
+    @include transition;
 
     padding: 0 1.2rem;
 
@@ -110,18 +138,8 @@ input:focus {
       background-color: var(--white);
       width: 25rem;
 
-
-      //.input-group {
-      //  flex-wrap: wrap;
-      //
-      //}
-
-
     }
 
-    .btn {
-      color: inherit;
-    }
 
     input.form-control {
       //padding: 1rem;
@@ -138,6 +156,34 @@ input:focus {
     }
   }
 
+  i {
+    font-size: 1.3rem;
+  }
+}
+
+.site-header {
+  padding: 1.5rem 0;
+  @include transition;
+  background-color: var(--header-backgroundColor);
+  color: var(--text-color);
+
+  .head {
+    .head__theme {
+      &:after {
+        @include headThemeAfter
+      }
+    }
+  }
+
+
+  .logo-dark {
+    display: none;
+  }
+
+
+}
+
+.site-navigation {
   .hamburgerMenuBtn {
     color: var(--dark-blue) !important;
 
@@ -146,6 +192,44 @@ input:focus {
     }
   }
 
+  background-color: var(--navigation-background);
+  color: var(--text-color);
+
+  a {
+    color: inherit;
+
+  }
+
+
+  .list-unstyled {
+    a {
+      font-size: small;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+.primary-menu {
+  a {
+    display: block;
+    color: inherit;
+  }
+}
+
+@media (min-width: 1200px) {
+  .primary-menu {
+    a {
+      padding: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .primary-menu {
+    a {
+      padding: 1rem 0.6rem;
+    }
+  }
 }
 
 #loginModal {
@@ -183,7 +267,7 @@ input:focus {
     background-color: var(--header-backgroundColor);
     text-align: right;
     padding: 1rem;
-    transition: all 0.3s;
+    @include transition;
     @include borderRadius;
 
     &::placeholder {
@@ -230,10 +314,8 @@ input:focus {
   .modal-lg, .modal-xl {
     --bs-modal-width: 900px;
   }
-  .site-header {
-    .mini-logo {
-      display: none;
-    }
+  .mini-logo {
+    display: none;
   }
 }
 
@@ -243,23 +325,78 @@ input:focus {
       display: none;
     }
 
-    .logo-light.mini-logo {
+
+  }
+  .mini-logo {
+    &.logo-dark {
+      display: none;
+    }
+
+    &.logo-light {
       display: block;
     }
   }
 }
 
+#mobileMenu {
+  color: var(--text-color);
+  width: 300px;
+  @include transition;
+
+  .mobileMenu__top {
+    @include bordered(var(--gray-border));
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.5rem 0;
+
+    .head {
+
+      .head__theme {
+        &:before {
+          @include headThemeAfter
+        }
+      }
+
+      .head__profile {
+        font-weight: bold;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .pollDigiato, .list-socialMedia {
+
+    padding: 1rem;
+  }
+
+  .list-socialMedia {
+    i {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+    }
+  }
+
+  .pollDigiato {
+    background-color: var(--secondary-color);
+    color: var(--white);
+  }
+
+}
 
 //darkMode theme
 
 .darkMode {
   background-color: var(--dark-body);
-  .hamburgerMenuBtn{
+  color: var(--light-textColor);
+
+  .hamburgerMenuBtn {
     color: var(--white) !important;
   }
+
   .site-header {
     background-color: var(--darkHeaderBackgroundColor);
-    color: var(--white);
+    color: inherit;
 
     .head__profile {
       color: inherit;
@@ -270,7 +407,6 @@ input:focus {
     }
 
 
-
     #searchArea {
       border-color: transparent;
 
@@ -279,24 +415,40 @@ input:focus {
       }
     }
   }
-  .modal-content{
+
+  .modal-content {
     background-color: var(--dark-body);
-    color:var(--white)
+    color: var(--white)
   }
-  #loginModal .form-control:hover, #loginModal .form-control:focus{
+
+  #mobileMenu {
+    background-color: var(--dark-mobildMenu);
+    color: inherit;
+  }
+
+  #loginModal .form-control:hover, #loginModal .form-control:focus {
     border-color: transparent;
   }
+
+  .site-navigation {
+    background-color: transparent;
+  }
+
   @media (min-width: 992px) {
-    .site-header{
+    .site-header {
       .logo-dark.logoImg {
         display: block;
       }
     }
   }
   @media (max-width: 992px) {
-    .site-header{
-      .logo-dark.mini-logo {
+    .mini-logo {
+      &.logo-dark {
         display: block;
+      }
+
+      &.logo-light {
+        display: none;
       }
     }
   }
