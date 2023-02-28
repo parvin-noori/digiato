@@ -36,3 +36,19 @@ body{
     left: 1rem;
     right: inherit;
 }
+@media (max-width: 992px){
+    #mobileMenu {
+        .primary-menu {
+            .withSubmenu > a::after {
+                content: '\f053';
+            }
+        }
+    }
+}
+#mobileMenu{
+    .backBtn{
+        i{
+            transform: scaleX(-1);
+        }
+    }
+}
