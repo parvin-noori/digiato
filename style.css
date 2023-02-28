@@ -224,7 +224,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     padding: 1.5rem; } }
 @media (max-width: 1200px) {
   .primary-menu a {
-    padding: 1rem 0.6rem; } }
+    padding: 1.5rem 0.6rem; } }
 .homeCards {
   background-color: var(--black); }
   .homeCards .card__overload {

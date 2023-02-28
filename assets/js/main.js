@@ -171,6 +171,11 @@ $(document).ready(function () {
     new Swiper(".editorsSuggestionsSwiper", {
         slidesPerView: 1,
         spaceBetween: 15,
+        loop:false,
+        // autoplay: {
+        //     delay: 1000,
+        //     disableOnInteraction: false,
+        // },
         navigation: {
             nextEl: ".swiper-button-next1",
             prevEl: ".swiper-button-prev1",
@@ -202,6 +207,10 @@ $(document).ready(function () {
     new Swiper(".homeCardsFooterBoxSwiper", {
         slidesPerView: 1,
         spaceBetween: 30,
+        navigation: {
+            nextEl: ".swiper-button-next2",
+            prevEl: ".swiper-button-prev2",
+        },
         breakpoints: {
             0: {
                 slidesPerView: 1.4,
