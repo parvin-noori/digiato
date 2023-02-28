@@ -240,5 +240,26 @@ $(document).ready(function () {
             siteNavigation.removeClass('hiddenNav');
             $('body').removeClass('hiddenNav');
         }
+    });
+
+
+    //change display of sub menu in responsive
+    let menuLink = $('#mobileMenu .withSubmenu');
+
+
+    //show submenu
+    menuLink.click(function (e) {
+        e.stopPropagation();
+        $(this).find('.subMenuMobile').fadeIn(300)
+    });
+
+    
+    //hide submenu
+    let backBtn=$('.subMenuMobile .backBtn');
+    backBtn.click(function (e) {
+        e.stopPropagation();
+        console.log($(this).closest('.subMenuMobile'))
+        $(this).closest('.subMenuMobile').fadeOut(300)
     })
+
 });

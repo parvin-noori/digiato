@@ -45,7 +45,13 @@ a {
   .miniCard .miniCard__title p {
     color: var(--blue);
     line-height: 2;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden; }
 .miniCard .miniCard__date {
   font-size: 0.8rem;
   color: var(--text-color); }
@@ -464,7 +470,16 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
   .mini-logo.logo-dark {
     display: none; }
   .mini-logo.logo-light {
-    display: block; } }
+    display: block; }
+
+  #mobileMenu .primary-menu .withSubmenu > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    #mobileMenu .primary-menu .withSubmenu > a::after {
+      content: '\f053';
+      font-family: "Font Awesome 6 Pro";
+      font-size: 0.8rem; } }
 #mobileMenu {
   color: var(--text-color);
   width: 300px;
@@ -485,14 +500,42 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     #mobileMenu .mobileMenu__top .head .head__profile {
       font-weight: bold;
       white-space: nowrap; }
+  #mobileMenu .mobileMenu__middle {
+    height: 100%;
+    overflow: auto; }
   #mobileMenu .pollDigiato, #mobileMenu .list-socialMedia {
     padding: 1rem; }
+  #mobileMenu .offcanvas-wrapper {
+    height: 85%;
+    position: relative;
+    overflow-y: hidden; }
+  #mobileMenu .subMenuMobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    display: none; }
+  #mobileMenu .backBtn {
+    color: var(--text-color);
+    font-weight: bold; }
+  #mobileMenu .offcanvas-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background: var(--white); }
   #mobileMenu .list-socialMedia i {
     font-size: 1.3rem;
     color: var(--secondary-color); }
   #mobileMenu .pollDigiato {
     background-color: var(--secondary-color);
     color: var(--white); }
+
+.btn-close:focus {
+  box-shadow: none; }
 
 .darkMode {
   background-color: var(--dark-body);
