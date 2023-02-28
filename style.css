@@ -542,6 +542,8 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
   color: var(--light-textColor); }
   .darkMode .hamburgerMenuBtn {
     color: var(--white) !important; }
+  .darkMode #mobileMenu .subMenuMobile {
+    background-color: var(--dark-mobildMenu); }
   .darkMode .siteTitle {
     color: var(--text-color); }
   .darkMode .site-header {
