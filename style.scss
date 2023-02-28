@@ -98,6 +98,7 @@ a {
     p {
       color: var(--blue);
       line-height: 2;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -198,13 +199,54 @@ input:focus {
   }
 }
 
+
 .site-header {
   padding: 1.5rem 0;
   @include transition;
   background-color: var(--header-backgroundColor);
   color: var(--text-color);
 
+  //.site-branding {
+  //  img{
+  //    width: 142px;
+  //    transition: width .3s 0s ease-out,.3s opacity;
+  //  }
+  //}
+
+  .site-branding {
+
+
+    .logo-brand {
+      width: 135px;
+      display: block;
+      @include transition;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    //
+    //
+    //img {
+    //  @include transition;
+    //  width: 100%;
+    //}
+
+    &.small {
+      //width: 35px;
+      //overflow: hidden;
+
+      img {
+        //width: 80px;
+      }
+    }
+
+  }
+
   .head {
+    @include transition;
+
     .head__theme {
       &:after {
         @include headThemeAfter(var(--gray-border), 21px, 2px);
@@ -221,6 +263,30 @@ input:focus {
 }
 
 .site-navigation {
+  @include transition;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .popularArea, .primary-menu {
+    @include transition;
+  }
+
+  &.sticky {
+    .primary-menu {
+      padding-right: 40px;
+    }
+
+    .popularArea {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &.hiddenNav {
+    transform: translateY(-100%);
+  }
+
   .hamburgerMenuBtn {
     color: var(--dark-blue) !important;
 
@@ -242,6 +308,41 @@ input:focus {
     a {
       font-size: small;
       margin-right: 1.5rem;
+    }
+  }
+}
+
+
+body.sticky {
+  .site-header {
+    position: sticky;
+    z-index: 1000;
+    top: -100px;
+    //top: 0;
+    .site-branding {
+      @include transition;
+
+      .logo-brand {
+        @include transition;
+        display: block;
+        width: 35px;
+        overflow: hidden;
+
+        img {
+          @include transition;
+          width: 80px;
+        }
+      }
+    }
+
+    .head, .site-branding {
+      transform: translateY(90px);
+    }
+  }
+
+  &.hiddenNav {
+    .site-branding, .head {
+      transform: translateY(0);
     }
   }
 }
@@ -300,13 +401,12 @@ input:focus {
   line-height: 48px;
   letter-spacing: -0.5px;
   position: relative;
-  padding-right: 16px;
   display: flex;
   align-items: center;
 
   &::before {
     @include headThemeAfter(var(--secondary-color), 23px, 8px);
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
   }
 }
 
@@ -521,7 +621,8 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: end;
-padding: 2rem;
+    padding: 2rem;
+
     .card-overload--categories {
       display: flex;
       align-items: center;
@@ -607,10 +708,12 @@ padding: 2rem;
   font-size: small;
   color: var(--white);
   white-space: nowrap;
+
   &::before {
-    @include headThemeAfter(var(--secondary-color), 23px, 8px);
-    border-radius: 0.5rem;
+    @include headThemeAfter(var(--secondary-color), 20px, 8px);
+    border-radius: 0.2rem;
   }
+
   a {
     color: inherit;
   }
@@ -752,6 +855,7 @@ padding: 2rem;
 
   .site-navigation {
     background-color: transparent;
+
   }
 
   .dropdown-menu {
@@ -764,8 +868,12 @@ padding: 2rem;
     background: var(--dark-mobildMenu);
   }
 
-  .homeCardsFooterBox {
+  .homeCardsFooterBox, .editorsSuggestions {
+
     background-color: var(--dark-body);
+  }
+
+  .homeCardsFooterBox {
 
     .homeCardsFooter {
       background-color: var(--dark-searchArea);

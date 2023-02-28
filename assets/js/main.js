@@ -1,14 +1,14 @@
 $(document).ready(function () {
     //variables
-    let searchArea=$('#searchArea');
-    let loginForm=$("#login-form");
-    let registerForm=$("#register-form");
-    let forgetForm=$("#forgot-form");
-    let changeThemeBtn=$(".head__theme");
-    
+    let searchArea = $('#searchArea');
+    let loginForm = $("#login-form");
+    let registerForm = $("#register-form");
+    let forgetForm = $("#forgot-form");
+    let changeThemeBtn = $(".head__theme");
+
     //change theme
     changeThemeBtn.click(function () {
-       $('body').toggleClass('darkMode')
+        $('body').toggleClass('darkMode')
         $("i", this).toggleClass("fa-regular fa-moon fa-regular fa-brightness");
     });
 
@@ -61,7 +61,7 @@ $(document).ready(function () {
         errorPlacement: function (error, element) {
             if (element.attr("type") === "checkbox") {
                 error.insertAfter($(element).parents('.form-check'));
-            }else {
+            } else {
                 error.insertAfter($(element))
             }
         },
@@ -72,12 +72,12 @@ $(document).ready(function () {
             },
             registerEmail: {
                 required: true,
-                email:true,
+                email: true,
             },
             registerPassword: {
                 required: true,
             },
-            registerPrivacy:{
+            registerPrivacy: {
                 required: true,
             },
             action: "required"
@@ -94,50 +94,49 @@ $(document).ready(function () {
             registerPassword: {
                 required: 'لطفا رمز عبور خود را وارد نمایید',
             },
-            registerPrivacy:{
-                required:'شما باید شرایط و ضوابط قوانین را بپذیرید'
+            registerPrivacy: {
+                required: 'شما باید شرایط و ضوابط قوانین را بپذیرید'
             }
         }
     });
 
     //forget password form validation
     forgetForm.validate({
-         errorClass: "error-message",
-         validClass: "my-valid-class",
-         errorElement: 'span',
-         rules: {
-             forgetEmail: {
-                 required: true,
-                 email:true,
+        errorClass: "error-message",
+        validClass: "my-valid-class",
+        errorElement: 'span',
+        rules: {
+            forgetEmail: {
+                required: true,
+                email: true,
 
-             },
-             action: "required"
-         },
-         messages: {
-             forgetEmail: {
-                 required: 'لطفا ایمیل خود را وارد نمایید',
-                 email:"لطفا ایمل معتبر وارد نمایید"
+            },
+            action: "required"
+        },
+        messages: {
+            forgetEmail: {
+                required: 'لطفا ایمیل خود را وارد نمایید',
+                email: "لطفا ایمل معتبر وارد نمایید"
 
-             }
-         }
-     });
-
+            }
+        }
+    });
 
 
     //loginForm modal
 
-    let loginModalBox=$('.loginModalbox');
-    let forgotModalBox=$('.forgotModalbox ');
-    let registerModalBox=$('.registerModalbox');
-    let registerButtonLink=$('.registerModalOpen');
-    let loginButtonLink=$('.loginModalOpen');
-    let forgetButtonLink=$('.forgotModalOpen');
-    let loginModal= $('#loginModal');
-    let loginEmail= $('#loginEmail');
+    let loginModalBox = $('.loginModalbox');
+    let forgotModalBox = $('.forgotModalbox ');
+    let registerModalBox = $('.registerModalbox');
+    let registerButtonLink = $('.registerModalOpen');
+    let loginButtonLink = $('.loginModalOpen');
+    let forgetButtonLink = $('.forgotModalOpen');
+    let loginModal = $('#loginModal');
+    let loginEmail = $('#loginEmail');
 
     //focus input after open modal
     loginModal.on('shown.bs.modal', function () {
-       loginEmail.focus();
+        loginEmail.focus();
     });
 
     //back to login step after close modal
@@ -166,18 +165,18 @@ $(document).ready(function () {
         registerModalBox.slideUp();
         loginModalBox.slideUp();
         forgotModalBox.slideDown()
-    })
+    });
 
     //suggestion editor swiper
     new Swiper(".editorsSuggestionsSwiper", {
         slidesPerView: 1,
         spaceBetween: 15,
-            navigation: {
-                nextEl: ".swiper-button-next1",
-                prevEl: ".swiper-button-prev1",
-            },
+        navigation: {
+            nextEl: ".swiper-button-next1",
+            prevEl: ".swiper-button-prev1",
+        },
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1.4,
             },
             640: {
@@ -191,4 +190,28 @@ $(document).ready(function () {
             },
         },
     });
+
+
+    let siteNavigation = $('.site-navigation');
+    let siteNavigationOffsetTop = siteNavigation.offset().top;
+
+    $(window).scroll(function () {
+        // add sticky class to site navigation after scroll on it
+        if ($(this).scrollTop() >= siteNavigationOffsetTop) {
+            siteNavigation.addClass('sticky');
+            $('body').addClass('sticky');
+        } else {
+            $('body').removeClass('sticky');
+            siteNavigation.removeClass('sticky');
+        }
+
+        // add hidden nav class to site navigation after 500 scroll top
+        if ($(this).scrollTop() >= 500) {
+            siteNavigation.addClass('hiddenNav');
+            $('body').addClass('hiddenNav');
+        } else {
+            siteNavigation.removeClass('hiddenNav');
+            $('body').removeClass('hiddenNav');
+        }
+    })
 });
