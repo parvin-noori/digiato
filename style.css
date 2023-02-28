@@ -219,25 +219,25 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 @media (max-width: 1200px) {
   .primary-menu a {
     padding: 1rem 0.6rem; } }
-#homeCards {
+.homeCards {
   background-color: var(--black); }
-  #homeCards .card__overload {
+  .homeCards .card__overload {
     z-index: 2; }
-  #homeCards .card__overload--title {
+  .homeCards .card__overload--title {
     color: var(--white);
     font-size: 2.7rem;
     font-weight: bold; }
-  #homeCards .card__overload--description {
+  .homeCards .card__overload--description {
     color: var(--text-color);
     font-weight: bold;
     font-size: 1.1rem;
     line-height: 2; }
-  #homeCards .homeFeaturedItem {
+  .homeCards .homeFeaturedItem {
     position: relative;
     height: 583px; }
-    #homeCards .homeFeaturedItem .attachment-single-reviews {
+    .homeCards .homeFeaturedItem .attachment-single-reviews {
       object-fit: cover; }
-    #homeCards .homeFeaturedItem:before, #homeCards .homeFeaturedItem:after {
+    .homeCards .homeFeaturedItem:before, .homeCards .homeFeaturedItem:after {
       content: "";
       display: block;
       position: absolute;
@@ -245,12 +245,12 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
       z-index: 1;
       top: 0;
       pointer-events: none; }
-    #homeCards .homeFeaturedItem:after {
+    .homeCards .homeFeaturedItem:after {
       left: 80%;
       width: 20vw;
       background: -webkit-gradient(linear, left top, right top, color-stop(0.35%, rgba(0, 0, 0, 0)), color-stop(53.68%, #000));
       background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0.35%, #000 53.68%); }
-    #homeCards .homeFeaturedItem:before {
+    .homeCards .homeFeaturedItem:before {
       left: 0;
       width: 70%;
       background: -webkit-gradient(linear, right top, left top, color-stop(0.35%, rgba(0, 0, 0, 0)), color-stop(53.68%, #000));
@@ -321,11 +321,9 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     z-index: 10;
     position: relative;
     border-radius: 0.8rem; }
-    .homeCardsFooterBox .homeCardsFooter ul li {
-      padding: 0 1rem;
-      flex: 1;
+    .homeCardsFooterBox .homeCardsFooter .swiper-slide {
       position: relative; }
-      .homeCardsFooterBox .homeCardsFooter ul li:not(:last-child):after {
+      .homeCardsFooterBox .homeCardsFooter .swiper-slide:not(:last-child):after {
         content: '';
         width: 1px;
         background-color: var(--gray-border);
@@ -333,7 +331,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
         display: block;
         margin: 0 1rem;
         top: 0.8rem;
-        right: -1rem;
+        right: -2rem;
         position: absolute; }
 
 .card {

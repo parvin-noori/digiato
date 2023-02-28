@@ -426,7 +426,7 @@ body.sticky {
   }
 }
 
-#homeCards {
+.homeCards {
   background-color: var(--black);
 
   .card__overload {
@@ -575,18 +575,14 @@ body.sticky {
     position: relative;
     @include borderRadius;
 
-    ul {
-      li {
-        padding: 0 1rem;
-        flex: 1;
-        position: relative;
+    .swiper-slide {
+      position: relative;
 
-        &:not(:last-child):after {
-          @include headThemeAfter(var(--gray-border), 60px, 1px);
-          top: 0.8rem;
-          right: -1rem;
-          position: absolute;
-        }
+      &:not(:last-child):after {
+        @include headThemeAfter(var(--gray-border), 60px, 1px);
+        top: 0.8rem;
+        right: -2rem;
+        position: absolute;
       }
     }
   }

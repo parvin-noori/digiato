@@ -191,6 +191,33 @@ $(document).ready(function () {
         },
     });
 
+    //home cards swiper
+    new Swiper(".homeCardSwiper", {
+        pagination: {
+            el: ".swiper-pagination1",
+        },
+    });
+
+    //home card footer box swiper
+    new Swiper(".homeCardsFooterBoxSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+            0: {
+                slidesPerView: 1.4,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1400: {
+                slidesPerView: 4,
+            },
+        },
+    });
+
 
     let siteNavigation = $('.site-navigation');
     let siteNavigationOffsetTop = siteNavigation.offset().top;

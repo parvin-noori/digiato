@@ -11,13 +11,11 @@ body{
 }
 .homeCardsFooterBox {
     .homeCardsFooter {
-        ul {
-            li:not(:last-child){
+            .swiper-slide:not(:last-child){
                 &:after{
                     right: inherit;
-                    left: -1rem;
+                    left: -2rem;
                 }
-            }
         }
     }
 }
