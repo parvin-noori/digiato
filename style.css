@@ -520,6 +520,8 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
   #mobileMenu .backBtn {
     color: var(--text-color);
     font-weight: bold; }
+    #mobileMenu .backBtn i {
+      font-weight: bold; }
   #mobileMenu .offcanvas-footer {
     position: absolute;
     bottom: 0;
@@ -534,8 +536,13 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     background-color: var(--secondary-color);
     color: var(--white); }
 
-.btn-close:focus {
-  box-shadow: none; }
+.btn-close {
+  background: none;
+  color: inherit !important;
+  font-size: 1.7rem;
+  opacity: 1 !important; }
+  .btn-close:focus {
+    box-shadow: none; }
 
 .darkMode {
   background-color: var(--dark-body);
