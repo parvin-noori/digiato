@@ -258,8 +258,14 @@ $(document).ready(function () {
     let backBtn=$('.subMenuMobile .backBtn');
     backBtn.click(function (e) {
         e.stopPropagation();
-        console.log($(this).closest('.subMenuMobile'))
-        $(this).closest('.subMenuMobile').fadeOut(300)
-    })
+        $(this).closest('.subMenuMobile').fadeOut(300);
+    });
+
+
+    let mobileMenu=$('#mobileMenu');
+    //close submenu after close offcanvas
+    mobileMenu.on('hidden.bs.offcanvas', function () {
+        $('.subMenuMobile').hide();
+    });
 
 });
