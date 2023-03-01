@@ -30,4 +30,11 @@ body {
 #mobileMenu .backBtn i {
   transform: scaleX(-1); }
 
+#socialNetwork:before, #socialNetwork:after {
+  right: inherit; }
+#socialNetwork:before {
+  left: -70px; }
+#socialNetwork:after {
+  left: 0; }
+
 /*# sourceMappingURL=rtl.css.map */

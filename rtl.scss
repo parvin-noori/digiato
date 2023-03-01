@@ -1,54 +1,74 @@
-body{
-    font-family: IranSans, 'Figtree';
-    direction: rtl;
-    text-align: right;
+body {
+  font-family: IranSans, 'Figtree';
+  direction: rtl;
+  text-align: right;
 }
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
-    content: 'next';
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  content: 'next';
 }
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
-    content: 'prev';
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  content: 'prev';
 }
+
 .homeCardsFooterBox {
-    .homeCardsFooter {
-            .swiper-slide:not(:last-child){
-                &:after{
-                    right: inherit;
-                    left: -2rem;
-                }
-        }
+  .homeCardsFooter {
+    .swiper-slide:not(:last-child) {
+      &:after {
+        right: inherit;
+        left: -2rem;
+      }
     }
+  }
 }
 
 .swiper-button-prev, .swiper-button-next {
 
-    &.swiper-button-next {
-        left: 0;
-        right: auto;
-    }
+  &.swiper-button-next {
+    left: 0;
+    right: auto;
+  }
 
-    &.swiper-button-prev {
-        left: 2.5rem;
-        right: inherit;
-    }
-}
-.card__bookmark {
-    left: 1rem;
+  &.swiper-button-prev {
+    left: 2.5rem;
     right: inherit;
+  }
 }
-@media (max-width: 992px){
-    #mobileMenu {
-        .primary-menu {
-            .withSubmenu > a::after {
-                content: '\f053';
-            }
-        }
-    }
+
+.card__bookmark {
+  left: 1rem;
+  right: inherit;
 }
-#mobileMenu{
-    .backBtn{
-        i{
-            transform: scaleX(-1);
-        }
+
+@media (max-width: 992px) {
+  #mobileMenu {
+    .primary-menu {
+      .withSubmenu > a::after {
+        content: '\f053';
+      }
     }
+  }
+}
+
+#mobileMenu {
+  .backBtn {
+    i {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+#socialNetwork {
+  &:before, &:after {
+    right: inherit;
+  }
+
+  &:before {
+    left: -70px;
+  }
+
+  &:after {
+    left: 0;
+  }
 }
