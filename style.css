@@ -45,13 +45,13 @@ a {
   .miniCard .miniCard__title p {
     color: var(--blue);
     line-height: 2;
-    margin-bottom: 0.5rem;
     display: -webkit-box;
     max-width: 100%;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-bottom: 0.5rem; }
 .miniCard .miniCard__date {
   font-size: 0.8rem;
   color: var(--text-color); }
@@ -122,7 +122,7 @@ input:focus {
       background-color: var(--gray-border);
       height: 21px;
       display: block;
-      margin: 0 1rem; }
+      margin: 0 0.5rem; }
   .site-header .logo-dark {
     display: none; }
 
@@ -213,7 +213,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     background-color: var(--secondary-color);
     height: 23px;
     display: block;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     border-radius: 0.2rem; }
 
 @media (min-width: 1200px) {
@@ -331,16 +331,18 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
         background-color: var(--gray-border);
         height: 60px;
         display: block;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
         top: 0.8rem;
         right: -2rem;
         position: absolute; }
 
+p {
+  line-height: 2; }
+
 .card {
   border: none;
   position: relative;
-  overflow: hidden;
-  border-radius: 0.4rem; }
+  overflow: hidden; }
   .card .card__overload--link {
     position: absolute;
     top: 0;
@@ -350,6 +352,13 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     left: 0; }
   .card a {
     color: inherit; }
+  .card .card__picture {
+    border-radius: 0.4rem;
+    overflow: hidden; }
+  .card .card__overload--info, .card .card__overload--title, .card .card__overload--description {
+    position: relative;
+    z-index: 2;
+    pointer-events: none; }
   .card .card-overload {
     position: absolute;
     top: 0;
@@ -369,33 +378,106 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
         z-index: 2;
         border: 1px solid var(--dark-blue);
         background-color: var(--dark-blue);
-        border-radius: 8px;
+        border-radius: 7px;
         color: var(--white);
         padding: 0.4rem 1rem;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        pointer-events: all; }
         .card .card-overload .card-overload--categories .card__overload--category:hover {
           opacity: 0.8; }
         .card .card-overload .card-overload--categories .card__overload--category:hover {
           opacity: 1; }
     .card .card-overload .card__overload--title {
       font-size: 1.2rem;
-      font-weight: bold;
       line-height: 2;
-      margin-bottom: 1.1rem; }
-  .card:before {
-    z-index: 0;
-    width: 100%;
-    display: block;
-    height: 100%;
+      font-weight: bold;
+      margin-bottom: 1.1rem;
+      display: -webkit-box;
+      max-width: 100%;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .card .card-overload .card__overload--img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden; }
+    .card .card-overload:before {
+      z-index: 0;
+      width: 100%;
+      display: block;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: '';
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 32, 91, 0)), to(#16205b));
+      background: linear-gradient(180deg, rgba(22, 32, 91, 0) 0, #16205b 100%);
+      opacity: .5;
+      pointer-events: none; }
+    .card .card-overload .card__overload--description {
+      font-size: 0.8rem;
+      display: -webkit-box;
+      max-width: 100%;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+  .card.card--full .card-overload .card__overload--title {
+    font-size: 2.5rem; }
+  .card.card--full .card-overload .card__overload--description {
+    font-size: 0.8rem;
+    max-width: 50%; }
+  .card.card--full .card-overload .card__overload--info {
     position: absolute;
-    right: 0;
-    top: 0;
-    content: '';
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 32, 91, 0)), to(#16205b));
-    background: linear-gradient(180deg, rgba(22, 32, 91, 0) 0, #16205b 100%);
-    opacity: .5;
-    pointer-events: none; }
+    top: 1rem;
+    right: 1rem; }
+    .card.card--full .card-overload .card__overload--info .card__overload--img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden; }
+  .card .card__picture {
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%; }
+    .card .card__picture img {
+      transition: all 0.3s;
+      height: 100%;
+      object-fit: cover; }
+  .card:hover .card__picture img {
+    transform: scale(1.05); }
+  .card.homeTodayItem {
+    height: 100%; }
+    .card.homeTodayItem:not(.card--full) .card-overload {
+      position: relative;
+      padding: 1rem 0 0 0; }
+      .card.homeTodayItem:not(.card--full) .card-overload:before {
+        display: none; }
+      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--category {
+        background-color: transparent;
+        color: var(--text-color);
+        margin-bottom: 0;
+        border: none;
+        padding: 0; }
+      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--title {
+        color: var(--blue); }
+      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--info {
+        color: var(--text-color); }
+        .card.homeTodayItem:not(.card--full) .card-overload .card__overload--info .card__overload--author:after {
+          background-color: var(--text-color); }
+      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--description {
+        color: var(--dark-blue); }
 
+@media (min-width: 1200px) {
+  .card.homeTodayItem:not(.card--full).col-reverse {
+    display: flex;
+    flex-direction: column-reverse; }
+    .card.homeTodayItem:not(.card--full).col-reverse .card__picture {
+      margin-top: 1rem; } }
 .card__bookmark {
   position: absolute;
   z-index: 2;
@@ -405,7 +487,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
   background-color: var(--primary-color);
   border-radius: 4px;
   color: var(--white);
-  padding: 0.6rem;
+  padding: 0.5rem 0.6rem;
   color: var(--white) !important;
   display: flex;
   align-items: center;
@@ -428,30 +510,36 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
   right: 2.5rem;
   left: inherit; }
 
+.homeCards .card__overload--info::before {
+  content: '';
+  width: 8px;
+  background-color: var(--secondary-color);
+  height: 20px;
+  display: block;
+  margin: 0 0.5rem;
+  border-radius: 0.2rem; }
+
 .card__overload--info {
-  font-size: small;
+  font-size: 0.9rem;
   color: var(--white);
   white-space: nowrap; }
-  .card__overload--info::before {
-    content: '';
-    width: 8px;
-    background-color: var(--secondary-color);
-    height: 20px;
-    display: block;
-    margin: 0 1rem;
-    border-radius: 0.2rem; }
   .card__overload--info a {
     color: inherit; }
-  .card__overload--info .card__overload--author {
-    position: relative;
-    z-index: 2; }
-    .card__overload--info .card__overload--author::after {
-      content: '';
-      width: 1px;
-      background-color: var(--white);
-      height: 15px;
-      display: block;
-      margin: 0 1rem; }
+  .card__overload--info .card__overload--author::after {
+    content: '';
+    width: 1px;
+    background-color: var(--white);
+    height: 15px;
+    display: block;
+    margin: 0 0.5rem; }
+
+.todayNews .todayNews__head a {
+  color: var(--text-color); }
+  .todayNews .todayNews__head a.active {
+    color: var(--primary-color); }
+  .todayNews .todayNews__head a i {
+    font-size: 1.5rem;
+    font-weight: bold; }
 
 @media (min-width: 992px) {
   .modal-lg, .modal-xl {
@@ -495,7 +583,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
       background-color: var(--gray-border);
       height: 21px;
       display: block;
-      margin: 0 1rem; }
+      margin: 0 0.5rem; }
     #mobileMenu .mobileMenu__top .head .head__profile {
       font-weight: bold;
       white-space: nowrap; }
