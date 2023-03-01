@@ -135,6 +135,105 @@ a {
   .container {
     width: 766px;
   }
+  .card {
+    &.card--full {
+      .card-overload {
+        .card__overload--title {
+          font-size: 2.5rem;
+        }
+
+        .card__overload--description {
+          font-size: 0.8rem;
+          max-width: 50%;
+        }
+
+        .card__overload--info {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+
+          .card__overload--img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+      }
+
+
+    }
+
+    &.homeTodayItem:not(.card--full) {
+      .card__picture {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    &.homeTodayItem {
+      .card__bookmark, .card__overload--description, .card-overload--categories, .card__overload--img {
+
+        display: none !important;
+      }
+    }
+
+    &.card--full {
+      .card-overload {
+        .card__overload--info {
+
+        }
+
+        .card__overload--title {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &.homeTodayItem:not(.card--full) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: start;
+      border-bottom: 1px solid var(--gray-border);
+      padding-bottom: 1rem;
+
+      .card__picture {
+
+        margin-right: 1rem;
+        //flex-grow: 0;
+        flex: 1;
+        display: flex;
+        justify-content: end;
+
+        img {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+
+      .card-overload {
+        padding-top: 0 !important;
+        display: flex;
+        flex: 4;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .card__overload--title {
+        font-size: 0.9rem;
+      }
+
+      .card__overload--info {
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
 
 
@@ -600,6 +699,7 @@ p {
 
 .card {
   background-color: transparent;
+
   .card__overload--link {
     position: absolute;
     top: 0;
@@ -695,32 +795,6 @@ p {
     }
   }
 
-
-  &.card--full {
-    .card-overload {
-      .card__overload--title {
-        font-size: 2.5rem;
-      }
-
-      .card__overload--description {
-        font-size: 0.8rem;
-        max-width: 50%;
-      }
-
-      .card__overload--info {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-
-        .card__overload--img {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          overflow: hidden;
-        }
-      }
-    }
-  }
 
   .card__picture {
     overflow: hidden;
@@ -864,6 +938,9 @@ p {
 
 
   .card__overload--author {
+    pointer-events: all;
+    position: relative;
+    z-index: 2;
 
     &::after {
       @include headThemeAfter(var(--white), 15px, 1px)
@@ -1042,6 +1119,24 @@ p {
 }
 
 //darkMode theme
+.todaysNews__more {
+  @include mainButtons(transparent, 1rem, 1rem 2rem);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color) !important;
+  margin: 2rem 0;
+  font-weight: 500;
+  @include transition;
+
+  i {
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: var(--secondary-color);
+    opacity: 1;
+    color: var(--white) !important;
+  }
+}
 
 .darkMode {
   background-color: var(--dark-body);
@@ -1127,23 +1222,24 @@ p {
   .miniCard .miniCard__title p {
     color: var(--white);
   }
-  .card{
+
+  .card {
     //background-color: transparent;
 
-    &.homeTodayItem{
-      &:not(.card--full){
-        .card-overload{
-          .card__overload--title{
+    &.homeTodayItem {
+      &:not(.card--full) {
+        .card-overload {
+          .card__overload--title {
             color: var(--white);
           }
-          .card__overload--description{
+
+          .card__overload--description {
             color: var(--text-color);
           }
         }
       }
     }
   }
-
 
 
   @media (min-width: 992px) {

@@ -64,7 +64,54 @@ a {
     width: 986px; } }
 @media (min-width: 768px) {
   .container {
-    width: 766px; } }
+    width: 766px; }
+
+  .card.card--full .card-overload .card__overload--title {
+    font-size: 2.5rem; }
+  .card.card--full .card-overload .card__overload--description {
+    font-size: 0.8rem;
+    max-width: 50%; }
+  .card.card--full .card-overload .card__overload--info {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; }
+    .card.card--full .card-overload .card__overload--info .card__overload--img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden; }
+  .card.homeTodayItem:not(.card--full) .card__picture img {
+    width: 100%; } }
+@media (max-width: 768px) {
+  .card.homeTodayItem .card__bookmark, .card.homeTodayItem .card__overload--description, .card.homeTodayItem .card-overload--categories, .card.homeTodayItem .card__overload--img {
+    display: none !important; }
+  .card.card--full .card-overload .card__overload--title {
+    font-size: 1.4rem; }
+  .card.homeTodayItem:not(.card--full) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+    border-bottom: 1px solid var(--gray-border);
+    padding-bottom: 1rem; }
+    .card.homeTodayItem:not(.card--full) .card__picture {
+      margin-right: 1rem;
+      flex: 1;
+      display: flex;
+      justify-content: end; }
+      .card.homeTodayItem:not(.card--full) .card__picture img {
+        width: 6rem;
+        height: 6rem; }
+    .card.homeTodayItem:not(.card--full) .card-overload {
+      padding-top: 0 !important;
+      display: flex;
+      flex: 4;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%; }
+    .card.homeTodayItem:not(.card--full) .card__overload--title {
+      font-size: 0.9rem; }
+    .card.homeTodayItem:not(.card--full) .card__overload--info {
+      font-size: 0.8rem; } }
 .btn:focus, .btn:active {
   outline: none;
   border-color: transparent !important; }
@@ -427,20 +474,6 @@ p {
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
       overflow: hidden; }
-  .card.card--full .card-overload .card__overload--title {
-    font-size: 2.5rem; }
-  .card.card--full .card-overload .card__overload--description {
-    font-size: 0.8rem;
-    max-width: 50%; }
-  .card.card--full .card-overload .card__overload--info {
-    position: absolute;
-    top: 1rem;
-    right: 1rem; }
-    .card.card--full .card-overload .card__overload--info .card__overload--img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      overflow: hidden; }
   .card .card__picture {
     overflow: hidden;
     flex-grow: 1;
@@ -526,13 +559,17 @@ p {
   white-space: nowrap; }
   .card__overload--info a {
     color: inherit; }
-  .card__overload--info .card__overload--author::after {
-    content: '';
-    width: 1px;
-    background-color: var(--white);
-    height: 15px;
-    display: block;
-    margin: 0 0.5rem; }
+  .card__overload--info .card__overload--author {
+    pointer-events: all;
+    position: relative;
+    z-index: 2; }
+    .card__overload--info .card__overload--author::after {
+      content: '';
+      width: 1px;
+      background-color: var(--white);
+      height: 15px;
+      display: block;
+      margin: 0 0.5rem; }
 
 .todayNews .todayNews__head a {
   color: var(--text-color); }
@@ -631,6 +668,26 @@ p {
   opacity: 1 !important; }
   .btn-close:focus {
     box-shadow: none; }
+
+.todaysNews__more {
+  border: 1px solid transparent;
+  background-color: transparent;
+  border-radius: 1rem;
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color) !important;
+  margin: 2rem 0;
+  font-weight: 500;
+  transition: all 0.3s; }
+  .todaysNews__more:hover {
+    opacity: 0.8; }
+  .todaysNews__more i {
+    font-weight: 500; }
+  .todaysNews__more:hover {
+    background-color: var(--secondary-color);
+    opacity: 1;
+    color: var(--white) !important; }
 
 .darkMode {
   background-color: var(--dark-body);
