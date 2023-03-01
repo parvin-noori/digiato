@@ -599,7 +599,7 @@ p {
 }
 
 .card {
-
+  background-color: transparent;
   .card__overload--link {
     position: absolute;
     top: 0;
@@ -634,7 +634,7 @@ p {
     bottom: 0;
     right: 0;
     left: 0;
-    color: white;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -1127,6 +1127,24 @@ p {
   .miniCard .miniCard__title p {
     color: var(--white);
   }
+  .card{
+    //background-color: transparent;
+
+    &.homeTodayItem{
+      &:not(.card--full){
+        .card-overload{
+          .card__overload--title{
+            color: var(--white);
+          }
+          .card__overload--description{
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+  }
+
+
 
   @media (min-width: 992px) {
     .site-header {
