@@ -676,6 +676,16 @@ p {
   .btn-close:focus {
     box-shadow: none; }
 
+@media (min-width: 1200px) {
+  #socialNetwork h4 {
+    font-size: 2.4rem; }
+  #socialNetwork p {
+    font-size: 1.3rem; } }
+@media (max-width: 1200px) {
+  #socialNetwork h4 {
+    font-size: 1.6rem; }
+  #socialNetwork p {
+    font-size: 1.1rem; } }
 #socialNetwork {
   border: 5px solid var(--lightBlue);
   border-radius: 2rem;
@@ -684,13 +694,11 @@ p {
   overflow: hidden; }
   #socialNetwork h4 {
     color: var(--blue);
-    font-size: 2.4rem;
     font-weight: bold;
     margin-bottom: 1.2rem; }
   #socialNetwork p {
     max-width: 50%;
     color: var(--text-color);
-    font-size: 1.3rem;
     margin-bottom: 2rem; }
   #socialNetwork ul li {
     margin-left: 1.5rem; }
