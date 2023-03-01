@@ -57,9 +57,6 @@
   transition: all 0.3s;
 }
 
-//@mixin beforeRectangle {
-//
-//}
 @mixin limitLines($-webkit-line-clamp) {
   display: -webkit-box;
   max-width: 100%;
@@ -67,6 +64,41 @@
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+@mixin rowCard {
+  border-radius: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: start;
+  padding-bottom: 1rem;
+
+  .card__picture {
+
+    margin-right: 1rem;
+    flex: 1;
+    display: flex;
+    justify-content: end;
+
+  }
+
+  .card-overload {
+    padding-top: 0 !important;
+    display: flex;
+    flex: 4;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+
+
+  }
+}
+
+@mixin rowCardPictureSize($width,$height) {
+  img {
+    width: $width;
+    height: $height;
+  }
 }
 
 html {
@@ -165,11 +197,17 @@ a {
 
     }
 
-    &.homeTodayItem:not(.card--full) {
+    &.homeTodayItem:not(.card--full):not(.rowCard) {
       .card__picture {
         img {
           width: 100%;
         }
+      }
+    }
+
+    &.rowCard {
+      .card__picture {
+        @include rowCardPictureSize(18rem, 10rem)
       }
     }
   }
@@ -196,10 +234,6 @@ a {
 
     &.card--full {
       .card-overload {
-        .card__overload--info {
-
-        }
-
         .card__overload--title {
           font-size: 1.4rem;
         }
@@ -207,35 +241,8 @@ a {
     }
 
 
-    &.homeTodayItem:not(.card--full) {
-      border-radius: 0;
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: start;
-
-      padding-bottom: 1rem;
-
-      .card__picture {
-
-        margin-right: 1rem;
-        flex: 1;
-        display: flex;
-        justify-content: end;
-
-        img {
-          width: 6rem;
-          height: 6rem;
-        }
-      }
-
-      .card-overload {
-        padding-top: 0 !important;
-        display: flex;
-        flex: 4;
-        justify-content: space-between;
-        flex-direction: column;
-        height: 100%;
-      }
+    &.homeTodayItem:not(.card--full):not(.rowCard) {
+      @include rowCard;
 
       .card__overload--title {
         font-size: 0.9rem;
@@ -243,6 +250,18 @@ a {
 
       .card__overload--info {
         font-size: 0.8rem;
+      }
+
+      .card__picture {
+        @include rowCardPictureSize(6rem, 6rem)
+      }
+    }
+
+    &.rowCard {
+
+      .card__picture {
+
+        @include rowCardPictureSize(6rem, 6rem)
       }
     }
   }
@@ -775,7 +794,6 @@ p {
       font-size: 1.2rem;
       line-height: 2;
       font-weight: bold;
-      margin-bottom: 1.1rem;
       @include limitLines(2)
     }
 
@@ -802,11 +820,20 @@ p {
     }
 
     .card__overload--description {
-      font-size: 0.8rem;
       @include limitLines(2);
     }
+
   }
 
+  &:not(.rowCard) {
+    .card__overload--description {
+      font-size: 0.8rem;
+    }
+
+    .card__overload--title {
+      margin-bottom: 1.1rem;
+    }
+  }
 
   .card__picture {
     overflow: hidden;
@@ -872,6 +899,17 @@ p {
     }
   }
 
+  &.rowCard {
+    @include rowCard;
+
+    .card__overload--category {
+      margin-bottom: 1rem!important;
+    }
+
+    .card__overload--author:after {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1137,21 +1175,25 @@ p {
     h4 {
       font-size: 2.4rem;
     }
-    p{
-        font-size: 1.3rem;
+
+    p {
+      font-size: 1.3rem;
     }
   }
 }
+
 @media (max-width: 1200px) {
   #socialNetwork {
     h4 {
       font-size: 1.6rem;
     }
-    p{
+
+    p {
       font-size: 1.1rem;
     }
   }
 }
+
 #socialNetwork {
   border: 5px solid var(--lightBlue);
   border-radius: 2rem;
