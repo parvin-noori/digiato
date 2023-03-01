@@ -225,7 +225,6 @@ input:focus {
     .logo-brand {
       width: 135px;
       display: block;
-      @include transition;
 
       img {
         width: 100%;
@@ -329,13 +328,11 @@ body.sticky {
       @include transition;
 
       .logo-brand {
-        @include transition;
         display: block;
         width: 35px;
         overflow: hidden;
 
         img {
-          @include transition;
           width: 80px;
         }
       }
@@ -576,7 +573,6 @@ body.sticky {
     @include transition;
     background-color: var(--header-backgroundColor);
     padding: 2rem;
-    margin-top: -3rem;
     z-index: 10;
     position: relative;
     @include borderRadius;
@@ -738,6 +734,12 @@ body.sticky {
   .mini-logo {
     display: none;
   }
+  .homeCardsFooterBox {
+
+    .homeCardsFooter {
+      margin-top: -3rem;
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -832,7 +834,8 @@ body.sticky {
   .backBtn {
     color: var(--text-color);
     font-weight: bold;
-    i{
+
+    i {
       font-weight: bold;
     }
   }

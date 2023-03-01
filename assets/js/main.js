@@ -171,7 +171,7 @@ $(document).ready(function () {
     new Swiper(".editorsSuggestionsSwiper", {
         slidesPerView: 1,
         spaceBetween: 15,
-        loop:false,
+        loop: false,
         // autoplay: {
         //     delay: 1000,
         //     disableOnInteraction: false,
@@ -227,29 +227,31 @@ $(document).ready(function () {
         },
     });
 
+// add class sticky to body after scroll page
+    function stikcyBody() {
+        let siteNavigation = $('.site-navigation');
+        let siteNavigationOffsetTop = siteNavigation.offset().top;
 
-    let siteNavigation = $('.site-navigation');
-    let siteNavigationOffsetTop = siteNavigation.offset().top;
+        $(window).scroll(function () {
+            // add sticky class to site navigation after scroll on it
+            if ($(this).scrollTop() >= siteNavigationOffsetTop) {
+                siteNavigation.addClass('sticky');
+                $('body').addClass('sticky');
+            } else {
+                $('body').removeClass('sticky');
+                siteNavigation.removeClass('sticky');
+            }
 
-    $(window).scroll(function () {
-        // add sticky class to site navigation after scroll on it
-        if ($(this).scrollTop() >= siteNavigationOffsetTop) {
-            siteNavigation.addClass('sticky');
-            $('body').addClass('sticky');
-        } else {
-            $('body').removeClass('sticky');
-            siteNavigation.removeClass('sticky');
-        }
-
-        // add hidden nav class to site navigation after 500 scroll top
-        if ($(this).scrollTop() >= 500) {
-            siteNavigation.addClass('hiddenNav');
-            $('body').addClass('hiddenNav');
-        } else {
-            siteNavigation.removeClass('hiddenNav');
-            $('body').removeClass('hiddenNav');
-        }
-    });
+            // add hidden nav class to site navigation after 500 scroll top
+            if ($(this).scrollTop() >= 500) {
+                siteNavigation.addClass('hiddenNav');
+                $('body').addClass('hiddenNav');
+            } else {
+                siteNavigation.removeClass('hiddenNav');
+                $('body').removeClass('hiddenNav');
+            }
+        });
+    }
 
 
     //change display of sub menu in responsive
@@ -262,19 +264,36 @@ $(document).ready(function () {
         $(this).find('.subMenuMobile').fadeIn(300)
     });
 
-    
+
     //hide submenu
-    let backBtn=$('.subMenuMobile .backBtn');
+    let backBtn = $('.subMenuMobile .backBtn');
     backBtn.click(function (e) {
         e.stopPropagation();
         $(this).closest('.subMenuMobile').fadeOut(300);
     });
 
 
-    let mobileMenu=$('#mobileMenu');
+    let mobileMenu = $('#mobileMenu');
     //close submenu after close offcanvas
     mobileMenu.on('hidden.bs.offcanvas', function () {
         $('.subMenuMobile').hide();
     });
 
+
+
+    //run stikcyBody function in breakpoint
+    var width = $("body").width();
+    if (width > 992) {
+        stikcyBody()
+    }
+    $(window).on('resize', function () {
+
+        // breakpoints
+        let $large_up = window.matchMedia("(min-width: 992px)");
+
+        if ($large_up.matches) {
+            stikcyBody()
+        }
+    });
 });
+
