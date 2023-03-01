@@ -13,7 +13,8 @@
   --light-textColor: #e1eaf9;
   --navigation-background: #f0f4fc;
   --black: #000;
-  --blue: #004b94; }
+  --blue: #004b94;
+  --lightBlue: #ddedfc; }
 
 html {
   font-size: 14px; }
@@ -674,6 +675,52 @@ p {
   opacity: 1 !important; }
   .btn-close:focus {
     box-shadow: none; }
+
+#socialNetwork {
+  border: 5px solid var(--lightBlue);
+  border-radius: 2rem;
+  padding: 7rem 5rem;
+  position: relative;
+  overflow: hidden; }
+  #socialNetwork h4 {
+    color: var(--blue);
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem; }
+  #socialNetwork p {
+    max-width: 50%;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-bottom: 2rem; }
+  #socialNetwork ul li {
+    margin-left: 1.5rem; }
+    #socialNetwork ul li a {
+      color: var(--secondary-color);
+      font-size: 2.2rem; }
+  #socialNetwork::before {
+    content: "";
+    display: block;
+    width: 500px;
+    height: 100%;
+    border-radius: 50%;
+    background: #ddedfc;
+    position: absolute;
+    -webkit-transform: scale(1.5, 2);
+    transform: scale(1.5, 2);
+    z-index: -1;
+    left: -70px;
+    top: 0; }
+  #socialNetwork:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding-left: 55px;
+    width: 475px;
+    z-index: 0;
+    background: url("assets/imgs/social-bg.svg") 30px center no-repeat; }
 
 .todaysNews__more {
   border: 1px solid transparent;
