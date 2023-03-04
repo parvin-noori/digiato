@@ -836,6 +836,12 @@ p {
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor); }
+  .darkMode #socialNetwork {
+    border-color: var(--dark-searchArea); }
+    .darkMode #socialNetwork h4 {
+      color: var(--white); }
+    .darkMode #socialNetwork:before {
+      background: var(--dark-searchArea); }
   .darkMode .hamburgerMenuBtn {
     color: var(--white) !important; }
   .darkMode .card.videoCard .card__picture:after {

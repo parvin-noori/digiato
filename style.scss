@@ -1422,6 +1422,16 @@ p {
   background-color: var(--dark-body);
   color: var(--light-textColor);
 
+  #socialNetwork{
+    border-color: var(--dark-searchArea);
+    h4{
+      color: var(--white);
+    }
+    &:before{
+      background: var(--dark-searchArea);
+    }
+  }
+
   .hamburgerMenuBtn {
     color: var(--white) !important;
   }
