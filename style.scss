@@ -279,11 +279,9 @@ a {
 }
 
 @media (max-width: 768px) {
-  .todayNews .row > *:not(:last-child) {
-    .card {
-      &.homeTodayItem:not(.card--full), &.videoCard {
+  .todayNews .row > *:not(:last-child),.videoCards .row > *:not(:last-child),.miniCards {
+    .card.homeTodayItem:not(.card--full),.card.videoCard,.miniCard {
         border-bottom: 1px solid var(--gray-border);
-      }
     }
   }
   .todaysNews__more {
@@ -364,6 +362,7 @@ a {
   }
   .miniCards {
     .miniCard {
+      padding-bottom: 1rem;
       .miniCard__title {
         font-size: 0.9rem;
       }

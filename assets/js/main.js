@@ -248,7 +248,7 @@ $(document).ready(function () {
             // add hidden nav class to site navigation after 500 scroll top
             if (scrollTop >= 500) {
 
-                //hide nav on scroll  
+                //hide nav on scroll
                 siteNavigation.toggleClass('hidden', scrollTop > prev);
                 body.toggleClass('sticky', scrollTop < prev);
                 prev = scrollTop;

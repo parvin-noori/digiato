@@ -121,7 +121,7 @@ a {
     width: 100px;
     height: 100px; } }
 @media (max-width: 768px) {
-  .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .todayNews .row > *:not(:last-child) .card.videoCard {
+  .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .todayNews .row > *:not(:last-child) .card.videoCard, .todayNews .row > *:not(:last-child) .miniCard, .videoCards .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .videoCards .row > *:not(:last-child) .card.videoCard, .videoCards .row > *:not(:last-child) .miniCard, .miniCards .card.homeTodayItem:not(.card--full), .miniCards .card.videoCard, .miniCards .miniCard {
     border-bottom: 1px solid var(--gray-border); }
 
   .todaysNews__more {
@@ -174,11 +174,13 @@ a {
     height: 2.5rem;
     width: 2.5rem; }
 
-  .miniCards .miniCard .miniCard__title {
-    font-size: 0.9rem; }
-  .miniCards .miniCard .miniCard__picture {
-    width: 80px;
-    height: 80px; } }
+  .miniCards .miniCard {
+    padding-bottom: 1rem; }
+    .miniCards .miniCard .miniCard__title {
+      font-size: 0.9rem; }
+    .miniCards .miniCard .miniCard__picture {
+      width: 80px;
+      height: 80px; } }
 .btn:focus, .btn:active {
   outline: none;
   border-color: transparent !important; }
