@@ -67,7 +67,7 @@ a {
   justify-content: space-between; }
   .latestIranianNews__mini .miniCards .miniCard .miniCard__picture {
     padding-right: 0;
-    margin-left: 1rem; }
+    margin-right: 1rem; }
   .latestIranianNews__mini .miniCards .miniCard .card__overload--info {
     color: var(--text-color); }
     .latestIranianNews__mini .miniCards .miniCard .card__overload--info .card__overload--author::after {
