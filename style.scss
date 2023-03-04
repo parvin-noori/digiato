@@ -280,7 +280,7 @@ a {
 
 @media (max-width: 768px) {
   .todayNews .row > *:not(:last-child),.videoCards .row > *:not(:last-child),.miniCards {
-    .card.homeTodayItem:not(.card--full),.card.videoCard,.miniCard {
+    .card.homeTodayItem:not(.card--full),.card.videoCard,.miniCard:not(:last-child) {
         border-bottom: 1px solid var(--gray-border);
     }
   }

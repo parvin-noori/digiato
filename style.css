@@ -121,7 +121,7 @@ a {
     width: 100px;
     height: 100px; } }
 @media (max-width: 768px) {
-  .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .todayNews .row > *:not(:last-child) .card.videoCard, .todayNews .row > *:not(:last-child) .miniCard, .videoCards .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .videoCards .row > *:not(:last-child) .card.videoCard, .videoCards .row > *:not(:last-child) .miniCard, .miniCards .card.homeTodayItem:not(.card--full), .miniCards .card.videoCard, .miniCards .miniCard {
+  .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .todayNews .row > *:not(:last-child) .card.videoCard, .todayNews .row > *:not(:last-child) .miniCard:not(:last-child), .videoCards .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .videoCards .row > *:not(:last-child) .card.videoCard, .videoCards .row > *:not(:last-child) .miniCard:not(:last-child), .miniCards .card.homeTodayItem:not(.card--full), .miniCards .card.videoCard, .miniCards .miniCard:not(:last-child) {
     border-bottom: 1px solid var(--gray-border); }
 
   .todaysNews__more {
