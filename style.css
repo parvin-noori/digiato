@@ -34,10 +34,14 @@ a {
   padding-left: 2rem;
   padding-right: 2rem; }
 
+.latestIranianNews__big {
+  height: 100%; }
+
 .miniCard .miniCard__picture {
   border-radius: 0.4rem;
   width: 80px;
   height: 80px;
+  display: block;
   padding-right: 0.5rem;
   overflow: hidden; }
 .miniCard .miniCard__title {
@@ -56,6 +60,18 @@ a {
 .miniCard .miniCard__date {
   font-size: 0.8rem;
   color: var(--text-color); }
+
+.latestIranianNews__mini .miniCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .latestIranianNews__mini .miniCards .miniCard .miniCard__picture {
+    padding-right: 0;
+    margin-left: 1rem; }
+  .latestIranianNews__mini .miniCards .miniCard .card__overload--info {
+    color: var(--text-color); }
+    .latestIranianNews__mini .miniCards .miniCard .card__overload--info .card__overload--author::after {
+      background-color: var(--text-color); }
 
 @media (min-width: 1600px) {
   .container {
@@ -97,7 +113,13 @@ a {
     width: 4.5rem; }
 
   .lastVideos__big {
-    height: 100%; } }
+    height: 100%; }
+
+  .miniCards .miniCard .miniCard__title {
+    font-size: 1.3rem; }
+  .miniCards .miniCard .miniCard__picture {
+    width: 100px;
+    height: 100px; } }
 @media (max-width: 768px) {
   .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .todayNews .row > *:not(:last-child) .card.videoCard {
     border-bottom: 1px solid var(--gray-border); }
@@ -150,7 +172,13 @@ a {
     font-size: 0.9rem; }
   .card.videoCard .card__picture:after {
     height: 2.5rem;
-    width: 2.5rem; } }
+    width: 2.5rem; }
+
+  .miniCards .miniCard .miniCard__title {
+    font-size: 0.9rem; }
+  .miniCards .miniCard .miniCard__picture {
+    width: 80px;
+    height: 80px; } }
 .btn:focus, .btn:active {
   outline: none;
   border-color: transparent !important; }
@@ -286,7 +314,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 .siteTitle {
   margin-bottom: 16px;
   color: var(--dark-blue);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   line-height: 48px;
   letter-spacing: -0.5px;
@@ -310,10 +338,16 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     width: 330px;
     height: 180px; }
     .card.rowCard .card__picture img {
-      object-fit: cover; } }
+      object-fit: cover; }
+
+  .latestIranianNews__mini .miniCards {
+    min-height: 45rem; } }
 @media (max-width: 1200px) {
   .primary-menu a {
-    padding: 1.5rem 0.6rem; } }
+    padding: 1.5rem 0.6rem; }
+
+  .miniCards .miniCard {
+    margin-bottom: 1rem; } }
 .homeCards {
   background-color: var(--black); }
   .homeCards .card__overload {
