@@ -247,6 +247,8 @@ input:focus {
   z-index: 100;
   background-color: var(--navigation-background);
   color: var(--text-color); }
+  .site-navigation.hidden {
+    transform: translateY(-100%); }
   .site-navigation .popularArea, .site-navigation .primary-menu {
     transition: all 0.3s; }
   .site-navigation.sticky .primary-menu {

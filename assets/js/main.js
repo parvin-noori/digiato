@@ -133,7 +133,7 @@ $(document).ready(function () {
     let forgetButtonLink = $('.forgotModalOpen');
     let loginModal = $('#loginModal');
     let loginEmail = $('#loginEmail');
-    let body= $('body');
+    let body = $('body');
 
     //focus input after open modal
     loginModal.on('shown.bs.modal', function () {
@@ -232,10 +232,12 @@ $(document).ready(function () {
     function stikcyBody() {
         let siteNavigation = $('.site-navigation');
         let siteNavigationOffsetTop = siteNavigation.offset().top;
+        let prev = 0;
 
         $(window).scroll(function () {
             // add sticky class to site navigation after scroll on it
-            if ($(this).scrollTop() >= siteNavigationOffsetTop) {
+            let scrollTop = $(this).scrollTop()
+            if (scrollTop >= siteNavigationOffsetTop) {
                 siteNavigation.addClass('sticky');
                 body.addClass('sticky');
             } else {
@@ -244,13 +246,11 @@ $(document).ready(function () {
             }
 
             // add hidden nav class to site navigation after 500 scroll top
-            if ($(this).scrollTop() >= 500) {
-                siteNavigation.addClass('hiddenNav');
-               body.removeClass('sticky');
-                body.addClass('hiddenNav');
+            if (scrollTop >= 500) {
+                siteNavigation.toggleClass('hidden', scrollTop > prev);
+                body.toggleClass('sticky', scrollTop < prev);
+                prev = scrollTop;
             } else {
-                siteNavigation.removeClass('hiddenNav');
-                body.removeClass('hiddenNav');
             }
         });
     }
@@ -280,7 +280,6 @@ $(document).ready(function () {
     mobileMenu.on('hidden.bs.offcanvas', function () {
         $('.subMenuMobile').hide();
     });
-
 
 
     //run stikcyBody function in breakpoint

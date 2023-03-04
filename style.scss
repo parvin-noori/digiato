@@ -269,6 +269,7 @@ a {
       .miniCard__title {
         font-size: 1.3rem;
       }
+
       .miniCard__picture {
         width: 100px;
         height: 100px;
@@ -366,6 +367,7 @@ a {
       .miniCard__title {
         font-size: 0.9rem;
       }
+
       .miniCard__picture {
         width: 80px;
         height: 80px;
@@ -515,6 +517,10 @@ input:focus {
   top: 0;
   z-index: 100;
 
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
   .popularArea, .primary-menu {
     @include transition;
   }
@@ -560,37 +566,49 @@ input:focus {
 }
 
 
-body.sticky {
-  .site-header {
-    position: sticky;
-    z-index: 1000;
-    top: -100px;
-    //top: 0;
-    .site-branding {
-      @include transition;
+body {
+  //&.hidden {
+  //  .site-header {
+  //
+  //    transform: translateY(-100%);
+  //  }
+  //}
 
-      .logo-brand {
-        display: block;
-        width: 35px;
-        overflow: hidden;
+  &.sticky {
 
-        img {
-          width: 80px;
+
+    .site-header {
+      position: sticky;
+      z-index: 1000;
+      top: -100px;
+      //top: 0;
+      .site-branding {
+        @include transition;
+
+        .logo-brand {
+          display: block;
+          width: 35px;
+          overflow: hidden;
+
+          img {
+            width: 80px;
+          }
         }
+      }
+
+      .head, .site-branding {
+        transform: translateY(90px);
       }
     }
 
-    .head, .site-branding {
-      transform: translateY(90px);
-    }
-  }
-
-  &.hiddenNav {
-    .site-branding, .head {
-      transform: translateY(0);
+    &.hiddenNav {
+      .site-branding, .head {
+        transform: translateY(0);
+      }
     }
   }
 }
+
 
 .dropdown-menu {
   border: none;
