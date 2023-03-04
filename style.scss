@@ -76,7 +76,7 @@
   .card__picture {
 
     margin-right: 1rem;
-    flex: 1;
+    //flex: 1;
     display: flex;
     justify-content: end;
 
@@ -95,10 +95,8 @@
 }
 
 @mixin rowCardPictureSize($width,$height) {
-  img {
-    width: $width;
-    height: $height;
-  }
+  width: $width;
+  height: $height;
 }
 
 html {
@@ -168,6 +166,7 @@ a {
   .container {
     width: 766px;
   }
+
   .card {
     &.card--full {
       .card-overload {
@@ -207,7 +206,11 @@ a {
 
     &.rowCard {
       .card__picture {
-        @include rowCardPictureSize(18rem, 10rem)
+        @include rowCardPictureSize(120px, 120px);
+
+        img {
+          object-fit: cover;
+        }
       }
     }
   }
@@ -240,10 +243,7 @@ a {
       }
     }
 
-
-    &.homeTodayItem:not(.card--full):not(.rowCard) {
-      @include rowCard;
-
+    &.homeTodayItem:not(.card--full) {
       .card__overload--title {
         font-size: 0.9rem;
       }
@@ -251,17 +251,23 @@ a {
       .card__overload--info {
         font-size: 0.8rem;
       }
+    }
+
+    &.homeTodayItem:not(.card--full):not(.rowCard) {
+      @include rowCard;
 
       .card__picture {
-        @include rowCardPictureSize(6rem, 6rem)
+        @include rowCardPictureSize(80px, 80px)
       }
     }
 
     &.rowCard {
-
       .card__picture {
+        @include rowCardPictureSize(80px, 80px);
 
-        @include rowCardPictureSize(6rem, 6rem)
+        img {
+          object-fit: cover;
+        }
       }
     }
   }
@@ -553,6 +559,17 @@ body.sticky {
       padding: 1.5rem;
     }
   }
+  .card {
+    &.rowCard {
+      .card__picture {
+        @include rowCardPictureSize(330px, 180px);
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1200px) {
@@ -728,8 +745,24 @@ p {
   line-height: 2;
 }
 
+
+.rowCards .row> *:not(:last-child) {
+  .card {
+    border-radius: 0;
+    &.homeTodayItem:not(.card--full) {
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    padding-bottom: 2rem;
+  }
+}
+
 .card {
   background-color: transparent;
+  border: none;
+  position: relative;
+  overflow: hidden;
+
 
   .card__overload--link {
     position: absolute;
@@ -744,9 +777,6 @@ p {
     color: inherit;
   }
 
-  border: none;
-  position: relative;
-  overflow: hidden;
 
   .card__picture {
     @include lightBorderRadius;
@@ -837,12 +867,13 @@ p {
 
   .card__picture {
     overflow: hidden;
-    flex-grow: 1;
+    //flex-grow: 1;
     height: 100%;
 
     img {
-      @include transition;
+      transition: all 0.7s;
       height: 100%;
+      width: 100%;
       object-fit: cover;
     }
   }
@@ -900,15 +931,21 @@ p {
   }
 
   &.rowCard {
-    @include rowCard;
-
-    .card__overload--category {
-      margin-bottom: 1rem!important;
+    .card-date{
+      color: #b3b6c9;
+      font-weight: bold;
+      margin-top: 2.2rem;
+      display: block;
     }
-
-    .card__overload--author:after {
-      display: none;
-    }
+    //@include rowCard;
+    //
+    //.card__overload--category {
+    //  margin-bottom: 1rem!important;
+    //}
+    //
+    //.card__overload--author:after {
+    //  display: none;
+    //}
   }
 }
 

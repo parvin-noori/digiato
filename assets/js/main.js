@@ -133,6 +133,7 @@ $(document).ready(function () {
     let forgetButtonLink = $('.forgotModalOpen');
     let loginModal = $('#loginModal');
     let loginEmail = $('#loginEmail');
+    let body= $('body');
 
     //focus input after open modal
     loginModal.on('shown.bs.modal', function () {
@@ -236,19 +237,20 @@ $(document).ready(function () {
             // add sticky class to site navigation after scroll on it
             if ($(this).scrollTop() >= siteNavigationOffsetTop) {
                 siteNavigation.addClass('sticky');
-                $('body').addClass('sticky');
+                body.addClass('sticky');
             } else {
-                $('body').removeClass('sticky');
+                body.removeClass('sticky');
                 siteNavigation.removeClass('sticky');
             }
 
             // add hidden nav class to site navigation after 500 scroll top
             if ($(this).scrollTop() >= 500) {
                 siteNavigation.addClass('hiddenNav');
-                $('body').addClass('hiddenNav');
+               body.removeClass('sticky');
+                body.addClass('hiddenNav');
             } else {
                 siteNavigation.removeClass('hiddenNav');
-                $('body').removeClass('hiddenNav');
+                body.removeClass('hiddenNav');
             }
         });
     }

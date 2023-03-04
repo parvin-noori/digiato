@@ -83,9 +83,11 @@ a {
       overflow: hidden; }
   .card.homeTodayItem:not(.card--full):not(.rowCard) .card__picture img {
     width: 100%; }
-  .card.rowCard .card__picture img {
-    width: 18rem;
-    height: 10rem; } }
+  .card.rowCard .card__picture {
+    width: 120px;
+    height: 120px; }
+    .card.rowCard .card__picture img {
+      object-fit: cover; } }
 @media (max-width: 768px) {
   .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full) {
     border-bottom: 1px solid var(--gray-border); }
@@ -97,6 +99,10 @@ a {
     display: none !important; }
   .card.card--full .card-overload .card__overload--title {
     font-size: 1.4rem; }
+  .card.homeTodayItem:not(.card--full) .card__overload--title {
+    font-size: 0.9rem; }
+  .card.homeTodayItem:not(.card--full) .card__overload--info {
+    font-size: 0.8rem; }
   .card.homeTodayItem:not(.card--full):not(.rowCard) {
     border-radius: 0;
     display: flex;
@@ -105,7 +111,6 @@ a {
     padding-bottom: 1rem; }
     .card.homeTodayItem:not(.card--full):not(.rowCard) .card__picture {
       margin-right: 1rem;
-      flex: 1;
       display: flex;
       justify-content: end; }
     .card.homeTodayItem:not(.card--full):not(.rowCard) .card-overload {
@@ -115,16 +120,14 @@ a {
       justify-content: space-between;
       flex-direction: column;
       height: 100%; }
-    .card.homeTodayItem:not(.card--full):not(.rowCard) .card__overload--title {
-      font-size: 0.9rem; }
-    .card.homeTodayItem:not(.card--full):not(.rowCard) .card__overload--info {
-      font-size: 0.8rem; }
-    .card.homeTodayItem:not(.card--full):not(.rowCard) .card__picture img {
-      width: 6rem;
-      height: 6rem; }
-  .card.rowCard .card__picture img {
-    width: 6rem;
-    height: 6rem; } }
+    .card.homeTodayItem:not(.card--full):not(.rowCard) .card__picture {
+      width: 80px;
+      height: 80px; }
+  .card.rowCard .card__picture {
+    width: 80px;
+    height: 80px; }
+    .card.rowCard .card__picture img {
+      object-fit: cover; } }
 .btn:focus, .btn:active {
   outline: none;
   border-color: transparent !important; }
@@ -278,7 +281,13 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 
 @media (min-width: 1200px) {
   .primary-menu a {
-    padding: 1.5rem; } }
+    padding: 1.5rem; }
+
+  .card.rowCard .card__picture {
+    width: 330px;
+    height: 180px; }
+    .card.rowCard .card__picture img {
+      object-fit: cover; } }
 @media (max-width: 1200px) {
   .primary-menu a {
     padding: 1.5rem 0.6rem; } }
@@ -399,6 +408,12 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 p {
   line-height: 2; }
 
+.rowCards .row > *:not(:last-child) .card {
+  border-radius: 0;
+  padding-bottom: 2rem; }
+  .rowCards .row > *:not(:last-child) .card.homeTodayItem:not(.card--full) {
+    border-bottom: 1px solid var(--gray-border); }
+
 .card {
   background-color: transparent;
   border: none;
@@ -491,11 +506,11 @@ p {
     margin-bottom: 1.1rem; }
   .card .card__picture {
     overflow: hidden;
-    flex-grow: 1;
     height: 100%; }
     .card .card__picture img {
-      transition: all 0.3s;
+      transition: all 0.7s;
       height: 100%;
+      width: 100%;
       object-fit: cover; }
   .card:hover .card__picture img {
     transform: scale(1.05); }
@@ -520,28 +535,11 @@ p {
           background-color: var(--text-color); }
       .card.homeTodayItem:not(.card--full) .card-overload .card__overload--description {
         color: var(--dark-blue); }
-  .card.rowCard {
-    border-radius: 0;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: start;
-    padding-bottom: 1rem; }
-    .card.rowCard .card__picture {
-      margin-right: 1rem;
-      flex: 1;
-      display: flex;
-      justify-content: end; }
-    .card.rowCard .card-overload {
-      padding-top: 0 !important;
-      display: flex;
-      flex: 4;
-      justify-content: space-between;
-      flex-direction: column;
-      height: 100%; }
-    .card.rowCard .card__overload--category {
-      margin-bottom: 1rem !important; }
-    .card.rowCard .card__overload--author:after {
-      display: none; }
+  .card.rowCard .card-date {
+    color: #b3b6c9;
+    font-weight: bold;
+    margin-top: 2.2rem;
+    display: block; }
 
 @media (min-width: 1200px) {
   .card.homeTodayItem:not(.card--full).col-reverse {
