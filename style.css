@@ -474,7 +474,7 @@ p {
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      margin-right: -15px; }
+      margin-left: -15px; }
   .card .card__overload--link {
     position: absolute;
     top: 0;

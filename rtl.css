@@ -37,4 +37,11 @@ body {
 #socialNetwork:after {
   left: 0; }
 
+.fa-chevrons-right {
+  transform: scaleX(-1); }
+
+.card.videoCard .videoCardSpecial__followers img {
+  margin-left: 0;
+  margin-right: -15px; }
+
 /*# sourceMappingURL=rtl.css.map */
