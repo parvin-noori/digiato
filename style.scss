@@ -99,6 +99,21 @@
   height: $height;
 }
 
+@mixin darkBlueOverlay {
+  z-index: 0;
+  width: 100%;
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: '';
+  //background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 32, 91, 0)), to(#16205b));
+  background: linear-gradient(180deg, rgba(22, 32, 91, 0) 0, #16205b 100%);
+  opacity: .5;
+  pointer-events: none;
+}
+
 html {
   font-size: 14px;
 }
@@ -279,9 +294,9 @@ a {
 }
 
 @media (max-width: 768px) {
-  .todayNews .row > *:not(:last-child),.videoCards .row > *:not(:last-child),.miniCards {
-    .card.homeTodayItem:not(.card--full),.card.videoCard,.miniCard:not(:last-child) {
-        border-bottom: 1px solid var(--gray-border);
+  .todayNews .row > *:not(:last-child), .videoCards .row > *:not(:last-child), .miniCards {
+    .card.homeTodayItem:not(.card--full), .card.videoCard, .miniCard:not(:last-child) {
+      border-bottom: 1px solid var(--gray-border);
     }
   }
   .todaysNews__more {
@@ -363,6 +378,7 @@ a {
   .miniCards {
     .miniCard {
       padding-bottom: 1rem;
+
       .miniCard__title {
         font-size: 0.9rem;
       }
@@ -708,15 +724,58 @@ body {
     }
   }
 }
-.homeRelatedNewsBox{
-  .homeRelatedCard{
+
+.homeRelatedNewsBox {
+  .homeRelatedCard {
+    position: relative;
     @include lightBorderRadius;
     overflow: hidden;
-    .homeRelatedCard__overload{
 
+    img {
+      transition: all 1s;
+    }
+
+    .homeRelatedCard__overload {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: end;
+      align-items: center;
+      text-align: center;
+
+      &:before {
+        @include darkBlueOverlay;
+      }
+
+      .card__overload--info, .homeRelatedCard__title {
+        position: relative;
+        z-index: 2;
+      }
+
+      .card__overload--info {
+        font-size: 1rem;
+      }
+    }
+
+    .homeRelatedCard__title {
+      color: var(--white);
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
     }
   }
 }
+
 .homeCards {
   background-color: var(--black);
 
@@ -1032,18 +1091,7 @@ p {
     }
 
     &:before {
-      z-index: 0;
-      width: 100%;
-      display: block;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      content: '';
-      //background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 32, 91, 0)), to(#16205b));
-      background: linear-gradient(180deg, rgba(22, 32, 91, 0) 0, #16205b 100%);
-      opacity: .5;
-      pointer-events: none;
+      @include darkBlueOverlay;
     }
 
 
