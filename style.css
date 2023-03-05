@@ -49,6 +49,10 @@ a {
   .miniCard .miniCard__picture a {
     width: 100%;
     height: 100%; }
+  .miniCard .miniCard__picture img {
+    transition: all 1s; }
+.miniCard:hover .miniCard__picture img {
+  transform: scale(1.1); }
 .miniCard .miniCard__title {
   flex: 80%;
   font-weight: bold; }
