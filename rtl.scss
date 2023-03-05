@@ -4,12 +4,15 @@ body {
   text-align: right;
 }
 
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
-  content: 'next';
-}
+.siteTitleWrapper {
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    content: 'next';
+  }
 
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
-  content: 'prev';
+  .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    content: 'prev';
+  }
+
 }
 
 .homeCardsFooterBox {
@@ -23,16 +26,18 @@ body {
   }
 }
 
-.swiper-button-prev, .swiper-button-next {
+.siteTitleWrapper {
+  .swiper-button-prev, .swiper-button-next {
 
-  &.swiper-button-next {
-    left: 0;
-    right: auto;
-  }
+    &.swiper-button-next {
+      left: 0;
+      right: auto;
+    }
 
-  &.swiper-button-prev {
-    left: 2.5rem;
-    right: inherit;
+    &.swiper-button-prev {
+      left: 2.5rem;
+      right: inherit;
+    }
   }
 }
 
@@ -72,17 +77,20 @@ body {
     left: 0;
   }
 }
-  .fa-chevrons-right{
-    transform: scaleX(-1);
-  }
-.card.videoCard{
-  .videoCardSpecial__followers{
-    img{
+
+.fa-chevrons-right {
+  transform: scaleX(-1);
+}
+
+.card.videoCard {
+  .videoCardSpecial__followers {
+    img {
       margin-left: 0;
       margin-right: -15px;
     }
   }
 }
+
 .latestIranianNews__mini {
   .miniCards {
     .miniCard {
@@ -90,6 +98,31 @@ body {
         margin-left: 1rem;
         margin-right: 0;
       }
+    }
+  }
+}
+
+.applicationAreaSwiper {
+  .swiper-slide:not(:last-child) {
+    .miniCard {
+      &:after {
+        margin-left: 0;
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    &.swiper-button-next {
+      left: 0;
+      right: inherit;
+      background: linear-gradient(90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%);
+    }
+
+    &.swiper-button-prev {
+      right: 0;
+      left: inherit;
+      background: linear-gradient(-90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%);
     }
   }
 }

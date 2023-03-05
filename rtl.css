@@ -3,20 +3,19 @@ body {
   direction: rtl;
   text-align: right; }
 
-.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+.siteTitleWrapper .swiper-button-prev:after, .siteTitleWrapper .swiper-rtl .swiper-button-next:after {
   content: 'next'; }
-
-.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+.siteTitleWrapper .swiper-button-next:after, .siteTitleWrapper .swiper-rtl .swiper-button-prev:after {
   content: 'prev'; }
 
 .homeCardsFooterBox .homeCardsFooter .swiper-slide:not(:last-child):after {
   right: inherit;
   left: -2rem; }
 
-.swiper-button-prev.swiper-button-next, .swiper-button-next.swiper-button-next {
+.siteTitleWrapper .swiper-button-prev.swiper-button-next, .siteTitleWrapper .swiper-button-next.swiper-button-next {
   left: 0;
   right: auto; }
-.swiper-button-prev.swiper-button-prev, .swiper-button-next.swiper-button-prev {
+.siteTitleWrapper .swiper-button-prev.swiper-button-prev, .siteTitleWrapper .swiper-button-next.swiper-button-prev {
   left: 2.5rem;
   right: inherit; }
 
@@ -47,5 +46,17 @@ body {
 .latestIranianNews__mini .miniCards .miniCard .miniCard__picture {
   margin-left: 1rem;
   margin-right: 0; }
+
+.applicationAreaSwiper .swiper-slide:not(:last-child) .miniCard:after {
+  margin-left: 0;
+  margin-right: 2rem; }
+.applicationAreaSwiper .swiper-button-prev.swiper-button-next, .applicationAreaSwiper .swiper-button-next.swiper-button-next {
+  left: 0;
+  right: inherit;
+  background: linear-gradient(90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%); }
+.applicationAreaSwiper .swiper-button-prev.swiper-button-prev, .applicationAreaSwiper .swiper-button-next.swiper-button-prev {
+  right: 0;
+  left: inherit;
+  background: linear-gradient(-90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%); }
 
 /*# sourceMappingURL=rtl.css.map */

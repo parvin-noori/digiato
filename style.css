@@ -192,7 +192,10 @@ a {
       height: 80px; }
 
   .miniCard .miniCard__title p {
-    font-size: 13px; } }
+    font-size: 13px; }
+
+  .applicationAreaSwiper .swiper-button-prev:after, .applicationAreaSwiper .swiper-button-next:after {
+    content: ''; } }
 .btn:focus, .btn:active {
   outline: none;
   border-color: transparent !important; }
@@ -716,13 +719,40 @@ p {
     opacity: 1; }
 
 .swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--text-color); }
-.swiper-button-prev.swiper-button-next, .swiper-button-next.swiper-button-next {
+  color: var(--text-color);
+  font-weight: bold; }
+
+.applicationAreaSwiper .swiper-button-prev, .applicationAreaSwiper .swiper-button-next {
+  transition: all 0.3s;
+  width: 100px;
+  height: auto;
+  top: 0;
+  bottom: 0; }
+  .applicationAreaSwiper .swiper-button-prev.swiper-button-next, .applicationAreaSwiper .swiper-button-next.swiper-button-next {
+    right: 0;
+    background: linear-gradient(-90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%); }
+  .applicationAreaSwiper .swiper-button-prev.swiper-button-prev, .applicationAreaSwiper .swiper-button-next.swiper-button-prev {
+    left: 0;
+    background: linear-gradient(90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%); }
+  .applicationAreaSwiper .swiper-button-prev.swiper-button-disabled, .applicationAreaSwiper .swiper-button-next.swiper-button-disabled {
+    opacity: 0; }
+  .applicationAreaSwiper .swiper-button-prev:after, .applicationAreaSwiper .swiper-button-next:after {
+    font-size: 2.5rem; }
+.applicationAreaSwiper .swiper-slide:not(:last-child) .miniCard:after {
+  content: '';
+  width: 1px;
+  background-color: var(--gray-border);
+  height: 6rem;
+  display: block;
+  margin: 0 0.5rem;
+  margin-left: 2rem; }
+
+.siteTitleWrapper .swiper-button-prev:after, .siteTitleWrapper .swiper-button-next:after {
+  font-size: 1rem; }
+.siteTitleWrapper .swiper-button-prev.swiper-button-next, .siteTitleWrapper .swiper-button-next.swiper-button-next {
   right: 0;
   left: auto; }
-.swiper-button-prev.swiper-button-prev, .swiper-button-next.swiper-button-prev {
+.siteTitleWrapper .swiper-button-prev.swiper-button-prev, .siteTitleWrapper .swiper-button-next.swiper-button-prev {
   right: 2.5rem;
   left: inherit; }
 

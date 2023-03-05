@@ -228,11 +228,36 @@ $(document).ready(function () {
         },
     });
 
+
+
+    new Swiper(".applicationAreaSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".swiper-button-next3",
+            prevEl: ".swiper-button-prev3",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.4,
+            },
+            640: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1400: {
+                slidesPerView: 4,
+            },
+        },
+    });
+
 // add class sticky to body after scroll page
     function stikcyBody() {
         let siteNavigation = $('.site-navigation');
         let siteNavigationOffsetTop = siteNavigation.offset().top;
-        let prev = 500;
+        let prev = 0;
 
         $(window).scroll(function () {
             // add sticky class to site navigation after scroll on it
