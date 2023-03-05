@@ -37,13 +37,18 @@ a {
 .latestIranianNews__big {
   height: 100%; }
 
+.homeCardsFooter .miniCard .miniCard__picture {
+  margin-right: 0.5rem; }
+
 .miniCard .miniCard__picture {
   border-radius: 0.4rem;
   width: 80px;
   height: 80px;
   display: block;
-  padding-right: 0.5rem;
   overflow: hidden; }
+  .miniCard .miniCard__picture a {
+    width: 100%;
+    height: 100%; }
 .miniCard .miniCard__title {
   flex: 80%;
   font-weight: bold; }
@@ -56,9 +61,10 @@ a {
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-bottom: 0.5rem; }
+    margin-bottom: 0.5rem;
+    font-size: 16px; }
 .miniCard .miniCard__date {
-  font-size: 0.8rem;
+  font-size: 12px;
   color: var(--text-color); }
 
 .latestIranianNews__mini .miniCards {
@@ -66,7 +72,6 @@ a {
   flex-direction: column;
   justify-content: space-between; }
   .latestIranianNews__mini .miniCards .miniCard .miniCard__picture {
-    padding-right: 0;
     margin-right: 1rem; }
   .latestIranianNews__mini .miniCards .miniCard .card__overload--info {
     color: var(--text-color); }
@@ -115,8 +120,6 @@ a {
   .lastVideos__big {
     height: 100%; }
 
-  .miniCards .miniCard .miniCard__title {
-    font-size: 1.3rem; }
   .miniCards .miniCard .miniCard__picture {
     width: 100px;
     height: 100px; } }
@@ -636,7 +639,7 @@ p {
       text-overflow: ellipsis;
       overflow: hidden; }
   .card:not(.rowCard) .card__overload--description {
-    font-size: 0.8rem; }
+    font-size: 12px; }
   .card:not(.rowCard) .card__overload--title {
     margin-bottom: 1.1rem; }
   .card .card__picture {
@@ -724,7 +727,7 @@ p {
   border-radius: 0.2rem; }
 
 .card__overload--info {
-  font-size: 0.9rem;
+  font-size: 12px;
   color: var(--white);
   white-space: nowrap; }
   .card__overload--info a {

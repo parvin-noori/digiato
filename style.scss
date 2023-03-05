@@ -140,14 +140,26 @@ a {
   height: 100%;
 }
 
+.homeCardsFooter {
+  .miniCard {
+    .miniCard__picture {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
 .miniCard {
   .miniCard__picture {
     @include lightBorderRadius;
     width: 80px;
     height: 80px;
     display: block;
-    padding-right: 0.5rem;
     overflow: hidden;
+
+    a {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .miniCard__title {
@@ -159,12 +171,13 @@ a {
       line-height: 2;
       @include limitLines(2);
       margin-bottom: 0.5rem;
+      font-size: 16px;
 
     }
   }
 
   .miniCard__date {
-    font-size: 0.8rem;
+    font-size: 12px;
     color: var(--text-color);
   }
 
@@ -178,7 +191,6 @@ a {
 
     .miniCard {
       .miniCard__picture {
-        padding-right: 0;
         margin-right: 1rem;
       }
 
@@ -282,7 +294,7 @@ a {
   .miniCards {
     .miniCard {
       .miniCard__title {
-        font-size: 1.3rem;
+        //font-size: 1.3rem;
       }
 
       .miniCard__picture {
@@ -1103,7 +1115,7 @@ p {
 
   &:not(.rowCard) {
     .card__overload--description {
-      font-size: 0.8rem;
+      font-size: 12px;
     }
 
     .card__overload--title {
@@ -1263,7 +1275,7 @@ p {
 }
 
 .card__overload--info {
-  font-size: 0.9rem;
+  font-size: 12px;
   color: var(--white);
   white-space: nowrap;
 
