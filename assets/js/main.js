@@ -232,7 +232,7 @@ $(document).ready(function () {
     function stikcyBody() {
         let siteNavigation = $('.site-navigation');
         let siteNavigationOffsetTop = siteNavigation.offset().top;
-        let prev = 0;
+        let prev = 500;
 
         $(window).scroll(function () {
             // add sticky class to site navigation after scroll on it
@@ -251,6 +251,7 @@ $(document).ready(function () {
                 //hide nav on scroll
                 siteNavigation.toggleClass('hidden', scrollTop > prev);
                 body.toggleClass('sticky', scrollTop < prev);
+                siteNavigation.toggleClass('sticky', scrollTop < prev);
                 prev = scrollTop;
             } else {
             }

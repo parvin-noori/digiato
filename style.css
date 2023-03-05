@@ -352,6 +352,10 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 
   .miniCards .miniCard {
     margin-bottom: 1rem; } }
+.homeRelatedNewsBox .homeRelatedCard {
+  border-radius: 0.4rem;
+  overflow: hidden; }
+
 .homeCards {
   background-color: var(--black); }
   .homeCards .card__overload {

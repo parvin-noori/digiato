@@ -708,7 +708,15 @@ body {
     }
   }
 }
+.homeRelatedNewsBox{
+  .homeRelatedCard{
+    @include lightBorderRadius;
+    overflow: hidden;
+    .homeRelatedCard__overload{
 
+    }
+  }
+}
 .homeCards {
   background-color: var(--black);
 
