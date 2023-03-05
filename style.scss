@@ -149,6 +149,20 @@ a {
 }
 
 .miniCard {
+
+
+  .miniCard__title {
+    flex: 80%;
+    font-weight: bold;
+
+    p {
+      color: var(--blue);
+      line-height: 2;
+      @include limitLines(2);
+      margin-bottom: 0.5rem;
+
+    }
+  }
   .miniCard__picture {
     @include lightBorderRadius;
     width: 80px;
@@ -171,21 +185,6 @@ a {
       }
     }
   }
-
-  .miniCard__title {
-    flex: 80%;
-    font-weight: bold;
-
-    p {
-      color: var(--blue);
-      line-height: 2;
-      @include limitLines(2);
-      margin-bottom: 0.5rem;
-      font-size: 16px;
-
-    }
-  }
-
   .miniCard__date {
     font-size: 12px;
     color: var(--text-color);
@@ -313,6 +312,13 @@ a {
       }
     }
   }
+  .miniCard {
+    .miniCard__title {
+      p {
+        font-size: 16px;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -353,7 +359,7 @@ a {
 
     &.homeTodayItem:not(.card--full), &.videoCard {
       .card__overload--title {
-        font-size: 0.9rem !important;
+        font-size: 13px!important;
       }
 
       .card__overload--info {
@@ -408,6 +414,14 @@ a {
       .miniCard__picture {
         width: 80px;
         height: 80px;
+      }
+    }
+  }
+
+  .miniCard {
+    .miniCard__title {
+      p {
+        font-size: 13px;
       }
     }
   }
