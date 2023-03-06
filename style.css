@@ -269,7 +269,7 @@ input:focus {
   .site-navigation .popularArea, .site-navigation .primary-menu {
     transition: all 0.3s; }
   .site-navigation.sticky .primary-menu {
-    padding-right: 40px; }
+    padding-left: 40px; }
   .site-navigation.sticky .popularArea {
     opacity: 0;
     visibility: hidden; }

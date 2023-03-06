@@ -59,4 +59,8 @@ body {
   left: inherit;
   background: linear-gradient(-90deg, #fff 32.65%, rgba(251, 252, 253, 0) 100%); }
 
+.site-navigation.sticky .primary-menu {
+  padding-right: 40px;
+  padding-left: 0; }
+
 /*# sourceMappingURL=rtl.css.map */
