@@ -144,7 +144,7 @@ a {
 .homeCardsFooter {
   .miniCard {
     .miniCard__picture {
-      margin-right: 0.5rem;
+      margin-right: 1rem;
     }
   }
 }
@@ -153,7 +153,7 @@ a {
 
 
   .miniCard__title {
-    flex: 80%;
+    flex: 1;
     font-weight: bold;
 
     p {
@@ -193,6 +193,7 @@ a {
   .miniCard__date {
     font-size: 12px;
     color: var(--text-color);
+    font-weight: 500;
   }
 
 }
@@ -305,6 +306,7 @@ a {
   .lastVideos__big {
     height: 100%;
   }
+
   .miniCards {
     .miniCard {
       .miniCard__title {
@@ -320,7 +322,16 @@ a {
   .miniCard {
     .miniCard__title {
       p {
-        font-size: 16px;
+        font-size: 14px;
+      }
+    }
+  }
+  .latestIranianNews {
+    .miniCard {
+      .miniCard__title {
+        p {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -426,7 +437,7 @@ a {
   .miniCard {
     .miniCard__title {
       p {
-        font-size: 13px;
+        font-size: 13px !important;
       }
     }
   }
@@ -986,7 +997,7 @@ body {
 }
 
 p {
-  line-height: 2;
+  line-height: 1.7;
 }
 
 
@@ -1115,7 +1126,7 @@ p {
         @include mainButtons(var(--dark-blue), 7px, 0.4rem 1rem);
         margin-bottom: 1rem;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 12px;
         pointer-events: all;
 
         &:hover {
@@ -1125,9 +1136,10 @@ p {
     }
 
     .card__overload--title {
-      font-size: 1.2rem;
-      line-height: 2;
+      font-size: 18px;
+      line-height: 1.8;
       font-weight: bold;
+      margin-bottom: 0.5rem;
       @include limitLines(2)
     }
 
@@ -1151,7 +1163,7 @@ p {
 
   &:not(.rowCard) {
     .card__overload--description {
-      font-size: 12px;
+      font-size: 12px !important;
     }
 
     .card__overload--title {
@@ -1225,9 +1237,15 @@ p {
   }
 
   &.rowCard {
+    .card__overload--author {
+      &:after {
+        display: none;
+      }
+    }
+
     .card-date {
       color: #b3b6c9;
-      font-weight: bold;
+      font-weight: 500;
       margin-top: 2.2rem;
       display: block;
     }
@@ -1334,7 +1352,7 @@ p {
       }
 
       .appCard__description, .appCard__category {
-        font-size: 14px;
+        font-size: 12px;
         color: var(--text-color);
       }
 
@@ -1346,6 +1364,12 @@ p {
       .appCard__category {
         font-weight: 500;
       }
+    }
+
+    .miniCard__picture {
+      width: 60px;
+      height: 60px;
+      @include borderRadius;
     }
   }
 }
@@ -1515,7 +1539,7 @@ p {
         ul {
           li {
             position: relative;
-            padding-right: 1rem;
+            padding-left: 1rem;
 
             a {
               color: var(--text-color);
@@ -1528,7 +1552,7 @@ p {
               display: block;
               height: 4px;
               position: absolute;
-              right: 0;
+              left: 0;
               top: 10px;
               content: '';
               background: #6a7196;
@@ -1543,7 +1567,7 @@ p {
   .list-socialMedia {
     ul {
       li {
-        margin-left: 1.5rem;
+        margin-right: 1.5rem;
 
         i {
           font-size: 1.8rem;
@@ -1565,6 +1589,10 @@ p {
     background-color: var(--white);
     border-radius: 1.3rem;
     overflow: hidden;
+
+    input {
+      font-size: 12px;
+    }
 
     #form-button {
       background-color: var(--secondary-color);
@@ -1601,9 +1629,13 @@ p {
         margin: 0 -2rem;
         background-color: var(--dark-blue);
         padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         h5 {
           color: var(--white);
+          margin: 0;
         }
 
         ul {
@@ -1653,6 +1685,7 @@ p {
     .footer {
       .links {
         padding-top: 2rem;
+
         .links__items {
           flex: 0 0 100%;
           max-width: 100%;
@@ -1669,13 +1702,20 @@ p {
             cursor: pointer;
             display: flex;
             align-items: center;
+
             &:before {
-              content:'\f078' ;
+              content: '\f078';
               font-family: "Font Awesome 6 Pro";
               font-size: 0.7rem;
               font-weight: bold;
               margin-left: 0.5rem;
               color: var(--primary-color);
+            }
+
+            &.active {
+              &:before {
+                content: '\f077'
+              }
             }
 
             &:after {
@@ -1699,6 +1739,31 @@ p {
 
         }
 
+      }
+    }
+  }
+}
+
+.copyright {
+  padding: 1.5rem 0;
+  background-color: #f0f4fc;
+
+  p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 12px;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .list-socialMedia {
+    li {
+      margin-left: 0.7rem;
+
+      i {
+        color: var(--text-color);
       }
     }
   }
@@ -1910,6 +1975,10 @@ p {
   background-color: var(--dark-body);
   color: var(--light-textColor);
 
+  .site-footer {
+    background-color: #03050c;
+  }
+
   #socialNetwork {
     border-color: var(--dark-searchArea);
 
@@ -2033,6 +2102,19 @@ p {
     }
   }
 
+  .applicationAreaSwiper {
+    .swiper-button-prev, .swiper-button-next {
+      &.swiper-button-next {
+        background: linear-gradient(-90deg, #161718 32.65%, rgba(45, 46, 49, 0) 100%);
+      }
+
+      &.swiper-button-prev {
+        background: linear-gradient(90deg, #161718 32.65%, rgba(45, 46, 49, 0) 100%);
+      }
+
+    }
+
+  }
 
   @media (min-width: 992px) {
     .site-header {
