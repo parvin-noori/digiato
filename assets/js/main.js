@@ -310,19 +310,47 @@ $(document).ready(function () {
     });
 
 
-    //run stikcyBody function in breakpoint
+    //accordion links__items in footer
+  function accordtionLinksItem() {
+      var acc = document.getElementsByClassName("accordion-button");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+              } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+              }
+          });
+      }
+  }
+
+
+
+    //run stickyBody function in breakpoint
     var width = $("body").width();
     if (width > 992) {
         stikcyBody()
+    }
+    if (width < 768) {
+        accordtionLinksItem()
     }
     $(window).on('resize', function () {
 
         // breakpoints
         let $large_up = window.matchMedia("(min-width: 992px)");
+        let $medium_down = window.matchMedia("(max-width: 768px)");
 
         if ($large_up.matches) {
             stikcyBody()
         }
+        if ($medium_down.matches) {
+            accordtionLinksItem()
+        }
+
     });
 });
 

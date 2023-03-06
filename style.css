@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --header-backgroundColor: #f7f9fd;
   --darkHeaderBackgroundColor: #161718;
@@ -14,7 +15,8 @@
   --navigation-background: #f0f4fc;
   --black: #000;
   --blue: #004b94;
-  --lightBlue: #ddedfc; }
+  --lightBlue: #ddedfc;
+  --footerBackground: #f7f9fd; }
 
 html {
   font-size: 14px; }
@@ -748,7 +750,8 @@ p {
   margin-left: 2rem; }
 .applicationAreaSwiper .miniCard .miniCard__title p {
   -webkit-line-clamp: 1;
-  font-size: 18px; }
+  font-size: 18px;
+  font-weight: 500; }
 .applicationAreaSwiper .miniCard .miniCard__title .appCard__description, .applicationAreaSwiper .miniCard .miniCard__title .appCard__category {
   font-size: 14px;
   color: var(--text-color); }
@@ -827,6 +830,114 @@ p {
       content: '\f054';
       font-family: "Font Awesome 6 Pro";
       font-size: 0.8rem; } }
+.site-footer {
+  background-color: var(--footerBackground); }
+  .site-footer .footer h5 {
+    font-weight: 500;
+    color: var(--blue);
+    margin-bottom: 1rem; }
+  .site-footer .footer .foot {
+    border-bottom: 1px solid var(--gray-border); }
+    .site-footer .footer .foot .foot__social {
+      padding-left: 1rem; }
+      .site-footer .footer .foot .foot__social p {
+        color: var(--text-color); }
+  .site-footer .footer .links {
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap; }
+    .site-footer .footer .links .links__items h6 {
+      color: var(--dark-blue);
+      margin-bottom: 1rem; }
+    .site-footer .footer .links .links__items ul li {
+      position: relative;
+      padding-right: 1rem; }
+      .site-footer .footer .links .links__items ul li a {
+        color: var(--text-color);
+        padding: 3px 0;
+        display: block; }
+      .site-footer .footer .links .links__items ul li:before {
+        width: 4px;
+        display: block;
+        height: 4px;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        content: '';
+        background: #6a7196; }
+  .site-footer .list-socialMedia ul li {
+    margin-left: 1.5rem; }
+    .site-footer .list-socialMedia ul li i {
+      font-size: 1.8rem; }
+  .site-footer .foot__newsletter p {
+    font-size: 12px;
+    color: var(--text-color);
+    margin-top: 0.3rem; }
+  .site-footer .foot__newsletter--form {
+    border: 1px solid var(--gray-border);
+    background-color: var(--white);
+    border-radius: 1.3rem;
+    overflow: hidden; }
+    .site-footer .foot__newsletter--form #form-button {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      padding: 1rem 2rem; }
+  .site-footer .copyright {
+    padding-top: 40px; }
+
+@media (min-width: 992px) {
+  .site-footer {
+    padding: 40px; }
+    .site-footer .foot {
+      padding-bottom: 40px; } }
+@media (max-width: 992px) {
+  .site-footer .foot h5 {
+    font-size: inherit; }
+  .site-footer .foot .foot__social {
+    margin: 0 -2rem;
+    background-color: var(--dark-blue);
+    padding: 2rem; }
+    .site-footer .foot .foot__social h5 {
+      color: var(--white); }
+    .site-footer .foot .foot__social ul li i {
+      font-size: 1.3rem; }
+  .site-footer .foot__newsletter {
+    padding: 2rem 2rem 0 2rem; } }
+@media (min-width: 1200px) {
+  .site-footer .footer .links .links__items {
+    flex: 0 0 12.5%;
+    max-width: 12.5%; } }
+@media (max-width: 1200px) {
+  .site-footer .footer .links .links__items {
+    flex: 0 0 25%;
+    max-width: 25%; } }
+@media (max-width: 768px) {
+  .site-footer .footer .links {
+    padding-top: 2rem; }
+    .site-footer .footer .links .links__items {
+      flex: 0 0 100%;
+      max-width: 100%; }
+      .site-footer .footer .links .links__items ul {
+        padding-right: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s; }
+      .site-footer .footer .links .links__items .accordion-button {
+        cursor: pointer;
+        display: flex;
+        align-items: center; }
+        .site-footer .footer .links .links__items .accordion-button:before {
+          content: "";
+          font-family: "Font Awesome 6 Pro";
+          font-size: 0.7rem;
+          font-weight: bold;
+          margin-left: 0.5rem;
+          color: var(--primary-color); }
+        .site-footer .footer .links .links__items .accordion-button:after {
+          display: none; } }
+@media (min-width: 768px) {
+  .site-footer .footer .links .links__items h6 {
+    font-size: 18px; } }
 #mobileMenu {
   color: var(--text-color);
   width: 300px;
@@ -876,12 +987,13 @@ p {
     left: 0;
     z-index: 100;
     background: var(--white); }
-  #mobileMenu .list-socialMedia i {
-    font-size: 1.3rem;
-    color: var(--secondary-color); }
   #mobileMenu .pollDigiato {
     background-color: var(--secondary-color);
     color: var(--white); }
+
+.list-socialMedia i {
+  font-size: 1.3rem;
+  color: var(--secondary-color); }
 
 .btn-close {
   background: none;
