@@ -305,7 +305,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 .dropdown-menu {
   border: none; }
   .dropdown-menu .dropdown-submenu .dropdown-menu {
-    right: 100%;
+    left: 100%;
     top: 0;
     white-space: nowrap; }
 

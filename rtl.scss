@@ -133,3 +133,12 @@ body {
     padding-left: 0;
   }
 }
+.dropdown-menu {
+  border: none;
+  .dropdown-submenu {
+    .dropdown-menu {
+      right: 100%;
+      left: inherit;
+    }
+  }
+}
