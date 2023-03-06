@@ -1323,6 +1323,26 @@ p {
       }
     }
   }
+
+  .miniCard{
+    .miniCard__title{
+      p{
+        -webkit-line-clamp: 1;
+        font-size: 18px;
+      }
+      .appCard__description,.appCard__category{
+        font-size: 14px;
+        color: var(--text-color);
+      }
+      .appCard__description{
+        font-weight: bold;
+
+      }
+      .appCard__category{
+        font-weight: 500;
+      }
+    }
+  }
 }
 
 .siteTitleWrapper {

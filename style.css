@@ -746,6 +746,16 @@ p {
   display: block;
   margin: 0 0.5rem;
   margin-left: 2rem; }
+.applicationAreaSwiper .miniCard .miniCard__title p {
+  -webkit-line-clamp: 1;
+  font-size: 18px; }
+.applicationAreaSwiper .miniCard .miniCard__title .appCard__description, .applicationAreaSwiper .miniCard .miniCard__title .appCard__category {
+  font-size: 14px;
+  color: var(--text-color); }
+.applicationAreaSwiper .miniCard .miniCard__title .appCard__description {
+  font-weight: bold; }
+.applicationAreaSwiper .miniCard .miniCard__title .appCard__category {
+  font-weight: 500; }
 
 .siteTitleWrapper .swiper-button-prev:after, .siteTitleWrapper .swiper-button-next:after {
   font-size: 1rem; }
