@@ -1181,4 +1181,20 @@ p {
     .darkMode .mini-logo.logo-light {
       display: none; } }
 
+.pollDigiato {
+  position: fixed;
+  bottom: 8rem;
+  color: var(--white) !important;
+  z-index: 1;
+  opacity: 1 !important;
+  left: -3.9rem;
+  transform: rotate(90deg);
+  border: 1px solid var(--secondary-color);
+  background-color: var(--secondary-color);
+  border-radius: 10px 10px 0 0;
+  color: var(--white);
+  padding: 0.8rem 2rem; }
+  .pollDigiato:hover {
+    opacity: 0.8; }
+
 /*# sourceMappingURL=style.css.map */

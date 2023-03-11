@@ -1974,6 +1974,10 @@ p {
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor);
+  .pollDigiato{
+    //background-color: #f47a53;
+    //border-color:#f47a53 ;
+  }
 
   .site-footer {
     background-color: #03050c;
@@ -2135,3 +2139,22 @@ p {
     }
   }
 }
+.pollDigiato{
+  position: fixed;
+  bottom: 8rem;
+  color: var(--white) !important;
+  z-index: 1;
+  opacity: 1!important;
+  left: -3.9rem;
+  transform: rotate(90deg);
+  @include mainButtons(var(--secondary-color),10px 10px 0 0,0.8rem 2rem)
+}
+//.pollDigiato{
+//  position: fixed;
+//  bottom: 8rem;
+//  color: var(--white) !important;
+//  z-index: 1;
+//  opacity: 1!important;
+//  right: -3.9rem;
+//  transform: rotate(-90deg);
+//}
