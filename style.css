@@ -1185,7 +1185,7 @@ p {
   position: fixed;
   bottom: 8rem;
   color: var(--white) !important;
-  z-index: 1;
+  z-index: 10;
   opacity: 1 !important;
   left: -3.9rem;
   transform: rotate(90deg);
@@ -1196,5 +1196,26 @@ p {
   padding: 0.8rem 2rem; }
   .pollDigiato:hover {
     opacity: 0.8; }
+
+.backToTop {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 0.8rem;
+  position: fixed;
+  bottom: 6rem;
+  left: 6rem;
+  display: none;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.3s; }
+  .backToTop.active {
+    display: flex;
+    opacity: 1;
+    transition: all 0.3s; }
 
 /*# sourceMappingURL=style.css.map */

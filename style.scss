@@ -1974,7 +1974,8 @@ p {
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor);
-  .pollDigiato{
+
+  .pollDigiato {
     //background-color: #f47a53;
     //border-color:#f47a53 ;
   }
@@ -2139,22 +2140,38 @@ p {
     }
   }
 }
-.pollDigiato{
+
+.pollDigiato {
   position: fixed;
   bottom: 8rem;
   color: var(--white) !important;
-  z-index: 1;
-  opacity: 1!important;
+  z-index: 10;
+  opacity: 1 !important;
   left: -3.9rem;
   transform: rotate(90deg);
-  @include mainButtons(var(--secondary-color),10px 10px 0 0,0.8rem 2rem)
+  @include mainButtons(var(--secondary-color), 10px 10px 0 0, 0.8rem 2rem)
 }
-//.pollDigiato{
-//  position: fixed;
-//  bottom: 8rem;
-//  color: var(--white) !important;
-//  z-index: 1;
-//  opacity: 1!important;
-//  right: -3.9rem;
-//  transform: rotate(-90deg);
-//}
+
+.backToTop {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  @include borderRadius;
+  position: fixed;
+  bottom: 6rem;
+  left: 6rem;
+  display: none;
+  z-index: 10;
+  opacity: 0;
+  @include transition;
+
+  &.active {
+    display: flex;
+    opacity: 1;
+    @include transition;
+  }
+}

@@ -93,4 +93,8 @@ body {
   left: inherit;
   transform: rotate(-90deg); }
 
+.backToTop {
+  right: 6rem;
+  left: inherit; }
+
 /*# sourceMappingURL=rtl.css.map */

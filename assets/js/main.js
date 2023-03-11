@@ -134,6 +134,7 @@ $(document).ready(function () {
     let loginModal = $('#loginModal');
     let loginEmail = $('#loginEmail');
     let body = $('body');
+    let backToTop = $('.backToTop');
 
     //focus input after open modal
     loginModal.on('shown.bs.modal', function () {
@@ -229,7 +230,6 @@ $(document).ready(function () {
     });
 
 
-
     new Swiper(".applicationAreaSwiper", {
         slidesPerView: 1,
         spaceBetween: 30,
@@ -280,6 +280,14 @@ $(document).ready(function () {
                 prev = scrollTop;
             } else {
             }
+
+
+            //add class active to back to top button
+            if (scrollTop > 500) {
+                backToTop.addClass('active');
+            } else {
+                backToTop.removeClass('active')
+            }
         });
     }
 
@@ -311,23 +319,22 @@ $(document).ready(function () {
 
 
     //accordion links__items in footer
-  function accordtionLinksItem() {
-      var acc = document.getElementsByClassName("accordion-button");
-      var i;
+    function accordtionLinksItem() {
+        var acc = document.getElementsByClassName("accordion-button");
+        var i;
 
-      for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-              this.classList.toggle("active");
-              var panel = this.nextElementSibling;
-              if (panel.style.maxHeight) {
-                  panel.style.maxHeight = null;
-              } else {
-                  panel.style.maxHeight = panel.scrollHeight + "px";
-              }
-          });
-      }
-  }
-
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    }
 
 
     //run stickyBody function in breakpoint
