@@ -499,7 +499,7 @@ input:focus {
       @include bordered(var(--gray-border));
       background-color: var(--white);
       width: 25rem;
-
+      margin-left: 1rem;
     }
 
 
@@ -519,7 +519,7 @@ input:focus {
   }
 
   i {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -573,6 +573,8 @@ input:focus {
     .head__theme {
       &:after {
         @include headThemeAfter(var(--gray-border), 21px, 2px);
+        margin-right: 0.5rem;
+        margin-left: 1.5rem;
       }
     }
   }
@@ -1347,7 +1349,7 @@ p {
     .miniCard__title {
       p {
         -webkit-line-clamp: 1;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
       }
 
@@ -1462,6 +1464,9 @@ p {
 }
 
 @media (max-width: 992px) {
+  .site-navigation {
+    z-index: 1050;
+  }
   .site-header {
     .logoImg {
       display: none;
@@ -1769,6 +1774,26 @@ p {
   }
 }
 
+.icon-toggle {
+  .btn-close {
+    display: none;
+  }
+
+  .hamburgerMenuBtn {
+    display: flex;
+  }
+
+  &.active {
+    .btn-close {
+      display: flex;
+    }
+
+    .hamburgerMenuBtn {
+      display: none;
+    }
+  }
+}
+
 #mobileMenu {
   color: var(--text-color);
   width: 300px;
@@ -1779,7 +1804,7 @@ p {
     border-top: none;
     border-right: none;
     border-left: none;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
 
     .head {
 
@@ -1859,7 +1884,7 @@ p {
   background: none;
   color: inherit !important;
   font-size: 1.7rem;
-
+  display: flex;
   opacity: 1 !important;
 
   &:focus {
@@ -1974,6 +1999,50 @@ p {
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor);
+
+  .primary-menu {
+    a {
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .copyright {
+    background-color: #161718;
+
+    .list-socialMedia {
+      li {
+        i {
+          color: var(--white);
+        }
+      }
+    }
+  }
+
+  .site-footer {
+    .footer {
+      h5 {
+        color: var(--text-color);
+      }
+
+      .links {
+        .links__items {
+          h6 {
+            color: var(--text-color);
+          }
+
+          ul {
+            li {
+              a {
+                color: var(--white);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   .pollDigiato {
     //background-color: #f47a53;
@@ -2141,7 +2210,7 @@ p {
   }
 }
 
-.pollDigiato {
+#pollDigiato {
   position: fixed;
   bottom: 8rem;
   color: var(--white) !important;
@@ -2155,7 +2224,7 @@ p {
 .backToTop {
   width: 4.5rem;
   height: 4.5rem;
-  background-color: var(--primary-color);
+  background-color: #5ca7f0;
   color: var(--white) !important;
   align-items: center;
   justify-content: center;
@@ -2173,5 +2242,9 @@ p {
     display: flex;
     opacity: 1;
     @include transition;
+  }
+
+  &:hover {
+    background-color: var(--primary-color);
   }
 }

@@ -199,7 +199,7 @@ body {
 
   }
 }
-.pollDigiato{
+#pollDigiato{
   right: -3.9rem;
   left: inherit;
   transform: rotate(-90deg);
@@ -207,4 +207,20 @@ body {
 .backToTop {
   right:6rem;
   left: inherit;
+}
+.site-header{
+  .head {
+    .head__theme{
+      &:after{
+        margin-left: 0.5rem;
+        margin-right: 1.5rem;
+      }
+    }
+    #searchArea{
+      &.active{
+        margin-right: 1rem;
+        margin-left: 0;
+      }
+    }
+  }
 }

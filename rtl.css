@@ -88,7 +88,7 @@ body {
 .darkMode .applicationAreaSwiper .swiper-button-prev.swiper-button-prev, .darkMode .applicationAreaSwiper .swiper-button-next.swiper-button-prev {
   background: linear-gradient(-90deg, #161718 32.65%, rgba(45, 46, 49, 0) 100%); }
 
-.pollDigiato {
+#pollDigiato {
   right: -3.9rem;
   left: inherit;
   transform: rotate(-90deg); }
@@ -96,5 +96,12 @@ body {
 .backToTop {
   right: 6rem;
   left: inherit; }
+
+.site-header .head .head__theme:after {
+  margin-left: 0.5rem;
+  margin-right: 1.5rem; }
+.site-header .head #searchArea.active {
+  margin-right: 1rem;
+  margin-left: 0; }
 
 /*# sourceMappingURL=rtl.css.map */

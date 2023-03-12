@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>digiato</title>
-    <!--                             <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
+    <!--                                 <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
@@ -18,7 +18,7 @@
     <script src="assets/js/jquery.validate.min.js"></script>
 </head>
 
-<body class="">
+<body class="px-0">
 <!-- <div class="container">
 <div class="row">
     <div class="col-6">
@@ -45,7 +45,7 @@
 </div>
 </div> -->
 <!--header-->
-<header class="site-header d-lg-block d-none">
+<header class="site-header d-lg-block d-none" id="site-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -87,7 +87,7 @@
                             </div>
 
                             <!--profile-->
-                            <a href="#" class="head__profile ms-4" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <a href="#" class="head__profile ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">
                                 <i class="fa-regular fa-user"></i>
                             </a>
                         </div>
@@ -103,12 +103,14 @@
     <div class="container navigation">
         <div class="row d-flex align-items-center justify-content-between">
             <!--hamburger menu-->
-            <div class="col-auto d-lg-none d-block">
-                <a class="btn hamburgerMenuBtn d-flex align-items-center justify-content-center py-4"
+            <div class="col-auto d-lg-none d-flex align-items-center icon-toggle">
+                <a class="btn hamburgerMenuBtn align-items-center justify-content-center py-4"
                    data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
                    aria-controls="mobileMenu">
                     <i class="fa-regular fa-bars"></i>
                 </a>
+                <button type="button" class="btn-close py-4" data-bs-dismiss="offcanvas"
+                        aria-label="Close" data-bs-target="#mobileMenu"><i class="fa-regular fa-xmark"></i></button>
             </div>
 
             <!--primary menu-->
@@ -1964,13 +1966,13 @@
 
 </main>
 <!--poll-->
-<a href="#" class="pollDigiato d-lg-flex d-none">
+<a href="#" class="pollDigiato d-lg-flex d-none" id="pollDigiato">
     <i class="fa-regular fa-message-medical"></i>
     <span class="ms-2">ثبت بازخورد</span>
 </a>
 
 <!--backToTop-->
-<a href="#" class="backToTop">
+<a href="#site-header" class="backToTop">
     <i class="fa-sharp fa-solid fa-arrow-up"></i>
 </a>
 <!--login Modal -->
@@ -2108,9 +2110,8 @@
 <!--hamburger mobile menu-->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
     <div class="offcanvas-wrapper d-flex justify-content-start flex-column">
-        <div class="offcanvas-header d-flex flex-column">
-            <button type="button" class="btn-close ms-auto mb-3" data-bs-dismiss="offcanvas"
-                    aria-label="Close"><i class="fa-regular fa-xmark"></i></button>
+        <div class="offcanvas-header d-flex flex-column p-0">
+
             <div class="mobileMenu__top">
                 <div class="head d-flex align-items-center">
 
@@ -2143,13 +2144,13 @@
                         <div class="subMenuMobile">
                             <div class="subMenuMobile__in px-3 h-100">
                                 <div class="mobileMenu__top d-flex align-items-center justify-content-between">
-                                    <button type="button" class="btn d-flex align-items-center backBtn"><i
+                                    <button type="button" class="btn d-flex align-items-center backBtn py-0"><i
                                             class="fa-sharp fa-regular fa-arrow-left me-2"></i>تازه های موبایل
                                     </button>
-                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                            aria-label="Close"><i class="fa-regular fa-xmark"></i></button>
+<!--                                    <button type="button" class="btn-close py-0" data-bs-dismiss="offcanvas"-->
+<!--                                            aria-label="Close"><i class="fa-regular fa-xmark"></i></button>-->
                                 </div>
-                                <div class="mobileMenu__middle">
+                                <div class="mobileMenu__middle mt-3">
                                     <ul class="nav flex-column primary-menu">
                                         <li><a href="#">تازه های موبایل</a></li>
                                         <li><a href="#">موبایل</a></li>

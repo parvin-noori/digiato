@@ -7,7 +7,8 @@ $(document).ready(function () {
     let changeThemeBtn = $(".head__theme");
 
     //change theme
-    changeThemeBtn.click(function () {
+    changeThemeBtn.click(function (e) {
+        e.preventDefault();
         $('body').toggleClass('darkMode')
         $("i", this).toggleClass("fa-regular fa-moon fa-regular fa-brightness");
     });
@@ -271,7 +272,7 @@ $(document).ready(function () {
             }
 
             // add hidden nav class to site navigation after 500 scroll top
-            if (scrollTop >= 500) {
+            if (scrollTop >= 400) {
 
                 //hide nav on scroll
                 siteNavigation.toggleClass('hidden', scrollTop > prev);
@@ -315,6 +316,10 @@ $(document).ready(function () {
     //close submenu after close offcanvas
     mobileMenu.on('hidden.bs.offcanvas', function () {
         $('.subMenuMobile').hide();
+        $('.icon-toggle').removeClass('active')
+    });
+    mobileMenu.on('shown.bs.offcanvas', function () {
+        $('.icon-toggle').addClass('active')
     });
 
 
@@ -336,6 +341,10 @@ $(document).ready(function () {
         }
     }
 
+    // console.log($('.site-navigation').height());
+
+    // top of mobileMenu drawer
+    mobileMenu.css("top",($('.site-navigation').height())-2);
 
     //run stickyBody function in breakpoint
     var width = $("body").width();
