@@ -316,10 +316,28 @@ $(document).ready(function () {
     //close submenu after close offcanvas
     mobileMenu.on('hidden.bs.offcanvas', function () {
         $('.subMenuMobile').hide();
+        $('.openSearchMobile').hide()
+        mobileMenu.removeClass('withSearch');
         $('.icon-toggle').removeClass('active')
     });
     mobileMenu.on('shown.bs.offcanvas', function () {
         $('.icon-toggle').addClass('active')
+    });
+
+
+    // let open search mobile
+    let responsiveSearchBtn = $('.responsiveSearchBtn');
+    let openSearchMobile = $('.openSearchMobile');
+    let backBtnSearch = $('.openSearchMobile .backBtn');
+
+
+    responsiveSearchBtn.click(function () {
+        openSearchMobile.fadeIn(300);
+        mobileMenu.addClass('withSearch');
+    });
+    backBtnSearch.click(function () {
+        openSearchMobile.fadeOut(300);
+        mobileMenu.removeClass('withSearch');
     });
 
 
@@ -344,7 +362,7 @@ $(document).ready(function () {
     // console.log($('.site-navigation').height());
 
     // top of mobileMenu drawer
-    mobileMenu.css("top",($('.site-navigation').height())-2);
+    mobileMenu.css("top", ($('.site-navigation').height()) - 2);
 
     //run stickyBody function in breakpoint
     var width = $("body").width();

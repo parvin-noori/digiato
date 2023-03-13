@@ -260,7 +260,7 @@ input:focus {
       background-color: var(--gray-border);
       height: 21px;
       display: block;
-      margin: 0 0.5rem;
+      margin-left: 0.5rem;
       margin-right: 0.5rem;
       margin-left: 1.5rem; }
   .site-header .logo-dark {
@@ -342,7 +342,6 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 .siteTitle {
   margin-bottom: 16px;
   color: var(--dark-blue);
-  font-size: 1.5rem;
   font-weight: bold;
   line-height: 48px;
   letter-spacing: -0.5px;
@@ -355,7 +354,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     background-color: var(--secondary-color);
     height: 23px;
     display: block;
-    margin: 0 0.5rem;
+    margin-left: 0.5rem;
     border-radius: 0.2rem; }
 
 @media (min-width: 1200px) {
@@ -527,7 +526,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
         background-color: var(--gray-border);
         height: 60px;
         display: block;
-        margin: 0 0.5rem;
+        margin-left: 0.5rem;
         top: 0.8rem;
         right: -2rem;
         position: absolute; }
@@ -756,7 +755,7 @@ p {
   background-color: var(--gray-border);
   height: 6rem;
   display: block;
-  margin: 0 0.5rem;
+  margin-left: 0.5rem;
   margin-left: 2rem; }
 .applicationAreaSwiper .miniCard .miniCard__title p {
   -webkit-line-clamp: 1;
@@ -789,7 +788,7 @@ p {
   background-color: var(--secondary-color);
   height: 20px;
   display: block;
-  margin: 0 0.5rem;
+  margin-left: 0.5rem;
   border-radius: 0.2rem; }
 
 .card__overload--info {
@@ -808,7 +807,7 @@ p {
       background-color: var(--white);
       height: 15px;
       display: block;
-      margin: 0 0.5rem; }
+      margin-left: 0.5rem; }
 
 .todayNews .todayNews__head a {
   color: var(--text-color); }
@@ -826,8 +825,14 @@ p {
     display: none; }
 
   .homeCardsFooterBox .homeCardsFooter {
-    margin-top: -3rem; } }
+    margin-top: -3rem; }
+
+  .siteTitle {
+    font-size: 1.5rem; } }
 @media (max-width: 992px) {
+  .siteTitle {
+    font-size: 1rem; }
+
   .site-navigation {
     z-index: 1050; }
 
@@ -989,7 +994,25 @@ p {
 #mobileMenu {
   color: var(--text-color);
   width: 300px;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  border: 0; }
+  #mobileMenu.withSearch {
+    width: 100%; }
+    #mobileMenu.withSearch .responsiveSearch-input {
+      display: flex;
+      align-items: center;
+      color: var(--text-color);
+      overflow: hidden;
+      border-radius: 0.8rem;
+      border: 1px solid transparent;
+      transition: all 0.3s; }
+      #mobileMenu.withSearch .responsiveSearch-input input {
+        padding: 1rem 0 1rem 1rem;
+        color: inherit; }
+      #mobileMenu.withSearch .responsiveSearch-input input::placeholder, #mobileMenu.withSearch .responsiveSearch-input button {
+        color: inherit; }
+      #mobileMenu.withSearch .responsiveSearch-input:focus-within {
+        border-color: var(--gray-border); }
   #mobileMenu .mobileMenu__top {
     border: 1px solid var(--gray-border);
     border-top: none;
@@ -1002,13 +1025,15 @@ p {
       background-color: var(--gray-border);
       height: 21px;
       display: block;
-      margin: 0 0.5rem; }
+      margin-left: 0.5rem; }
     #mobileMenu .mobileMenu__top .head .head__profile {
       font-weight: bold;
       white-space: nowrap; }
   #mobileMenu .mobileMenu__middle {
     height: 100%;
     overflow: auto; }
+  #mobileMenu .subMenuMobile .mobileMenu__middle {
+    height: 83%; }
   #mobileMenu .pollDigiato, #mobileMenu .list-socialMedia {
     padding: 1rem; }
   #mobileMenu .offcanvas-wrapper {
@@ -1208,6 +1233,25 @@ p {
       display: block; }
     .darkMode .mini-logo.logo-light {
       display: none; } }
+
+.openSearchMobile {
+  position: absolute;
+  background: var(--white);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none; }
+  .openSearchMobile .openSearchMobile__keywords ul {
+    display: flex;
+    flex-wrap: wrap; }
+    .openSearchMobile .openSearchMobile__keywords ul li {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 1.5rem; }
+      .openSearchMobile .openSearchMobile__keywords ul li a {
+        color: inherit;
+        font-weight: 500; }
 
 #pollDigiato {
   position: fixed;
