@@ -10,7 +10,7 @@ body {
 
 .homeCardsFooterBox .homeCardsFooter .swiper-slide:not(:last-child):after {
   right: inherit;
-  left: -2rem; }
+  left: -1.6rem; }
 
 .siteTitleWrapper .swiper-button-prev.swiper-button-next, .siteTitleWrapper .swiper-button-next.swiper-button-next {
   left: 0;

@@ -136,8 +136,11 @@ a {
   .latestIranianNews .miniCard .miniCard__title p {
     font-size: 16px; } }
 @media (max-width: 768px) {
-  .todayNews .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .todayNews .row > *:not(:last-child) .card.videoCard, .todayNews .row > *:not(:last-child) .miniCard:not(:last-child), .videoCards .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .videoCards .row > *:not(:last-child) .card.videoCard, .videoCards .row > *:not(:last-child) .miniCard:not(:last-child), .miniCards .card.homeTodayItem:not(.card--full), .miniCards .card.videoCard, .miniCards .miniCard:not(:last-child) {
-    border-bottom: 1px solid var(--gray-border); }
+  .card, .miniCard {
+    border-bottom: 1px solid var(--gray-border);
+    border-top: 0;
+    border-right: 0;
+    border-left: 0; }
 
   .todaysNews__more {
     width: 100%; }
@@ -189,13 +192,14 @@ a {
     height: 2.5rem;
     width: 2.5rem; }
 
-  .miniCards .miniCard {
+  .miniCard {
     padding-bottom: 1rem; }
-    .miniCards .miniCard .miniCard__title {
-      font-size: 0.9rem; }
-    .miniCards .miniCard .miniCard__picture {
-      width: 80px;
-      height: 80px; }
+
+  .miniCards .miniCard .miniCard__title {
+    font-size: 0.9rem; }
+  .miniCards .miniCard .miniCard__picture {
+    width: 80px;
+    height: 80px; }
 
   .miniCard .miniCard__title p {
     font-size: 13px !important; }
@@ -260,7 +264,7 @@ input:focus {
       background-color: var(--gray-border);
       height: 21px;
       display: block;
-      margin-left: 0.5rem;
+      margin: 0 0.5rem;
       margin-right: 0.5rem;
       margin-left: 1.5rem; }
   .site-header .logo-dark {
@@ -354,7 +358,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
     background-color: var(--secondary-color);
     height: 23px;
     display: block;
-    margin-left: 0.5rem;
+    margin: 0 0.5rem;
     border-radius: 0.2rem; }
 
 @media (min-width: 1200px) {
@@ -526,7 +530,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
         background-color: var(--gray-border);
         height: 60px;
         display: block;
-        margin-left: 0.5rem;
+        margin: 0 0.5rem;
         top: 0.8rem;
         right: -2rem;
         position: absolute; }
@@ -542,7 +546,6 @@ p {
 
 .card {
   background-color: transparent;
-  border: none;
   position: relative;
   overflow: hidden; }
   .card.videoCard .card__overload--date {
@@ -755,7 +758,7 @@ p {
   background-color: var(--gray-border);
   height: 6rem;
   display: block;
-  margin-left: 0.5rem;
+  margin: 0 0.5rem;
   margin-left: 2rem; }
 .applicationAreaSwiper .miniCard .miniCard__title p {
   -webkit-line-clamp: 1;
@@ -788,7 +791,7 @@ p {
   background-color: var(--secondary-color);
   height: 20px;
   display: block;
-  margin-left: 0.5rem;
+  margin: 0 0.5rem;
   border-radius: 0.2rem; }
 
 .card__overload--info {
@@ -807,7 +810,7 @@ p {
       background-color: var(--white);
       height: 15px;
       display: block;
-      margin-left: 0.5rem; }
+      margin: 0 0.5rem; }
 
 .todayNews .todayNews__head a {
   color: var(--text-color); }
@@ -930,7 +933,7 @@ p {
     .site-footer .foot .foot__social ul li i {
       font-size: 1.3rem; }
   .site-footer .foot__newsletter {
-    padding: 2rem 2rem 0 2rem; } }
+    padding-top: 2rem; } }
 @media (min-width: 1200px) {
   .site-footer .footer .links .links__items {
     flex: 0 0 12.5%;
@@ -966,6 +969,9 @@ p {
         .site-footer .footer .links .links__items .accordion-button:after {
           display: none; } }
 @media (min-width: 768px) {
+  .card {
+    border: none; }
+
   .site-footer .footer .links .links__items h6 {
     font-size: 18px; } }
 .copyright {
@@ -1025,7 +1031,7 @@ p {
       background-color: var(--gray-border);
       height: 21px;
       display: block;
-      margin-left: 0.5rem; }
+      margin: 0 0.5rem; }
     #mobileMenu .mobileMenu__top .head .head__profile {
       font-weight: bold;
       white-space: nowrap; }
@@ -1154,6 +1160,12 @@ p {
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor); }
+  .darkMode .openSearchMobile, .darkMode .mobileMenu__bottom {
+    background-color: var(--dark-mobildMenu); }
+  .darkMode #mobileMenu .backBtn {
+    color: var(--white) !important; }
+  .darkMode .site-footer .footer .links .links__items .accordion-button:before {
+    color: var(--text-color); }
   .darkMode .primary-menu a:hover {
     color: var(--primary-color); }
   .darkMode .copyright {
