@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>single</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>digiato</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rtl.css">
+    <script src="assets/js/jquery-3.6.3.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+</head>
+<body>
+<!--header-->
+<header class="site-header d-lg-block d-none" id="site-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="header" class="row align-items-center justify-content-between">
+
+                    <!--logo-->
+                    <div class="col-auto">
+                        <div class="site-branding">
+                            <a href="#" class="logo-brand">
+                                <img src="assets/imgs/logo.svg" alt="لوگوی دیجیاتو" class=" logo-light logoImg">
+                                <img src="assets/imgs/logo-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark logoImg">
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--head-->
+                    <div class="col-auto d-md-flex d-none">
+                        <div class="head d-flex align-items-center">
+
+                            <!--heade theme-->
+                            <a href="#" class="head__theme">
+                                <i class="fa-regular fa-moon"></i>
+                            </a>
+
+                            <!--search area-->
+                            <div class="searchArea me-2">
+                                <div id="searchArea">
+                                    <form action="">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control border-0 bg-transparent"
+                                                   placeholder="کلمه کلیدی مورد نظر را جستجو کنید"
+                                                   aria-label="Recipient's username" aria-describedby="searchBtn">
+                                            <button class="btn p-0  border-0 searchBtn" type="button" id=""><i
+                                                    class="fa-regular fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!--profile-->
+                            <a href="#" class="head__profile ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fa-regular fa-user"></i>
+                            </a>
+                            <!--                            <div class="userHeaderArea ms-3">-->
+                            <!--                                <a href="#" class="userHeaderArea__picture">-->
+                            <!--                                    <img src="assets/imgs/user7.png" alt="" class="w-100">-->
+                            <!--                                </a>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--site navigation-->
+<div class="site-navigation-wrapper">
+    <nav class="site-navigation">
+        <div class="container navigation">
+            <div class="row d-flex align-items-center justify-content-between">
+                <!--hamburger menu-->
+                <div class="col-auto d-lg-none d-flex align-items-center icon-toggle">
+                    <a class="btn hamburgerMenuBtn align-items-center justify-content-center py-4"
+                       data-bs-toggle="offcanvas" href="#mobileMenu" role="button"
+                       aria-controls="mobileMenu">
+                        <i class="fa-regular fa-bars"></i>
+                    </a>
+                    <button type="button" class="btn-close py-4" data-bs-dismiss="offcanvas"
+                            aria-label="Close" data-bs-target="#mobileMenu"><i class="fa-regular fa-xmark"></i></button>
+                </div>
+
+                <!--primary menu-->
+                <div class="col-auto d-lg-block d-none">
+                    <div id="primary-menu" class="primary-menu">
+                        <ul class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="hasChildren dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">تکنولوژی</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown dropdown-submenu dropend">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Action</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="more"><a href="#">Dropdown Link 4</a></li>
+                                            <li><a href="#">Dropdown Submenu Link 4.1</a></li>
+                                            <li><a href="#">Dropdown Submenu Link 4.2</a></li>
+                                            <li><a href="#">Dropdown Submenu Link 4.3</a></li>
+                                            <li><a href="#">Dropdown Submenu Link 4.4</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">خودرو</a></li>
+                            <li><a href="#">نقد و بررسی</a></li>
+                            <li><a href="#">ویدیو</a></li>
+                            <li><a href="#">آموزش</a></li>
+                            <li><a href="#">راهنمای خرید</a></li>
+                            <li><a href="#">علمی</a></li>
+                            <li><a href="#">کسب و کار</a></li>
+                            <li><a href="#">دیجیاتو</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--popularArea-->
+                <div class="col-auto d-lg-block d-none">
+                    <div class="popularArea d-flex align-items-center">
+                        <strong>پرطرفدارها:</strong>
+                        <ul class="nav list-unstyled">
+                            <li><a href="#"> s23 گلکسی</a></li>
+                            <li><a href="#">ChatGpt</a></li>
+                            <li><a href="#">ایلان ماسک</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--responsive logo-->
+                <div class="col-auto d-lg-none d-block">
+                    <a href="#" class="logo-brand">
+                        <img src="assets/imgs/mini-logo-en.svg" alt="لوگوی دیجیاتو" class=" logo-light mini-logo">
+                        <img src="assets/imgs/mini-logo-en-dark.svg" alt="لوگوی دیجیاتو" class="logo-dark mini-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Scroll page progress bar-->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

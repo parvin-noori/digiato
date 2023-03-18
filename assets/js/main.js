@@ -257,6 +257,7 @@ $(document).ready(function () {
 // add class sticky to body after scroll page
     function stikcyBody() {
         let siteNavigation = $('.site-navigation');
+        let siteNavigationWrapper = $('.site-navigation-wrapper');
         let siteNavigationOffsetTop = siteNavigation.offset().top;
         let prev = 0;
 
@@ -264,18 +265,18 @@ $(document).ready(function () {
             // add sticky class to site navigation after scroll on it
             let scrollTop = $(this).scrollTop()
             if (scrollTop >= siteNavigationOffsetTop) {
-                siteNavigation.addClass('sticky');
+                siteNavigationWrapper.addClass('sticky');
                 body.addClass('sticky');
             } else {
                 body.removeClass('sticky');
-                siteNavigation.removeClass('sticky');
+                siteNavigationWrapper.removeClass('sticky');
             }
 
             // add hidden nav class to site navigation after 500 scroll top
             if (scrollTop >= 400) {
 
                 //hide nav on scroll
-                siteNavigation.toggleClass('hidden', scrollTop > prev);
+                siteNavigationWrapper.toggleClass('hidden', scrollTop > prev);
                 body.toggleClass('sticky', scrollTop < prev);
                 siteNavigation.toggleClass('sticky', scrollTop < prev);
                 prev = scrollTop;
@@ -388,11 +389,33 @@ $(document).ready(function () {
     });
 
     //back to top
-    var backToTopBtn=$('.backToTop');
+    var backToTopBtn = $('.backToTop');
 
-    backToTopBtn.on('click', function(e) {
+    backToTopBtn.on('click', function (e) {
         e.preventDefault();
-        $('html, body').animate({scrollTop:0}, '100');
+        $('html, body').animate({scrollTop: 0}, '100');
     });
+
+
+
+    // Scroll page progress bar
+    let progressbar = document.getElementById("progressBar");
+
+    function progressBarScroll() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+            height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+            scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+    }
+
+    if (document.body.contains(progressbar)) {
+        window.onscroll = function () {
+            progressBarScroll();
+        };
+    }
+
 });
+
+
+
 

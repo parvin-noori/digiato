@@ -348,6 +348,18 @@ a {
   }
 }
 
+.progress-container {
+  background-color: transparent;
+  height: 5px;
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  height: 5px;
+  width: 0%;
+}
+
 @media (max-width: 768px) {
   .cardWrapper, .miniCard {
     border-bottom: 1px solid var(--gray-border);
@@ -357,13 +369,7 @@ a {
   }
   .card {
     border: 0;
-    //border-bottom: 1px solid var(--gray-border);
   }
-  //.todayNews .row > *:not(:last-child), .videoCards .row > *:not(:last-child), .miniCards {
-  //  .card.homeTodayItem:not(.card--full), .card.videoCard, .miniCard:not(:last-child) {
-  //    border-bottom: 1px solid var(--gray-border);
-  //  }
-  //}
   .todaysNews__more {
     width: 100%;
   }
@@ -612,14 +618,19 @@ input:focus {
 
 }
 
-.site-navigation {
+.site-navigation-wrapper {
   @include transition;
   position: sticky;
   top: 0;
   z-index: 100;
 
-  &.hidden {
-    transform: translateY(-100%);
+  .site-navigation {
+    background-color: var(--navigation-background);
+    color: var(--text-color);
+  }
+
+ &.hidden {
+    transform: translateY(calc(-100% + 5px));
   }
 
   .popularArea, .primary-menu {
@@ -649,8 +660,6 @@ input:focus {
     }
   }
 
-  background-color: var(--navigation-background);
-  color: var(--text-color);
 
   a {
     color: inherit;
