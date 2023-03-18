@@ -1379,6 +1379,10 @@ p {
     background: linear-gradient(-90deg, #161718 32.65%, rgba(45, 46, 49, 0) 100%); }
   .darkMode .applicationAreaSwiper .swiper-button-prev.swiper-button-prev, .darkMode .applicationAreaSwiper .swiper-button-next.swiper-button-prev {
     background: linear-gradient(90deg, #161718 32.65%, rgba(45, 46, 49, 0) 100%); }
+  .darkMode .dailyNewsPageHeadItem {
+    color: var(--white); }
+    .darkMode .dailyNewsPageHeadItem .dailyNewsPageHead__description .dailyNewsPageHead__description--title, .darkMode .dailyNewsPageHeadItem .dailyNewsPageHead__description .dailyNewsPageHead__description--description, .darkMode .dailyNewsPageHeadItem .dailyNewsPageHead__description .dailyNewsPageHead__description--social i, .darkMode .dailyNewsPageHeadItem .dailyNewsPageHead__description .card__bookmark {
+      color: inherit !important; }
   @media (min-width: 992px) {
     .darkMode .site-header .logo-dark.logoImg {
       display: block; } }
