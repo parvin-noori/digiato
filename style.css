@@ -782,6 +782,11 @@ p {
   border: none;
   font-size: 1.4rem; }
 
+.articleNewsPosts .articlePost p {
+  font-size: 18px; }
+  .articleNewsPosts .articlePost p a {
+    color: var(--secondary-color); }
+
 @media (max-width: 1200px) {
   .dailyNewsPageHeadItem .dailyNewsPageHead__description {
     padding-left: 3rem; } }
@@ -820,8 +825,10 @@ p {
   .dailyNewsPageHeadItem .icon-share {
     display: none; } }
 @media (min-width: 992px) {
-  .dailyNewsPageHeadItem .dailyNewsPageHead__description--title {
-    font-size: 1.9rem; } }
+  .dailyNewsPageHeadItem {
+    margin-bottom: 8rem; }
+    .dailyNewsPageHeadItem .dailyNewsPageHead__description--title {
+      font-size: 1.9rem; } }
 @media (min-width: 1200px) {
   .card.homeTodayItem:not(.card--full).col-reverse, .card.videoCard:not(.card--full).col-reverse {
     display: flex;
