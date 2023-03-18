@@ -686,7 +686,7 @@ input:focus {
   color: var(--text-color);
 
   .breadcrumb-item + .breadcrumb-item::before {
-    content: '\f0d9';
+    content: '\f0da';
     font-family: "Font Awesome 6 Pro";
     padding: 0 0.5rem;
   }
@@ -1486,7 +1486,7 @@ p {
     }
 
     .dailyNewsPageHead__description {
-      padding-left: 7rem;
+      padding-right: 7rem;
     }
   }
 }

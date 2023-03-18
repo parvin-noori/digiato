@@ -328,7 +328,7 @@ input:focus {
   padding: 2rem 0;
   color: var(--text-color); }
   .breadcrumbWrapper .breadcrumb-item + .breadcrumb-item::before {
-    content: '\f0d9';
+    content: '\f0da';
     font-family: "Font Awesome 6 Pro";
     padding: 0 0.5rem; }
   .breadcrumbWrapper a {
@@ -832,7 +832,7 @@ p {
   .dailyNewsPageHeadItem .dailyNewsPageHead__description--title {
     font-size: 2.8rem; }
   .dailyNewsPageHeadItem .dailyNewsPageHead__description {
-    padding-left: 7rem; } }
+    padding-right: 7rem; } }
 .card__bookmark {
   position: absolute;
   z-index: 2;
