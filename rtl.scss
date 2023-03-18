@@ -25,6 +25,16 @@ body {
     }
   }
 }
+.openSearchMobile {
+  .mobileMenu__middle {
+    .siteTitle {
+      &:before {
+        margin-right: 0;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
 
 .siteTitleWrapper {
   .swiper-button-prev, .swiper-button-next {

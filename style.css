@@ -546,7 +546,6 @@ p {
 
 .card {
   background-color: transparent;
-  position: relative;
   overflow: hidden; }
   .card.videoCard .card__overload--date {
     font-weight: 500; }
@@ -592,7 +591,8 @@ p {
     color: inherit; }
   .card .card__picture {
     border-radius: 0.4rem;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
   .card .card__overload--info, .card .card__overload--title, .card .card__overload--description {
     position: relative;
     z-index: 2;
@@ -676,27 +676,31 @@ p {
       object-fit: cover; }
   .card:hover .card__picture img {
     transform: scale(1.05); }
-  .card.homeTodayItem, .card.videoCard {
+  .card.homeTodayItem.rowCard {
+    padding: 2rem 0; }
+    .card.homeTodayItem.rowCard:not(:last-child) {
+      border-bottom: 1px solid var(--gray-border); }
+  .card.homeTodayItem:not(.rowCard), .card.videoCard {
     height: 100%; }
-    .card.homeTodayItem:not(.card--full) .card-overload, .card.videoCard:not(.card--full) .card-overload {
-      position: relative;
-      padding: 1rem 0 0 0; }
-      .card.homeTodayItem:not(.card--full) .card-overload:before, .card.videoCard:not(.card--full) .card-overload:before {
-        display: none; }
-      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--category, .card.videoCard:not(.card--full) .card-overload .card__overload--category {
-        background-color: transparent;
-        color: var(--text-color);
-        margin-bottom: 0;
-        border: none;
-        padding: 0; }
-      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--title, .card.videoCard:not(.card--full) .card-overload .card__overload--title {
-        color: var(--blue); }
-      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--info, .card.videoCard:not(.card--full) .card-overload .card__overload--info {
-        color: var(--text-color); }
-        .card.homeTodayItem:not(.card--full) .card-overload .card__overload--info .card__overload--author:after, .card.videoCard:not(.card--full) .card-overload .card__overload--info .card__overload--author:after {
-          background-color: var(--text-color); }
-      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--description, .card.videoCard:not(.card--full) .card-overload .card__overload--description {
-        color: var(--dark-blue); }
+  .card.homeTodayItem:not(.card--full) .card-overload, .card.videoCard:not(.card--full) .card-overload {
+    position: relative;
+    padding: 1rem 0 0 0; }
+    .card.homeTodayItem:not(.card--full) .card-overload:before, .card.videoCard:not(.card--full) .card-overload:before {
+      display: none; }
+    .card.homeTodayItem:not(.card--full) .card-overload .card__overload--category, .card.videoCard:not(.card--full) .card-overload .card__overload--category {
+      background-color: transparent;
+      color: var(--text-color);
+      margin-bottom: 0;
+      border: none;
+      padding: 0; }
+    .card.homeTodayItem:not(.card--full) .card-overload .card__overload--title, .card.videoCard:not(.card--full) .card-overload .card__overload--title {
+      color: var(--blue); }
+    .card.homeTodayItem:not(.card--full) .card-overload .card__overload--info, .card.videoCard:not(.card--full) .card-overload .card__overload--info {
+      color: var(--text-color); }
+      .card.homeTodayItem:not(.card--full) .card-overload .card__overload--info .card__overload--author:after, .card.videoCard:not(.card--full) .card-overload .card__overload--info .card__overload--author:after {
+        background-color: var(--text-color); }
+    .card.homeTodayItem:not(.card--full) .card-overload .card__overload--description, .card.videoCard:not(.card--full) .card-overload .card__overload--description {
+      color: var(--dark-blue); }
   .card.rowCard .card__overload--author:after {
     display: none; }
   .card.rowCard .card-date {
@@ -997,6 +1001,9 @@ p {
 .icon-toggle.active .hamburgerMenuBtn {
   display: none; }
 
+.openSearchMobile .mobileMenu__middle .siteTitle:before {
+  margin-left: 0; }
+
 #mobileMenu {
   color: var(--text-color);
   width: 300px;
@@ -1013,7 +1020,7 @@ p {
       border: 1px solid transparent;
       transition: all 0.3s; }
       #mobileMenu.withSearch .responsiveSearch-input input {
-        padding: 1rem 0 1rem 1rem;
+        padding: 1rem;
         color: inherit; }
       #mobileMenu.withSearch .responsiveSearch-input input::placeholder, #mobileMenu.withSearch .responsiveSearch-input button {
         color: inherit; }
@@ -1156,6 +1163,9 @@ p {
     background-color: var(--secondary-color);
     opacity: 1;
     color: var(--white) !important; }
+
+.head__profile {
+  color: var(--primary-color); }
 
 .darkMode {
   background-color: var(--dark-body);

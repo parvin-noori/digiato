@@ -12,6 +12,10 @@ body {
   right: inherit;
   left: -1.6rem; }
 
+.openSearchMobile .mobileMenu__middle .siteTitle:before {
+  margin-right: 0;
+  margin-left: 0.5rem; }
+
 .siteTitleWrapper .swiper-button-prev.swiper-button-next, .siteTitleWrapper .swiper-button-next.swiper-button-next {
   left: 0;
   right: auto; }

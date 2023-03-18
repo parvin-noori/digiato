@@ -1024,7 +1024,7 @@ p {
 
 .card {
   background-color: transparent;
-  position: relative;
+  //position: relative;
   overflow: hidden;
 
   &.videoCard {
@@ -1104,6 +1104,7 @@ p {
   .card__picture {
     @include lightBorderRadius;
     overflow: hidden;
+    position: relative;
   }
 
   .card__overload--info, .card__overload--title, .card__overload--description {
@@ -1200,8 +1201,21 @@ p {
     }
   }
 
-  &.homeTodayItem, &.videoCard {
+  &.homeTodayItem.rowCard {
+    padding: 2rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--gray-border);
+
+    }
+  }
+
+  &.homeTodayItem:not(.rowCard), &.videoCard {
+
     height: 100%;
+  }
+
+  &.homeTodayItem, &.videoCard {
 
 
     &:not(.card--full) {
@@ -1809,6 +1823,16 @@ p {
   }
 }
 
+.openSearchMobile {
+  .mobileMenu__middle {
+    .siteTitle {
+      &:before {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
 #mobileMenu {
   color: var(--text-color);
   width: 300px;
@@ -1824,7 +1848,7 @@ p {
       color: var(--text-color);
 
       input {
-        padding: 1rem 0 1rem 1rem;
+        padding: 1rem;
 
         color: inherit;
       }
@@ -1863,6 +1887,7 @@ p {
       .head__profile {
         font-weight: bold;
         white-space: nowrap;
+
       }
     }
   }
@@ -2050,6 +2075,10 @@ p {
   }
 }
 
+.head__profile {
+  color: var(--primary-color);
+}
+
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor);
@@ -2173,6 +2202,7 @@ p {
 
     .head__profile {
       color: inherit;
+
     }
 
     .logo-light {

@@ -386,5 +386,13 @@ $(document).ready(function () {
         }
 
     });
+
+    //back to top
+    var backToTopBtn=$('.backToTop');
+
+    backToTopBtn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '100');
+    });
 });
 
