@@ -136,11 +136,14 @@ a {
   .latestIranianNews .miniCard .miniCard__title p {
     font-size: 16px; } }
 @media (max-width: 768px) {
-  .card, .miniCard {
-    border-bottom: 1px solid var(--gray-border);
-    border-top: 0;
-    border-right: 0;
-    border-left: 0; }
+  .cardWrapper, .miniCard {
+    border-bottom: 1px solid var(--gray-border); }
+
+  .cardWrapper:last-child, .miniCard:last-child {
+    border-bottom: 0; }
+
+  .card {
+    border: 0; }
 
   .todaysNews__more {
     width: 100%; }
@@ -677,7 +680,8 @@ p {
   .card:hover .card__picture img {
     transform: scale(1.05); }
   .card.homeTodayItem.rowCard {
-    padding: 2rem 0; }
+    padding: 2rem 0;
+    border-radius: 0; }
     .card.homeTodayItem.rowCard:not(:last-child) {
       border-bottom: 1px solid var(--gray-border); }
   .card.homeTodayItem:not(.rowCard), .card.videoCard {
