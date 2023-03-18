@@ -414,6 +414,17 @@ $(document).ready(function () {
         };
     }
 
+    //add active class to list social media in single page (responsive)
+    let iconShare=$('.icon-share');
+    let shareIcons=$('.share__icons');
+    iconShare.click(function (e) {
+        e.preventDefault();
+        shareIcons.addClass('active');
+        iconShare.css({"display":"none"});
+        console.log(this)
+
+    })
+
 });
 
 
