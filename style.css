@@ -135,6 +135,14 @@ a {
 
   .latestIranianNews .miniCard .miniCard__title p {
     font-size: 16px; } }
+.userHeaderArea__picture {
+  width: 2.9rem;
+  height: 2.9rem;
+  display: block; }
+  .userHeaderArea__picture img {
+    border-radius: 50%;
+    object-fit: cover; }
+
 @media (max-width: 768px) {
   .cardWrapper, .miniCard {
     border-bottom: 1px solid var(--gray-border); }

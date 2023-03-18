@@ -337,6 +337,17 @@ a {
   }
 }
 
+.userHeaderArea__picture {
+  width: 2.9rem;
+  height: 2.9rem;
+  display: block;
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
 @media (max-width: 768px) {
   .cardWrapper, .miniCard {
     border-bottom: 1px solid var(--gray-border);
