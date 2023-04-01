@@ -1443,6 +1443,7 @@ p {
 @media (min-width: 1200px) {
   .articleNewsPosts {
     .articlePost {
+      padding: 0 5rem;
       p {
         font-size: 18px;
         margin-bottom: 2rem;
@@ -1764,6 +1765,29 @@ p {
     }
   }
 
+}
+.registerWidget{
+  @include bordered(var(--lightBlue));
+  border-width: 2px;
+  padding: 2rem;
+  text-align: center;
+  @include borderRadius;
+  .registerWidget--title{
+    font-weight: bold;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+  }
+  p{
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .btn.registerModalOpen{
+    width: 100%;
+    @include mainButtons(var(--secondary-color),16px,1rem);
+
+  }
 }
 
 .articleNewsPosts__content {
