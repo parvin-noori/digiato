@@ -250,8 +250,8 @@ body {
 @media (max-width: 1200px) {
   .dailyNewsPageHeadItem {
     .dailyNewsPageHead__description {
-      padding-left: 3rem;
-      padding-right: 0;
+      //padding-left: 3rem;
+      //padding-right: 0;
     }
   }
 }
@@ -294,4 +294,15 @@ body {
 .list-socialMedia ul li{
   margin-right: 1.5rem;
   margin-left: 0;
+}
+@media (max-width: 768px){
+  .articleNewsPosts__content {
+    li {
+      a:before {
+        margin-left: 1rem;
+        margin-right: 0;
+        transform: scaleX(-1);
+      }
+    }
+  }
 }
