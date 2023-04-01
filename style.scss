@@ -51,7 +51,7 @@
   background-color: $color;
   height: $height;
   display: block;
-  margin: 0 0.5rem;
+  margin-right: 0.5rem;
 }
 
 @mixin transition {
@@ -361,7 +361,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  .cardWrapper, .miniCard {
+  .cardWrapper:not(:last-child), .miniCard:not(:last-child), .articleCardWrapper:not(:last-child) {
     border-bottom: 1px solid var(--gray-border);
   }
   .cardWrapper:last-child, .miniCard:last-child {
@@ -1394,7 +1394,7 @@ p {
 }
 
 .articleNewsPosts {
-  margin-bottom: 5rem;
+  //margin-bottom: 5rem;
   @include bordered(var(--gray-border));
   border-top: 0;
   border-right: 0;
@@ -1444,6 +1444,7 @@ p {
   .articleNewsPosts {
     .articlePost {
       padding: 0 5rem;
+
       p {
         font-size: 18px;
         margin-bottom: 2rem;
@@ -1766,27 +1767,133 @@ p {
   }
 
 }
-.registerWidget{
+
+.registerWidget {
   @include bordered(var(--lightBlue));
   border-width: 2px;
   padding: 2rem;
   text-align: center;
   @include borderRadius;
-  .registerWidget--title{
+
+  .registerWidget--title {
     font-weight: bold;
     color: var(--dark-blue);
     margin-bottom: 1rem;
   }
-  p{
+
+  p {
     color: var(--text-color);
     font-weight: 500;
     font-size: 0.9rem;
     margin-bottom: 2rem;
   }
-  .btn.registerModalOpen{
-    width: 100%;
-    @include mainButtons(var(--secondary-color),16px,1rem);
 
+  .btn.registerModalOpen {
+    width: 100%;
+    @include mainButtons(var(--secondary-color), 16px, 1rem);
+
+  }
+}
+
+.articleCardWrapper {
+    margin-bottom: 1rem;
+  .articleCard {
+
+    .articleCard__picture {
+      margin-bottom: 1rem;
+      overflow: hidden;
+      @include lightBorderRadius;
+
+      img {
+        transition: all 1s;
+
+      }
+
+      &:hover {
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .articleCard__details--title {
+      color: var(--blue);
+      font-weight: 500;
+      line-height: 2;
+    }
+
+  }
+}
+
+@media (min-width: 768px) {
+  .articleCard {
+    .articleCard__picture {
+      margin-bottom: 1rem;
+      overflow: hidden;
+      @include lightBorderRadius;
+
+      img {
+        transition: all 1s;
+
+      }
+
+      &:hover {
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .articleCard__details--title {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .articleCard__details {
+    flex: 1;
+    margin-left: 1rem;
+  }
+  .articleCard {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .articleCard__picture {
+    width: 80px;
+    height: 80px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .articleCard {
+    .articleCard__picture {
+      margin-bottom: 1rem;
+      overflow: hidden;
+      @include lightBorderRadius;
+
+      img {
+        transition: all 1s;
+
+      }
+
+      &:hover {
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .articleCard__details--title {
+      font-size: 13px;
+    }
   }
 }
 

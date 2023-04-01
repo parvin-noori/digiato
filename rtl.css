@@ -142,5 +142,9 @@ body {
     margin-left: 1rem;
     margin-right: 0;
     transform: scaleX(-1); } }
+.siteTitle::before {
+  content: '';
+  margin-left: 0.5rem;
+  margin-right: 0; }
 
 /*# sourceMappingURL=rtl.css.map */
