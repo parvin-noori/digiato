@@ -121,8 +121,8 @@ body {
 
 @media (max-width: 1200px) {
   .dailyNewsPageHeadItem .dailyNewsPageHead__description {
-    padding-right: 3rem;
-    padding-left: 0; } }
+    padding-left: 3rem;
+    padding-right: 0; } }
 @media (min-width: 1200px) {
   .card.homeTodayItem:not(.card--full).col-reverse, .card.videoCard:not(.card--full).col-reverse {
     display: flex;
@@ -133,5 +133,12 @@ body {
   .dailyNewsPageHeadItem .dailyNewsPageHead__description {
     padding-left: 7rem;
     padding-right: 0; } }
+.articleNewsPosts__content .postRelated h5:before {
+  margin-right: 0;
+  margin-left: 0.5rem; }
+
+.list-socialMedia ul li {
+  margin-right: 1.5rem;
+  margin-left: 0; }
 
 /*# sourceMappingURL=rtl.css.map */
