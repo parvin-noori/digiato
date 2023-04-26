@@ -307,7 +307,10 @@ body {
   }
 }
 .siteTitle::before {
-  content: '';
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+.homeCards .card__overload--info::before {
   margin-left: 0.5rem;
   margin-right: 0;
 }

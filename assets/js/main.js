@@ -263,7 +263,7 @@ $(document).ready(function () {
 
         $(window).scroll(function () {
             // add sticky class to site navigation after scroll on it
-            let scrollTop = $(this).scrollTop()
+            let scrollTop = $(this).scrollTop();
             if (scrollTop >= siteNavigationOffsetTop) {
                 siteNavigationWrapper.addClass('sticky');
                 body.addClass('sticky');

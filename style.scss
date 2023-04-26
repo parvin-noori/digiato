@@ -622,7 +622,7 @@ input:focus {
   @include transition;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
 
   .site-navigation {
     background-color: var(--navigation-background);
@@ -702,19 +702,19 @@ input:focus {
 }
 
 body {
-  //&.hidden {
-  //  .site-header {
-  //
-  //    transform: translateY(-100%);
-  //  }
-  //}
+  &.hidden {
+    .site-header {
+
+      transform: translateY(-100%);
+    }
+  }
 
   &.sticky {
 
 
     .site-header {
       position: sticky;
-      z-index: 1000;
+      z-index: 100000;
       top: -100px;
       //top: 0;
       .site-branding {
@@ -1697,7 +1697,8 @@ p {
     display: flex;
 
     &:before {
-      @include headThemeAfter(var(--white), 15px, 1px)
+      @include headThemeAfter(var(--white), 15px, 1px);
+      margin-left: 0.5rem;
 
     }
   }
@@ -1708,7 +1709,8 @@ p {
     z-index: 2;
 
     &::after {
-      @include headThemeAfter(var(--white), 15px, 1px)
+      @include headThemeAfter(var(--white), 15px, 1px);
+      margin-left: 0.5rem;
     }
   }
 }
@@ -1796,7 +1798,7 @@ p {
 }
 
 .articleCardWrapper {
-    margin-bottom: 1rem;
+
   .articleCard {
 
     .articleCard__picture {
@@ -1827,6 +1829,9 @@ p {
 }
 
 @media (min-width: 768px) {
+  .articleCardWrapper {
+    margin-bottom: 3rem;
+  }
   .articleCard {
     .articleCard__picture {
       margin-bottom: 1rem;
@@ -1853,6 +1858,9 @@ p {
 }
 
 @media (max-width: 768px) {
+  .articleCardWrapper {
+    margin-bottom: 1rem;
+  }
   .articleCard__details {
     flex: 1;
     margin-left: 1rem;
@@ -2544,6 +2552,38 @@ p {
 .darkMode {
   background-color: var(--dark-body);
   color: var(--light-textColor);
+  .articleCardWrapper{
+    .articleCard {
+      .articleCard__details--title{
+        color: white;
+      }
+    }
+  }
+  .articleNewsPosts {
+    .articleNewsPosts__content{
+      .postRelated {
+        li {
+          a{
+            color: white;
+          }
+        }
+      }
+    }
+    .postTools {
+      .postTools__keywords {
+        a {
+          background: var(--dark-searchArea);
+          color: white;
+          border-color: var(--text-color);
+        }
+      }
+    }
+  }
+  .dailyNewsPageHead__description--social {
+    i{
+      color: white;
+    }
+  }
 
   .openSearchMobile, .mobileMenu__bottom {
     background-color: var(--dark-mobildMenu);
