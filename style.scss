@@ -622,7 +622,7 @@ input:focus {
   @include transition;
   position: sticky;
   top: 0;
-  z-index: 10000;
+  z-index: 100;
 
   .site-navigation {
     background-color: var(--navigation-background);
