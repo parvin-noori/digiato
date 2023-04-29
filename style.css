@@ -291,6 +291,27 @@ input:focus {
   .site-header .logo-dark {
     display: none; }
 
+.error-404 {
+  padding: 5rem 0; }
+  .error-404 h3 {
+    color: var(--blue);
+    font-weight: bold;
+    margin: 3rem 0 1.5rem 0; }
+  .error-404 p {
+    color: #a0a4bc;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold; }
+  .error-404 a {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    color: var(--white);
+    padding: 1rem 2rem;
+    margin-top: 2rem; }
+    .error-404 a:hover {
+      opacity: 0.8; }
+
 .site-navigation-wrapper {
   transition: all 0.3s;
   position: sticky;
