@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/IranSans.css">
+    <link rel="stylesheet" href="assets/css/persianDatepicker-default.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="rtl.css">
     <script src="assets/js/jquery-3.6.3.min.js"></script>
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/persianDatepicker.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
 <!--header-->
@@ -159,7 +161,7 @@
     <div class="search-page" id="searchPage">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-xxl-9 col-xl-8 col-lg-7 col-md-6 flex-grow-1 mb-md-0 mb-3">
                     <div class="searchPage_info">
                         <h3 class="searchPage__info--count">نمایش 3 مورد نتیجه جستجو برای:</h3>
                         <div class="searchPage__info--form">
@@ -170,12 +172,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6" >
                     <div class="searchPage__date">
                         <span class="searchPage__date--title d-block">نتایج منتشر شده در تاریخ:</span>
                         <form action="" class="searchPage__date--calendar">
-                            <div class="input-group mb-3 calender-input-group">
-                                <input type="text" class="form-control bg-transparent border-0 rounded-0" placeholder="" aria-label="" value="همه" aria-describedby="button-addon2">
+                            <div class="input-group mb-3 calender-input-group" >
+                                <input type="text" class="form-control bg-transparent border-0 rounded-0" placeholder="" aria-label="" value="همه" aria-describedby="" id="dateSelector">
                                 <span class="btn icon-calendar" type="submit" id="icon-calendar"><i class="fa-regular fa-calendar-week"></i></span>
                             </div>
                         </form>

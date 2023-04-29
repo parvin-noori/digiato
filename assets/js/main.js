@@ -425,6 +425,18 @@ $(document).ready(function () {
 
     })
 
+    ///data pickeer
+    $("#dateSelector").persianDatepicker({
+        cellWidth: 47,
+        cellHeight: 47,
+        fontSize: 15,
+        onShow: function () { },
+        onHide: function () { },
+        onSelect: function () { },
+
+    });
+    $('.goToday').html('برو به امروز')
+
 });
 
 

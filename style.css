@@ -313,33 +313,117 @@ input:focus {
       opacity: 0.8; }
 
 .search-page {
-  background-color: var(--header-backgroundColor);
-  padding: 7rem 0 4rem 0; }
+  background-color: var(--header-backgroundColor); }
   .search-page .searchPage_info .searchPage__info--form input {
     border-color: transparent; }
-    .search-page .searchPage_info .searchPage__info--form input:focus, .search-page .searchPage_info .searchPage__info--form input:hover {
-      border-color: #cad2e0; }
+  .search-page .searchPage__date .icon-calendar {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); }
   .search-page .searchPage_info .searchPage__info--count, .search-page .searchPage_info .searchPage__date--title, .search-page .searchPage__date .searchPage__info--count, .search-page .searchPage__date .searchPage__date--title {
-    font-size: 1.3rem;
-    color: var(--text-color);
-    font-weight: bold;
-    margin-bottom: 2rem; }
+    color: var(--text-color); }
   .search-page .searchPage_info .calender-input-group, .search-page .searchPage__date .calender-input-group {
-    border-bottom: 1px solid  transparent;
+    border-bottom: 1px solid transparent;
     transition: all 0.3s; }
-    .search-page .searchPage_info .calender-input-group:hover, .search-page .searchPage_info .calender-input-group:focus-within, .search-page .searchPage__date .calender-input-group:hover, .search-page .searchPage__date .calender-input-group:focus-within {
-      border-color: #cad2e0; }
   .search-page .searchPage_info .searchPage__info--form, .search-page .searchPage_info .searchPage__date--calendar, .search-page .searchPage__date .searchPage__info--form, .search-page .searchPage__date .searchPage__date--calendar {
     color: var(--dark-blue); }
     .search-page .searchPage_info .searchPage__info--form input, .search-page .searchPage_info .searchPage__info--form button, .search-page .searchPage_info .searchPage__info--form span, .search-page .searchPage_info .searchPage__date--calendar input, .search-page .searchPage_info .searchPage__date--calendar button, .search-page .searchPage_info .searchPage__date--calendar span, .search-page .searchPage__date .searchPage__info--form input, .search-page .searchPage__date .searchPage__info--form button, .search-page .searchPage__date .searchPage__info--form span, .search-page .searchPage__date .searchPage__date--calendar input, .search-page .searchPage__date .searchPage__date--calendar button, .search-page .searchPage__date .searchPage__date--calendar span {
-      font-weight: bold;
       color: inherit; }
     .search-page .searchPage_info .searchPage__info--form input, .search-page .searchPage_info .searchPage__date--calendar input, .search-page .searchPage__date .searchPage__info--form input, .search-page .searchPage__date .searchPage__date--calendar input {
-      font-size: 2.1rem;
       transition: all 0.3s; }
+
+@media (max-width: 768px) {
+  .search-page {
+    padding: 3rem 0 2rem 0; }
+    .search-page .searchPage_info .searchPage__info--count, .search-page .searchPage_info .searchPage__date--title, .search-page .searchPage__date .searchPage__info--count, .search-page .searchPage__date .searchPage__date--title {
+      font-size: inherit;
+      font-weight: normal;
+      margin-bottom: 1rem; }
+    .search-page .searchPage_info .searchPage__info--form .input-group, .search-page .searchPage_info .searchPage__date--calendar .input-group, .search-page .searchPage__date .searchPage__info--form .input-group, .search-page .searchPage__date .searchPage__date--calendar .input-group {
+      border: 1px solid var(--gray-border);
+      border-radius: 1rem; }
+      .search-page .searchPage_info .searchPage__info--form .input-group input, .search-page .searchPage_info .searchPage__date--calendar .input-group input, .search-page .searchPage__date .searchPage__info--form .input-group input, .search-page .searchPage__date .searchPage__date--calendar .input-group input {
+        padding: 1rem; }
+
+  .pdp-default {
+    left: 0 !important;
+    right: 0 !important;
+    width: 410px !important;
+    margin: auto !important; } }
+@media (min-width: 768px) {
+  .search-page {
+    padding: 7rem 0 4rem 0; }
+    .search-page .searchPage_info .searchPage__info--form input:focus, .search-page .searchPage_info .searchPage__info--form input:hover {
+      border-color: #cad2e0; }
+    .search-page .searchPage_info .calender-input-group:hover, .search-page .searchPage_info .calender-input-group:focus-within, .search-page .searchPage__date .calender-input-group:hover, .search-page .searchPage__date .calender-input-group:focus-within {
+      border-color: #cad2e0; }
+    .search-page .searchPage_info .searchPage__info--count, .search-page .searchPage_info .searchPage__date--title, .search-page .searchPage__date .searchPage__info--count, .search-page .searchPage__date .searchPage__date--title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 2rem; }
+    .search-page .searchPage_info .searchPage__info--form input, .search-page .searchPage_info .searchPage__date--calendar input, .search-page .searchPage__date .searchPage__info--form input, .search-page .searchPage__date .searchPage__date--calendar input {
+      font-size: 2.1rem; }
     .search-page .searchPage_info .searchPage__info--form button, .search-page .searchPage_info .searchPage__info--form span, .search-page .searchPage_info .searchPage__date--calendar button, .search-page .searchPage_info .searchPage__date--calendar span, .search-page .searchPage__date .searchPage__info--form button, .search-page .searchPage__date .searchPage__info--form span, .search-page .searchPage__date .searchPage__date--calendar button, .search-page .searchPage__date .searchPage__date--calendar span {
       font-size: 1.7rem;
       font-weight: bold; }
+    .search-page .searchPage_info .searchPage__info--form input, .search-page .searchPage_info .searchPage__info--form button, .search-page .searchPage_info .searchPage__info--form span, .search-page .searchPage_info .searchPage__date--calendar input, .search-page .searchPage_info .searchPage__date--calendar button, .search-page .searchPage_info .searchPage__date--calendar span, .search-page .searchPage__date .searchPage__info--form input, .search-page .searchPage__date .searchPage__info--form button, .search-page .searchPage__date .searchPage__info--form span, .search-page .searchPage__date .searchPage__date--calendar input, .search-page .searchPage__date .searchPage__date--calendar button, .search-page .searchPage__date .searchPage__date--calendar span {
+      font-weight: bold; } }
+.pdp-default {
+  background-color: var(--header-backgroundColor);
+  padding: 2rem;
+  border-radius: 1rem;
+  z-index: 99 !important; }
+  .pdp-default .monthYear {
+    font-size: 1rem;
+    color: var(--text-color); }
+  .pdp-default .dow {
+    font-size: 12px !important; }
+  .pdp-default .pdp-footer .goToday {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    color: var(--white);
+    padding: 5px;
+    width: 100%;
+    border-width: 2px;
+    color: var(--secondary-color) !important;
+    display: block;
+    opacity: 1 !important;
+    background-color: transparent; }
+    .pdp-default .pdp-footer .goToday:hover {
+      opacity: 0.8; }
+    .pdp-default .pdp-footer .goToday:hover {
+      text-decoration: none; }
+  .pdp-default .cell {
+    margin-top: 3px; }
+    .pdp-default .cell + .cell {
+      margin-right: 3px; }
+  .pdp-default .days > div {
+    display: flex; }
+  .pdp-default .pdp-header, .pdp-default .days, .pdp-default .nul, .pdp-default .day.cell, .pdp-default .dows, .pdp-default .dow, .pdp-default .pdp-footer {
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-family: inherit; }
+  .pdp-default .day {
+    border-radius: 50% !important;
+    cursor: pointer;
+    overflow: hidden;
+    font-weight: bold; }
+    .pdp-default .day.selday {
+      background-color: var(--secondary-color); }
+    .pdp-default .day.today {
+      background: var(--primary-color);
+      color: white; }
+  .pdp-default .day:not(.today):not(.selday):hover {
+    background-color: #cfe7ff !important; }
+  .pdp-default .pdp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .pdp-default .pdp-header .nextArrow, .pdp-default .pdp-header .prevArrow {
+      position: relative; }
 
 .site-navigation-wrapper {
   transition: all 0.3s;
