@@ -312,6 +312,35 @@ input:focus {
     .error-404 a:hover {
       opacity: 0.8; }
 
+.search-page {
+  background-color: var(--header-backgroundColor);
+  padding: 7rem 0 4rem 0; }
+  .search-page .searchPage_info .searchPage__info--form input {
+    border-color: transparent; }
+    .search-page .searchPage_info .searchPage__info--form input:focus, .search-page .searchPage_info .searchPage__info--form input:hover {
+      border-color: #cad2e0; }
+  .search-page .searchPage_info .searchPage__info--count, .search-page .searchPage_info .searchPage__date--title, .search-page .searchPage__date .searchPage__info--count, .search-page .searchPage__date .searchPage__date--title {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 2rem; }
+  .search-page .searchPage_info .calender-input-group, .search-page .searchPage__date .calender-input-group {
+    border-bottom: 1px solid  transparent;
+    transition: all 0.3s; }
+    .search-page .searchPage_info .calender-input-group:hover, .search-page .searchPage_info .calender-input-group:focus-within, .search-page .searchPage__date .calender-input-group:hover, .search-page .searchPage__date .calender-input-group:focus-within {
+      border-color: #cad2e0; }
+  .search-page .searchPage_info .searchPage__info--form, .search-page .searchPage_info .searchPage__date--calendar, .search-page .searchPage__date .searchPage__info--form, .search-page .searchPage__date .searchPage__date--calendar {
+    color: var(--dark-blue); }
+    .search-page .searchPage_info .searchPage__info--form input, .search-page .searchPage_info .searchPage__info--form button, .search-page .searchPage_info .searchPage__info--form span, .search-page .searchPage_info .searchPage__date--calendar input, .search-page .searchPage_info .searchPage__date--calendar button, .search-page .searchPage_info .searchPage__date--calendar span, .search-page .searchPage__date .searchPage__info--form input, .search-page .searchPage__date .searchPage__info--form button, .search-page .searchPage__date .searchPage__info--form span, .search-page .searchPage__date .searchPage__date--calendar input, .search-page .searchPage__date .searchPage__date--calendar button, .search-page .searchPage__date .searchPage__date--calendar span {
+      font-weight: bold;
+      color: inherit; }
+    .search-page .searchPage_info .searchPage__info--form input, .search-page .searchPage_info .searchPage__date--calendar input, .search-page .searchPage__date .searchPage__info--form input, .search-page .searchPage__date .searchPage__date--calendar input {
+      font-size: 2.1rem;
+      transition: all 0.3s; }
+    .search-page .searchPage_info .searchPage__info--form button, .search-page .searchPage_info .searchPage__info--form span, .search-page .searchPage_info .searchPage__date--calendar button, .search-page .searchPage_info .searchPage__date--calendar span, .search-page .searchPage__date .searchPage__info--form button, .search-page .searchPage__date .searchPage__info--form span, .search-page .searchPage__date .searchPage__date--calendar button, .search-page .searchPage__date .searchPage__date--calendar span {
+      font-size: 1.7rem;
+      font-weight: bold; }
+
 .site-navigation-wrapper {
   transition: all 0.3s;
   position: sticky;

@@ -633,9 +633,64 @@ input:focus {
     line-height: 30px;
     font-weight: bold;
   }
-  a{
+
+  a {
     @include mainButtons(var(--secondary-color), 15px, 1rem 2rem);
     margin-top: 2rem;
+  }
+}
+
+.search-page {
+  background-color: var(--header-backgroundColor);
+  padding: 7rem 0 4rem 0;
+
+  .searchPage_info {
+    .searchPage__info--form {
+      input {
+        border-color: transparent;
+
+        &:focus, &:hover {
+          border-color: #cad2e0;
+        }
+      }
+    }
+  }
+
+  .searchPage_info, .searchPage__date {
+    .searchPage__info--count, .searchPage__date--title {
+      font-size: 1.3rem;
+      color: var(--text-color);
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .calender-input-group {
+      border-bottom:1px solid  transparent;
+      transition: all 0.3s;
+      &:hover,&:focus-within{
+        border-color: #cad2e0;
+      }
+    }
+
+    .searchPage__info--form, .searchPage__date--calendar {
+      color: var(--dark-blue);
+
+      input, button, span {
+        font-weight: bold;
+        color: inherit;
+      }
+
+      input {
+        font-size: 2.1rem;
+        transition: all 0.3s;
+
+      }
+
+      button, span {
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+    }
   }
 }
 
