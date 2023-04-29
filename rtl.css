@@ -73,9 +73,6 @@ body {
     right: 100%;
     left: inherit; }
 
-.site-footer .list-socialMedia ul li {
-  margin-left: 1.5rem;
-  margin-right: 0; }
 .site-footer .footer .links .links__items ul li {
   padding-left: 0;
   padding-right: 1rem; }
@@ -135,10 +132,10 @@ body {
 
 .list-socialMedia ul li {
   margin-right: 1.5rem;
-  margin-left: 0; }
+  margin-left: 0 !important; }
 
 @media (max-width: 768px) {
-  .articleNewsPosts__content li a:before {
+  .articleNewsPosts__content li:not(:last-child) a:before {
     margin-left: 1rem;
     margin-right: 0;
     transform: scaleX(-1); } }

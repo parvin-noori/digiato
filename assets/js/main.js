@@ -397,7 +397,6 @@ $(document).ready(function () {
     });
 
 
-
     // Scroll page progress bar
     let progressbar = document.getElementById("progressBar");
 
@@ -415,27 +414,36 @@ $(document).ready(function () {
     }
 
     //add active class to list social media in single page (responsive)
-    let iconShare=$('.icon-share');
-    let shareIcons=$('.share__icons');
+    let iconShare = $('.icon-share');
+    let shareIcons = $('.share__icons');
     iconShare.click(function (e) {
         e.preventDefault();
         shareIcons.addClass('active');
-        iconShare.css({"display":"none"});
+        iconShare.css({"display": "none"});
         console.log(this)
 
     })
 
     ///data pickeer
-    $("#dateSelector").persianDatepicker({
-        cellWidth: 47,
-        cellHeight: 47,
-        fontSize: 15,
-        onShow: function () { },
-        onHide: function () { },
-        onSelect: function () { },
 
-    });
-    $('.goToday').html('برو به امروز')
+    let dateSelector = $("#dateSelector");
+    if (dateSelector.length > 0) {
+
+
+        dateSelector.persianDatepicker({
+            cellWidth: 47,
+            cellHeight: 47,
+            fontSize: 15,
+            onShow: function () {
+            },
+            onHide: function () {
+            },
+            onSelect: function () {
+            },
+
+        });
+        $('.goToday').html('برو به امروز')
+    }
 
 });
 

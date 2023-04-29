@@ -156,14 +156,7 @@ body {
 }
 
 .site-footer {
-  .list-socialMedia {
-    ul {
-      li {
-        margin-left: 1.5rem;
-        margin-right: 0;
-      }
-    }
-  }
+
 
   .footer {
     .links {
@@ -293,11 +286,11 @@ body {
 }
 .list-socialMedia ul li{
   margin-right: 1.5rem;
-  margin-left: 0;
+  margin-left: 0!important;
 }
 @media (max-width: 768px){
   .articleNewsPosts__content {
-    li {
+    li:not(:last-child) {
       a:before {
         margin-left: 1rem;
         margin-right: 0;

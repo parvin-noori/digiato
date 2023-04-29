@@ -349,7 +349,6 @@ input:focus {
   .pdp-default {
     left: 0 !important;
     right: 0 !important;
-    width: 410px !important;
     margin: auto !important; } }
 @media (min-width: 768px) {
   .search-page {
@@ -399,8 +398,15 @@ input:focus {
     margin-top: 3px; }
     .pdp-default .cell + .cell {
       margin-right: 3px; }
-  .pdp-default .days > div {
-    display: flex; }
+  .pdp-default .days {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .pdp-default .days > div {
+      display: flex; }
+  .pdp-default .dows {
+    display: flex;
+    justify-content: center; }
   .pdp-default .pdp-header, .pdp-default .days, .pdp-default .nul, .pdp-default .day.cell, .pdp-default .dows, .pdp-default .dow, .pdp-default .pdp-footer {
     border: none;
     background-color: transparent;
@@ -1325,12 +1331,12 @@ p {
   .site-footer .copyright {
     padding-top: 40px; }
 
-.list-socialMedia ul li {
+.list-socialMedia ul li:not(:last-child) {
   margin-left: 1.5rem; }
-  .list-socialMedia ul li a {
-    display: flex; }
-  .list-socialMedia ul li i {
-    font-size: 1.8rem; }
+.list-socialMedia ul li a {
+  display: flex; }
+.list-socialMedia ul li i {
+  font-size: 1.8rem; }
 
 @media (min-width: 992px) {
   .site-footer {
