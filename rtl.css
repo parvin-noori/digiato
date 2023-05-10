@@ -3,6 +3,10 @@ body {
   direction: rtl;
   text-align: right; }
 
+@media (min-width: 992px) {
+  body.sticky .navigation {
+    padding-right: 5rem;
+    padding-left: 0; } }
 .siteTitleWrapper .swiper-button-prev:after, .siteTitleWrapper .swiper-rtl .swiper-button-next:after {
   content: 'next'; }
 .siteTitleWrapper .swiper-button-next:after, .siteTitleWrapper .swiper-rtl .swiper-button-prev:after {

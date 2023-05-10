@@ -2,8 +2,14 @@ body {
   font-family: IranSans, 'Figtree';
   direction: rtl;
   text-align: right;
-}
 
+}
+@media (min-width: 992px) {
+  body.sticky .navigation {
+    padding-right: 5rem;
+    padding-left: 0;
+  }
+}
 .siteTitleWrapper {
   .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
     content: 'next';

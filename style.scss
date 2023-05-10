@@ -129,10 +129,17 @@ body {
       opacity: 0;
       visibility: hidden;
     }
-    .navigation{
-      padding-right: 5rem;
-    }
 
+  }
+}
+@media (min-width: 992px) {
+  body {
+    &.sticky {
+      .navigation{
+        padding-left: 5rem;
+      }
+
+    }
   }
 }
 
@@ -1002,7 +1009,7 @@ body {
       }
 
       .head, .site-branding {
-        transform: translateY(90px);
+        transform: translateY(85px);
       }
 
     }

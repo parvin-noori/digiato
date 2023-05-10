@@ -28,9 +28,10 @@ body {
   body.sticky .popularArea {
     opacity: 0;
     visibility: hidden; }
-  body.sticky .navigation {
-    padding-right: 5rem; }
 
+@media (min-width: 992px) {
+  body.sticky .navigation {
+    padding-left: 5rem; } }
 a {
   text-decoration: none; }
 
@@ -509,7 +510,7 @@ body.sticky .site-header {
       body.sticky .site-header .site-branding .logo-brand img {
         width: 80px; }
   body.sticky .site-header .head, body.sticky .site-header .site-branding {
-    transform: translateY(90px); }
+    transform: translateY(85px); }
 body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
   transform: translateY(0); }
 
