@@ -276,7 +276,8 @@ input:focus {
     width: 135px;
     display: block; }
     .site-header .site-branding .logo-brand img {
-      width: 100%; }
+      height: 4rem;
+      object-fit: contain; }
   .site-header .head {
     transition: all 0.3s; }
     .site-header .head .head__theme:after {
@@ -290,6 +291,10 @@ input:focus {
       margin-left: 1.5rem; }
   .site-header .logo-dark {
     display: none; }
+
+.mini-logo {
+  height: 2.3rem;
+  object-fit: contain; }
 
 .error-404 {
   padding: 5rem 0; }
@@ -834,8 +839,7 @@ p {
   .card:not(.rowCard) .card__overload--title {
     margin-bottom: 1.1rem; }
   .card .card__picture {
-    overflow: hidden;
-    height: 100%; }
+    overflow: hidden; }
     .card .card__picture img {
       transition: all 0.7s;
       height: 100%;

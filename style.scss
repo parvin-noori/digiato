@@ -576,7 +576,8 @@ input:focus {
       display: block;
 
       img {
-        width: 100%;
+        height: 4rem;
+        object-fit: contain;
       }
     }
 
@@ -617,7 +618,10 @@ input:focus {
 
 
 }
-
+.mini-logo{
+  height: 2.3rem;
+  object-fit: contain;
+}
 .error-404 {
   padding: 5rem 0;
 
@@ -1463,7 +1467,7 @@ p {
   .card__picture {
     overflow: hidden;
     //flex-grow: 1;
-    height: 100%;
+    //height: 100%;
 
     img {
       transition: all 0.7s;
