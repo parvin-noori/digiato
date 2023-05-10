@@ -255,43 +255,43 @@ $(document).ready(function () {
     });
 
 // add class sticky to body after scroll page
-    function stikcyBody() {
-        let siteNavigation = $('.site-navigation');
-        let siteNavigationWrapper = $('.site-navigation-wrapper');
-        let siteNavigationOffsetTop = siteNavigation.offset().top;
-        let prev = 0;
-
-        $(window).scroll(function () {
-            // add sticky class to site navigation after scroll on it
-            let scrollTop = $(this).scrollTop();
-            if (scrollTop >= siteNavigationOffsetTop) {
-                siteNavigationWrapper.addClass('sticky');
-                body.addClass('sticky');
-            } else {
-                body.removeClass('sticky');
-                siteNavigationWrapper.removeClass('sticky');
-            }
-
-            // add hidden nav class to site navigation after 500 scroll top
-            if (scrollTop >= 400) {
-
-                //hide nav on scroll
-                siteNavigationWrapper.toggleClass('hidden', scrollTop > prev);
-                body.toggleClass('sticky', scrollTop < prev);
-                siteNavigation.toggleClass('sticky', scrollTop < prev);
-                prev = scrollTop;
-            } else {
-            }
-
-
-            //add class active to back to top button
-            if (scrollTop > 500) {
-                backToTop.addClass('active');
-            } else {
-                backToTop.removeClass('active')
-            }
-        });
-    }
+//     function stikcyBody() {
+//         let siteNavigation = $('.site-navigation');
+//         let siteNavigationWrapper = $('.site-navigation-wrapper');
+//         let siteNavigationOffsetTop = siteNavigation.offset().top;
+//         let prev = 0;
+//
+//         $(window).scroll(function () {
+//             // add sticky class to site navigation after scroll on it
+//             let scrollTop = $(this).scrollTop();
+//             if (scrollTop >= siteNavigationOffsetTop) {
+//                 siteNavigationWrapper.addClass('sticky');
+//                 body.addClass('sticky');
+//             } else {
+//                 body.removeClass('sticky');
+//                 siteNavigationWrapper.removeClass('sticky');
+//             }
+//
+//             // add hidden nav class to site navigation after 500 scroll top
+//             if (scrollTop >= 400) {
+//
+//                 //hide nav on scroll
+//                 siteNavigationWrapper.toggleClass('hidden', scrollTop > prev);
+//                 body.toggleClass('sticky', scrollTop < prev);
+//                 siteNavigation.toggleClass('sticky', scrollTop < prev);
+//                 prev = scrollTop;
+//             } else {
+//             }
+//
+//
+//             //add class active to back to top button
+//             if (scrollTop > 500) {
+//                 backToTop.addClass('active');
+//             } else {
+//                 backToTop.removeClass('active')
+//             }
+//         });
+//     }
 
 
     //change display of sub menu in responsive
@@ -362,13 +362,49 @@ $(document).ready(function () {
 
     // console.log($('.site-navigation').height());
 
+    //header
+    let siteNavigation = jQuery('.site-navigation-wrapper');
+    let headerHeight = jQuery('header').outerHeight();
+    let sliderOffsetTop = jQuery('.homeCards').offset().top;
+    let sliderHeight = jQuery('.homeCards').outerHeight();
+    let prevScrollPos = window.pageYOffset;
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (currentScrollPos > headerHeight) {
+            jQuery('body').addClass('sticky')
+        } else {
+            jQuery('body').removeClass('sticky')
+        }
+        if (currentScrollPos > (sliderOffsetTop + sliderHeight) / 2) {
+
+            if (prevScrollPos > currentScrollPos) {
+                // scroll up
+                siteNavigation.removeClass("slide-up");
+
+                siteNavigation.addClass("slide-down");
+                jQuery('body').removeClass('hiddenNav');
+            } else {
+                // scroll down
+                siteNavigation.removeClass("slide-down");
+
+                siteNavigation.addClass("slide-up");
+                jQuery('body').addClass('hiddenNav');
+
+            }
+            prevScrollPos = currentScrollPos;
+        } else {
+            siteNavigation.removeClass("slide-down");
+            siteNavigation.removeClass("slide-up");
+        }
+    };
+
     // top of mobileMenu drawer
     mobileMenu.css("top", ($('.site-navigation').height()) - 2);
 
     //run stickyBody function in breakpoint
     var width = $("body").width();
     if (width > 992) {
-        stikcyBody()
+        // stikcyBody()
     }
     if (width < 768) {
         accordtionLinksItem()

@@ -123,10 +123,27 @@ body {
   font-family: IranSans, 'Figtree';
   font-size: 1rem;
   @include transition;
+
+  &.sticky {
+    .popularArea {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .navigation{
+      padding-right: 5rem;
+    }
+
+  }
 }
 
 a {
   text-decoration: none;
+}
+
+.popularArea {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s;
 }
 
 .container {
@@ -618,10 +635,12 @@ input:focus {
 
 
 }
-.mini-logo{
+
+.mini-logo {
   height: 2.3rem;
   object-fit: contain;
 }
+
 .error-404 {
   padding: 5rem 0;
 
@@ -864,11 +883,20 @@ input:focus {
 
 }
 
+
 .site-navigation-wrapper {
   @include transition;
   position: sticky;
   top: 0;
   z-index: 100;
+
+  &.slide-up {
+    transform: translateY(-100%);
+  }
+
+  &.slide-down {
+    transform: translateY(0);
+  }
 
   .site-navigation {
     background-color: var(--navigation-background);
@@ -892,10 +920,6 @@ input:focus {
       padding-left: 40px;
     }
 
-    .popularArea {
-      opacity: 0;
-      visibility: hidden;
-    }
   }
 
   &.hiddenNav {
@@ -980,6 +1004,7 @@ body {
       .head, .site-branding {
         transform: translateY(90px);
       }
+
     }
 
     &.hiddenNav {
@@ -1056,7 +1081,7 @@ body {
 @media (min-width: 1200px) {
   .primary-menu {
     a {
-      padding: 1.5rem;
+      padding: 1.8rem;
     }
   }
   .card {

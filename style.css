@@ -25,9 +25,19 @@ body {
   font-family: IranSans, 'Figtree';
   font-size: 1rem;
   transition: all 0.3s; }
+  body.sticky .popularArea {
+    opacity: 0;
+    visibility: hidden; }
+  body.sticky .navigation {
+    padding-right: 5rem; }
 
 a {
   text-decoration: none; }
+
+.popularArea {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s; }
 
 .container {
   max-width: 1624px;
@@ -441,6 +451,10 @@ input:focus {
   position: sticky;
   top: 0;
   z-index: 100; }
+  .site-navigation-wrapper.slide-up {
+    transform: translateY(-100%); }
+  .site-navigation-wrapper.slide-down {
+    transform: translateY(0); }
   .site-navigation-wrapper .site-navigation {
     background-color: var(--navigation-background);
     color: var(--text-color); }
@@ -452,9 +466,6 @@ input:focus {
     margin-left: -1rem; }
   .site-navigation-wrapper.sticky .primary-menu {
     padding-left: 40px; }
-  .site-navigation-wrapper.sticky .popularArea {
-    opacity: 0;
-    visibility: hidden; }
   .site-navigation-wrapper.hiddenNav {
     transform: translateY(-100%); }
   .site-navigation-wrapper .hamburgerMenuBtn {
@@ -550,7 +561,7 @@ body.sticky.hiddenNav .site-branding, body.sticky.hiddenNav .head {
 
 @media (min-width: 1200px) {
   .primary-menu a {
-    padding: 1.5rem; }
+    padding: 1.8rem; }
 
   .card.rowCard .card__picture {
     width: 330px;
