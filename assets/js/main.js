@@ -416,7 +416,6 @@ $(document).ready(function () {
         let $medium_down = window.matchMedia("(max-width: 768px)");
 
         if ($large_up.matches) {
-            stikcyBody()
         }
         if ($medium_down.matches) {
             accordtionLinksItem()
