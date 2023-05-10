@@ -743,6 +743,9 @@ p {
   .rowCards .row > *:not(:last-child) .card.homeTodayItem:not(.card--full), .rowCards .row > *:not(:last-child) .card.videoCard {
     border-bottom: 1px solid var(--gray-border); }
 
+#lastVideos .lastVideos__big .card__picture {
+  height: 100%; }
+
 .card {
   background-color: transparent;
   overflow: hidden; }

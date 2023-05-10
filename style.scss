@@ -399,6 +399,7 @@ a {
   }
   .lastVideos__big {
     height: 365px;
+
   }
   .card {
 
@@ -1350,7 +1351,9 @@ p {
     padding-bottom: 2rem;
   }
 }
-
+#lastVideos .lastVideos__big .card__picture{
+  height: 100%;
+}
 .card {
   background-color: transparent;
   //position: relative;
