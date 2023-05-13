@@ -158,7 +158,7 @@
 <main class="site-main " id="site-main">
 
     <!--search page-->
-    <div class="search-page" id="searchPage">
+    <div class="search-page mb-5" id="searchPage">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-9 col-xl-8 col-lg-7 col-md-6 flex-grow-1 mb-md-0 mb-3">
@@ -166,21 +166,79 @@
                         <h3 class="searchPage__info--count">نمایش 3 مورد نتیجه جستجو برای:</h3>
                         <div class="searchPage__info--form">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control bg-transparent border-top-0 rounded-0 border-start-0 border-end-0" value="اسطوره شناسی" placeholder="" aria-label="" aria-describedby="button-addon2">
-                                <button class="btn searchPage__info--submit" type="submit" id="searchPage__info--submit"><i class="fa-regular fa-magnifying-glass"></i></button>
+                                <input type="text"
+                                       class="form-control bg-transparent border-top-0 rounded-0 border-start-0 border-end-0"
+                                       value="اسطوره شناسی" placeholder="" aria-label=""
+                                       aria-describedby="button-addon2">
+                                <button class="btn searchPage__info--submit" type="submit"
+                                        id="searchPage__info--submit"><i class="fa-regular fa-magnifying-glass"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6" >
+                <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6">
                     <div class="searchPage__date">
                         <span class="searchPage__date--title d-block">نتایج منتشر شده در تاریخ:</span>
                         <form action="" class="searchPage__date--calendar">
-                            <div class="input-group mb-3 calender-input-group" >
-                                <input type="text" class="form-control bg-transparent border-0 rounded-0" placeholder="" aria-label="" value="همه" aria-describedby="" id="dateSelector">
-                                <span class="btn icon-calendar" type="submit" id="icon-calendar"><i class="fa-regular fa-calendar-week"></i></span>
+                            <div class="input-group mb-3 calender-input-group">
+                                <input type="text" class="form-control bg-transparent border-0 rounded-0" placeholder=""
+                                       aria-label="" value="همه" aria-describedby="" id="dateSelector">
+                                <span class="btn icon-calendar" type="submit" id="icon-calendar"><i
+                                        class="fa-regular fa-calendar-week"></i></span>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- authorProfilePage-->
+    <div class="authorProfilePage">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="sitePage-sideBar">
+                        <h3 class="siteTitle">دسته بندی های محتوا</h3>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="sitePage-content">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h3 class="siteTitle m-0">نمایش نتایج جستجو</h3>
+                            <div class="dropdown showSearchFilter">
+                                <button class="btn  dropdown-toggle showSearchFilterBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    مرتب سازی از جدید به قدیم
+                                </button>
+                                <ul class="dropdown-menu showSearchFilter-menu">
+                                    <li><a class="dropdown-item" href="#">مرتب سازی از جدید به قدیم</a></li>
+                                    <li><a class="dropdown-item" href="#">مرتب سازی از قدیم به جدید</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--social network-->
+    <div class="socialNetwork d-lg-block d-none py-lg-5 py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="socialNetwork">
+                        <h4>دیجیاتو را در شبکه‌های اجتماعی دنبال کنید</h4>
+                        <p>شبکه‌های اجتماعی دیجیاتو سریع‌ترین روش دسترسی به اخبار فناوری، علم و خودرو است. اگر می‌خواهید
+                            به‌روز باشید، شبکه‌های اجتماعی دیجیاتو را دنبال کنید.</p>
+                        <ul class="nav">
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa-light fa-paper-plane"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -199,7 +257,8 @@
                                     <div class="foot__social d-flex  flex-column">
                                         <h5 class="d-md-inline-block d-none">دیجیاتو را در شبکه‌های اجتماعی دنبال
                                             کنید</h5>
-                                        <h5 class="d-md-none d-inline-block mb-sm-0 mb-4">دیجیاتو در شبکه‌های اجتماعی </h5>
+                                        <h5 class="d-md-none d-inline-block mb-sm-0 mb-4">دیجیاتو در شبکه‌های
+                                            اجتماعی </h5>
                                         <p class="d-lg-block d-none">شبکه‌های اجتماعی دیجیاتو سریع‌ترین روش دسترسی به
                                             اخبار فناوری، علم و خودرو
                                             است. اگر

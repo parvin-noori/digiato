@@ -746,6 +746,39 @@ p {
 #lastVideos .lastVideos__big .card__picture {
   height: 100%; }
 
+.showSearchFilterBtn {
+  background-color: var(--header-backgroundColor) !important;
+  color: var(--dark-blue) !important;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--gray-border) !important;
+  display: flex;
+  align-items: center; }
+  .showSearchFilterBtn:after {
+    content: '\f078';
+    font-family: "Font Awesome 6 Pro";
+    border: none;
+    color: var(--primary-color);
+    font-size: x-small;
+    font-weight: bold;
+    margin: 0 0.5rem; }
+  .showSearchFilterBtn.show:after {
+    content: '\f077'; }
+
+.showSearchFilter-menu {
+  border-radius: 1rem;
+  right: 0 !important;
+  left: 0 !important;
+  border: 1px solid var(--gray-border) !important;
+  padding: 0.5rem !important;
+  top: 2px !important; }
+  .showSearchFilter-menu li a {
+    padding: 0.5rem;
+    font-weight: 500;
+    font-size: small; }
+    .showSearchFilter-menu li a:hover {
+      background-color: transparent !important; }
+
 .card {
   background-color: transparent;
   overflow: hidden; }
