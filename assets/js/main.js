@@ -365,7 +365,7 @@ $(document).ready(function () {
     //header
     let siteNavigation = jQuery('.site-navigation-wrapper');
     let headerHeight = jQuery('header').outerHeight();
-    let sliderOffsetTop = jQuery('.homeCards').offset().top;
+
     let sliderHeight = jQuery('.homeCards').outerHeight();
     let prevScrollPos = window.pageYOffset;
     window.onscroll = function () {
@@ -375,7 +375,11 @@ $(document).ready(function () {
         } else {
             jQuery('body').removeClass('sticky')
         }
-        if (currentScrollPos > (sliderOffsetTop + sliderHeight) / 2) {
+        // if ($('.homeCards').length > 0) {
+        // let sliderOffsetTop = jQuery('.homeCards').offset().top;
+
+        // }
+        if (currentScrollPos > 400) {
 
             if (prevScrollPos > currentScrollPos) {
                 // scroll up
