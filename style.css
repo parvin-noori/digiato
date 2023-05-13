@@ -24,7 +24,9 @@ html {
 body {
   font-family: IranSans, 'Figtree';
   font-size: 1rem;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  margin: 0;
+  padding: 0 !important; }
   body.sticky .popularArea {
     opacity: 0;
     visibility: hidden; }
@@ -52,6 +54,9 @@ a {
 
 .homeCardsFooter .miniCard .miniCard__picture {
   margin-right: 1rem; }
+
+#offcanvasFilter {
+  height: 45rem; }
 
 .miniCard .miniCard__title {
   flex: 1;
@@ -239,11 +244,67 @@ a {
   .applicationAreaSwiper .swiper-button-prev:after, .applicationAreaSwiper .swiper-button-next:after {
     content: ''; } }
 .btn:focus, .btn:active {
-  outline: none;
-  border-color: transparent !important; }
+  outline: none; }
 
 input:focus {
   box-shadow: none !important; }
+
+.relatedKeywords ul {
+  color: var(--text-color);
+  display: flex;
+  font-weight: 500; }
+  .relatedKeywords ul li {
+    flex: 0 0 50%;
+    max-width: 50%; }
+    .relatedKeywords ul li a {
+      color: inherit; }
+
+.showSearchFilterOnMobile {
+  font-size: large;
+  color: var(--text-color) !important; }
+  .showSearchFilterOnMobile:focus {
+    outline: none !important; }
+
+.contentCategory__title--toggle {
+  font-size: x-large; }
+  .contentCategory__title--toggle:after {
+    content: '\f0d9';
+    font-family: "Font Awesome 6 Pro";
+    transition: all 0.3s; }
+  .contentCategory__title--toggle.active:after {
+    transform: rotate(-90deg); }
+
+.contentCategory {
+  color: var(--text-color); }
+  .contentCategory .contentCategory__subs {
+    display: none; }
+    .contentCategory .contentCategory__subs ul {
+      margin: 0;
+      list-style: none; }
+      .contentCategory .contentCategory__subs ul label {
+        margin-bottom: 5px; }
+  .contentCategory label {
+    cursor: pointer;
+    position: relative; }
+    .contentCategory label input[type=checkbox] {
+      width: 100%;
+      opacity: 0;
+      cursor: pointer;
+      position: absolute;
+      height: 100%; }
+    .contentCategory label span {
+      display: flex;
+      align-items: center; }
+      .contentCategory label span:before {
+        content: '\f0c8';
+        font-family: "Font Awesome 6 Pro";
+        margin-left: 5px;
+        color: var(--navigation-background);
+        font-size: x-large;
+        transition: all 0.3s; }
+    .contentCategory label input:checked ~ span:before {
+      content: '\f14a';
+      color: var(--primary-color); }
 
 .head .head__theme {
   position: relative;
@@ -451,7 +512,7 @@ input:focus {
   transition: all 0.3s;
   position: sticky;
   top: 0;
-  z-index: 100; }
+  z-index: 1045; }
   .site-navigation-wrapper.slide-up {
     transform: translateY(-100%); }
   .site-navigation-wrapper.slide-down {

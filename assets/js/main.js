@@ -484,6 +484,70 @@ $(document).ready(function () {
         $('.goToday').html('برو به امروز')
     }
 
+
+    //filter in search page
+    $('.contentCategory__title--toggle').click(function (e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $(this).closest('.contentCategory').find('.contentCategory__subs').slideToggle(300)
+    })
+
+
+    let checkboxTitle = $('.contentCategory__title--main input');
+    let checkboxItem = $('.contentCategory__subs input');
+    let contentCategoryTitleCount = $('.contentCategory__title--count');
+    let contentCategory = $('.contentCategory');
+    let removeFilterButton = $('.removeFilter');
+
+    removeFilterButton.click(function (e) {
+        e.preventDefault();
+        let checkboxes = $(this).closest('.sitePage-sideBar').find('.contentCategories input[type=checkbox]');
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes.eq(i).prop('checked', false);
+        }
+    });
+
+    for (let i = 0; i < contentCategoryTitleCount.length; i++) {
+        contentCategoryTitleCount.eq(i).html('(' + contentCategoryTitleCount.eq(i).attr('data-count') + ')')
+    }
+
+    checkboxTitle.click(function () {
+        let labels = $(this).closest(contentCategory).find(checkboxItem);
+        let contentCategoryCount = $(this).closest(contentCategory).find(contentCategoryTitleCount)
+
+        if ($(this).is(':checked')) {
+            for (let i = 0; i < labels.length; i++) {
+                labels.eq(i).prop('checked', true);
+                contentCategoryCount.html('(' + labels.length + " " + 'مورد انتخاب شده' + ')')
+                console.log()
+            }
+        } else {
+            for (let i = 0; i < labels.length; i++) {
+                labels.eq(i).prop('checked', false);
+
+                contentCategoryCount.html('(' + contentCategoryCount.attr('data-count') + ')')
+            }
+        }
+    });
+    checkboxItem.click(function () {
+        let mainInput = $(this).closest(contentCategory).find(checkboxTitle);
+        let labels = $(this).closest(contentCategory).find('.contentCategory__subs input:checked');
+        let contentCategoryCount = $(this).closest(contentCategory).find(contentCategoryTitleCount)
+        if ($(this).is(':checked')) {
+            mainInput.prop('checked', true);
+            contentCategoryCount.html('(' + labels.length + " " + 'مورد انتخاب شده' + ')')
+        } else {
+            if (labels.length > 0) {
+
+                contentCategoryCount.html('(' + labels.length + 'مورد انتخاب شده' + ')')
+            } else {
+                mainInput.prop('checked', false);
+                contentCategoryCount.html('(' + contentCategoryCount.attr('data-count') + ')')
+            }
+
+        }
+    })
+
 });
 
 

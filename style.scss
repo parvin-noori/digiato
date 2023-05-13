@@ -123,6 +123,8 @@ body {
   font-family: IranSans, 'Figtree';
   font-size: 1rem;
   @include transition;
+  margin: 0;
+  padding: 0!important;
 
   &.sticky {
     .popularArea {
@@ -173,7 +175,9 @@ a {
     }
   }
 }
-
+#offcanvasFilter{
+  height: 45rem;
+}
 .miniCard {
 
 
@@ -511,11 +515,104 @@ a {
 
 .btn:focus, .btn:active {
   outline: none;
-  border-color: transparent !important;
+  //border-color: transparent !important;
 }
 
 input:focus {
   box-shadow: none !important;
+}
+
+.relatedKeywords {
+  ul {
+    color: var(--text-color);
+    display: flex;
+    font-weight: 500;
+
+
+    li {
+      flex: 0 0 50%;
+      max-width: 50%;
+
+      a {
+        color: inherit;
+
+      }
+    }
+  }
+}
+.showSearchFilterOnMobile{
+  font-size: large;
+  color: var(--text-color)!important;
+
+  &:focus{
+    outline: none!important;
+  }
+}
+
+.contentCategory__title--toggle {
+  &:after {
+    content: '\f0d9';
+    font-family: "Font Awesome 6 Pro";
+    transition: all 0.3s;
+  }
+
+  font-size: x-large;
+
+  &.active {
+    &:after {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.contentCategory {
+  color: var(--text-color);
+
+  .contentCategory__subs {
+    display: none;
+
+    ul {
+      margin: 0;
+      list-style: none;
+
+      label {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  label {
+    cursor: pointer;
+    position: relative;
+
+
+    input[type=checkbox] {
+      width: 100%;
+      opacity: 0;
+      cursor: pointer;
+      position: absolute;
+      height: 100%;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: '\f0c8';
+        font-family: "Font Awesome 6 Pro";
+        margin-left: 5px;
+        color: var(--navigation-background);
+        font-size: x-large;
+        transition: all 0.3s;
+      }
+    }
+
+    input:checked ~ span:before {
+      content: '\f14a';
+      color: var(--primary-color);
+    }
+  }
 }
 
 .head {
@@ -897,7 +994,7 @@ input:focus {
   @include transition;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1045;
 
   &.slide-up {
     transform: translateY(-100%);
@@ -1365,7 +1462,8 @@ p {
   border: 1px solid var(--gray-border) !important;
   display: flex;
   align-items: center;
-  &:after{
+
+  &:after {
     content: '\f078';
     font-family: "Font Awesome 6 Pro";
     border: none;
@@ -1374,8 +1472,9 @@ p {
     font-weight: bold;
     margin: 0 0.5rem;
   }
-  &.show{
-    &:after{
+
+  &.show {
+    &:after {
       content: '\f077';
     }
   }
@@ -1387,7 +1486,7 @@ p {
   left: 0 !important;
   border: 1px solid var(--gray-border) !important;
   padding: 0.5rem !important;
-  top: 2px!important;
+  top: 2px !important;
 
   li {
     a {
