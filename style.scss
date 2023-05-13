@@ -176,7 +176,7 @@ a {
   }
 }
 #offcanvasFilter{
-  height: 45rem;
+  height: 40rem;
 }
 .miniCard {
 
@@ -544,7 +544,7 @@ input:focus {
   font-size: large;
   color: var(--text-color)!important;
 
-  &:focus{
+  &:focus-visible,&:active{
     outline: none!important;
   }
 }

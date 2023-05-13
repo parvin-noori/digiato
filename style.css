@@ -56,7 +56,7 @@ a {
   margin-right: 1rem; }
 
 #offcanvasFilter {
-  height: 45rem; }
+  height: 40rem; }
 
 .miniCard .miniCard__title {
   flex: 1;
@@ -262,7 +262,7 @@ input:focus {
 .showSearchFilterOnMobile {
   font-size: large;
   color: var(--text-color) !important; }
-  .showSearchFilterOnMobile:focus {
+  .showSearchFilterOnMobile:focus-visible, .showSearchFilterOnMobile:active {
     outline: none !important; }
 
 .contentCategory__title--toggle {
