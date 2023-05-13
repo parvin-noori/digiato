@@ -58,6 +58,9 @@ a {
 #offcanvasFilter {
   height: 40rem; }
 
+@media (max-width: 992px) {
+  .showSearchFilter {
+    width: 100%; } }
 .miniCard .miniCard__title {
   flex: 1;
   font-weight: bold; }
