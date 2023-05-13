@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/search.html" line="541" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3563a01c-b553-437a-9899-3b25f742b2ad" name="Default Changelist" comment="" />
+    <list default="true" id="3563a01c-b553-437a-9899-3b25f742b2ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/search.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="172" column="24" lean-forward="true" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
+            <state relative-caret-position="239">
+              <caret line="181" column="19" selection-start-line="181" selection-start-column="3" selection-end-line="181" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -145,8 +147,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="544" column="65" selection-start-line="544" selection-start-column="49" selection-end-line="544" selection-end-column="65" />
+            <state relative-caret-position="299">
+              <caret line="809" column="34" lean-forward="true" selection-start-line="809" selection-start-column="34" selection-end-line="809" selection-end-column="34" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -256,7 +258,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.card__overload--info .card__overload--autho</find>
       <find>.card__overload--author</find>
       <find>.sticky</find>
       <find>darkmo</find>
@@ -285,6 +286,7 @@
       <find>offcanvasBottom</find>
       <find>btn  dropdown-toggle showSearchFilterBtn flex-grow-1</find>
       <find>top</find>
+      <find>dropdown showSearchFilter d-md-flex d-none</find>
       <find>showS</find>
     </findStrings>
     <replaceStrings>
@@ -392,12 +394,12 @@
       <workItem from="1682771510053" duration="33000" />
       <workItem from="1683712094972" duration="4785000" />
       <workItem from="1683722149438" duration="1064000" />
-      <workItem from="1683724430509" duration="19986000" />
+      <workItem from="1683724430509" duration="20256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253043000" />
+    <option name="totallyTimeSpent" value="253313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -715,15 +717,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="172" column="24" lean-forward="true" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
+        <state relative-caret-position="239">
+          <caret line="181" column="19" selection-start-line="181" selection-start-column="3" selection-end-line="181" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="544" column="65" selection-start-line="544" selection-start-column="49" selection-end-line="544" selection-end-column="65" />
+        <state relative-caret-position="299">
+          <caret line="809" column="34" lean-forward="true" selection-start-line="809" selection-start-column="34" selection-end-line="809" selection-end-column="34" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
